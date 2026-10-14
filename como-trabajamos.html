@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cómo trabajamos · Brokers Network</title>
+<meta name="description" content="Cómo trabajamos en Brokers Network: operaciones compartidas y modelo de comisiones para asesores.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/sitio.css">
+</head>
+<body>
+<style>
+/* Cómo trabajamos: encabezado de página, subnavegación, operaciones compartidas, modelo de comisiones y documentos. */
+.phead{background:var(--azul-o2);color:#fff;position:relative;overflow:hidden}
+.phead::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.phead .wrap{position:relative;z-index:1;padding-block:56px 50px}
+.phead h1{font-size:clamp(34px,4.4vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.phead h1 span{color:var(--naranja)}
+.phead p{color:#C9D4E0;font-size:18px;max-width:60ch;margin:14px 0 26px}
+.subnav{display:flex;gap:10px;flex-wrap:wrap}
+.subnav a{color:#fff;text-decoration:none;font-weight:700;font-size:14px;border:1.5px solid rgba(255,255,255,.35);border-radius:99px;padding:9px 16px}
+.subnav a:hover{border-color:var(--naranja);background:rgba(221,86,53,.15)}
+/* operaciones compartidas */
+.ops-blk{background:var(--gris-c)}
+.ops{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start;margin-top:28px}
+.ops .lead{font-size:17px;margin:16px 0 0;max-width:62ch}
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pasos li{display:grid;grid-template-columns:38px 1fr;gap:4px 14px;background:#fff;border:1px solid var(--linea);padding:18px 20px}
+.pasos i{font-style:normal;grid-row:span 2;width:38px;height:38px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-weight:800}
+.pasos b{font-size:16px;color:var(--azul)}
+.pasos span{font-size:14.5px;color:var(--gris-m)}
+
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.doc{background:#fff;border:1px solid var(--linea);border-top:3px solid var(--naranja);padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--gris);min-width:0}
+.doc:hover{box-shadow:0 10px 26px rgba(0,0,0,.08)}
+.doc b{font-size:16.5px;color:var(--azul)}
+.doc span{font-size:14px;color:var(--gris-m);flex:1}
+.doc em{font-style:normal;font-weight:700;font-size:13.5px;color:var(--naranja-t)}
+.doc em::after{content:" →"}
+.minfo{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.mtag{display:inline-block;background:var(--naranja-c);color:var(--naranja-t);font-weight:700;font-size:13px;border-radius:99px;padding:6px 14px}
+@media (max-width:1000px){.docs{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.docs{grid-template-columns:1fr}}
+/* modelo de comisiones (adaptado, con alcance .modelo) */
+.modelo{
+  --bg:#FFFFFF; --surface:#F6F3F0; --line:#E7E1DB; --ink:#3B3B3B; --muted:#5B6575;
+  --accent:#DD5635; --accent-ink:#B8401F; --accent-soft:#FFF1E8; --on-accent:#FFFFFF;
+  --house:#30445A; --on-house:#FFFFFF; --band:#1B2A41; --on-band:#FFFFFF; --band-muted:#C9D1DC; --peach:#FDBA8C;
+  --warn:#9A3412; --warn-soft:#FDECEC;
+  --display:var(--f); --body:var(--f);
+}
+.modelo{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.modelo .wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.modelo h1,.modelo h2,.modelo h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+.modelo .num{font-variant-numeric:tabular-nums}
+.modelo .eyebrow{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--peach)}
+.modelo .modelo-main{display:flex;flex-direction:column;gap:40px;padding-block:28px 56px}
+.modelo .vpick{background:var(--surface);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.modelo .vpick-title{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.modelo .vswitch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.modelo .vswitch input{position:absolute;opacity:0;pointer-events:none}
+.modelo .vswitch label{display:flex;flex-direction:column;gap:2px;padding:14px 18px;border-radius:12px;border:2px solid var(--line);background:var(--bg);cursor:pointer;min-height:44px;transition:background .2s,border-color .2s}
+.modelo .vswitch label:hover{border-color:var(--house)}
+.modelo .vk{font-family:var(--display);font-weight:800;font-size:18px}
+.modelo .vv{font-size:15px;font-weight:600;color:var(--muted)}
+.modelo .vswitch input:checked+label{background:var(--house);border-color:var(--house);color:var(--on-house)}
+.modelo .vswitch input:checked+label .vv{color:var(--on-house)}
+.modelo .money{position:relative;display:flex;align-items:center}
+.modelo .money .pre,.modelo .money .suf{position:absolute;font-size:18px;font-weight:700;color:var(--muted);pointer-events:none}
+.modelo .money .pre{left:14px}
+.modelo .money .suf{right:14px}
+.modelo .money input.has-pre{padding-left:30px}
+.modelo .money input.has-suf{padding-right:84px}
+.modelo .vswitch input:focus-visible+label{outline:3px solid var(--peach);outline-offset:2px}
+.modelo:has(#v-b:checked) .va{display:none!important}
+.modelo:not(:has(#v-b:checked)) .vb{display:none!important}
+.modelo input:focus-visible{outline:3px solid var(--peach);outline-offset:2px}
+.modelo .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.modelo .section-head h2{font-size:24px;font-weight:800}
+.modelo .legend{display:flex;gap:18px;font-size:15px;font-weight:600;color:var(--muted)}
+.modelo .legend span{display:inline-flex;align-items:center;gap:8px}
+.modelo .sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+.modelo .levels{display:flex;flex-direction:column;gap:26px;margin-top:20px}
+.modelo .level{display:flex;flex-direction:column;gap:8px}
+.modelo .level-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.modelo .level-head h3{font-size:21px;font-weight:800}
+.modelo .level-head span{color:var(--muted);font-size:16px}
+.modelo .bar{display:flex;height:48px;border-radius:10px;overflow:hidden;font-family:var(--display);font-weight:800;font-size:20px}
+.modelo .bar div{display:flex;align-items:center;padding:0 16px;white-space:nowrap;transition:width .35s ease}
+.modelo .bar .a{background:var(--accent);color:var(--on-accent)}
+.modelo .bar .h{background:var(--house);color:var(--on-house);justify-content:flex-end}
+.modelo .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:4px}
+.modelo .case{display:flex;align-items:center;gap:10px;border-radius:10px;padding:10px 12px;font-size:15px;font-weight:600;line-height:1.3;min-width:0}
+.modelo .case svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.modelo .case.yes{background:var(--accent-soft);color:var(--ink)}
+.modelo .case.yes svg{stroke:var(--accent-ink)}
+.modelo .case span{flex:1;min-width:0}
+.modelo .pct{font-family:var(--display);font-weight:800;font-size:15px;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.modelo .incl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.modelo .price{font-family:var(--display);font-weight:800;font-size:15px;background:var(--house);color:var(--on-house);border-radius:999px;padding:6px 14px}
+.modelo .tag{font-size:15px;font-weight:600;border:1.5px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink)}
+.modelo .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.modelo .card{background:var(--surface);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.modelo .card h3{font-size:17px;font-weight:800}
+.modelo .card p{margin:0}
+.modelo .hl{color:var(--accent-ink);font-weight:700}
+.modelo .coord{border:2px solid var(--peach);border-radius:14px;padding:20px 22px;margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.modelo .coord h3{font-size:17px;font-weight:800}
+.modelo .coord p{margin:0}
+.modelo .chips{display:flex;flex-wrap:wrap;gap:8px}
+.modelo .chip{background:var(--accent-soft);color:var(--accent-ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px}
+.modelo .example{margin-top:16px;background:var(--accent-soft);border-radius:14px;padding:20px 22px}
+.modelo .example h3{font-size:17px;font-weight:800}
+.modelo .ex-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:12px}
+.modelo .ex-row div{display:flex;flex-direction:column;gap:2px}
+.modelo .ex-row .lbl{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.modelo .ex-row .big{font-family:var(--display);font-size:26px;font-weight:800}
+.modelo .ex-row .sub{font-size:14px;color:var(--muted)}
+.modelo .calc{border-top:2px solid var(--line);padding-top:36px;display:flex;flex-direction:column;gap:20px}
+.modelo .calc-head p{margin:6px 0 0;color:var(--muted)}
+.modelo .calc-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px}
+@media (max-width:760px){.modelo .calc-body{grid-template-columns:1fr}}
+.modelo form{display:flex;flex-direction:column;gap:16px}
+.modelo .field{display:flex;flex-direction:column;gap:6px}
+.modelo .field label,.modelo .field legend{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.modelo fieldset{border:0;padding:0;margin:0}
+.modelo .seg{display:flex;flex-wrap:wrap;gap:6px}
+.modelo .seg input{position:absolute;opacity:0;pointer-events:none}
+.modelo .seg label{font-family:var(--body);text-transform:none;letter-spacing:0;font-size:16px;font-weight:600;color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;box-sizing:border-box}
+.modelo .seg input:checked+label{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.modelo .seg input:focus-visible+label{outline:3px solid var(--peach);outline-offset:2px}
+.modelo input[type=number],.modelo input[type=text]{font:inherit;font-size:18px;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;box-sizing:border-box;min-height:44px}
+.modelo .hint{font-size:14px;color:var(--muted)}
+.modelo .result{background:var(--surface);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.modelo .total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.modelo .total span{color:var(--muted);font-weight:600}
+.modelo .total strong{font-family:var(--display);font-size:30px;font-weight:800}
+.modelo .lines{display:flex;flex-direction:column}
+.modelo .line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.modelo .line .k{display:flex;align-items:center;gap:10px}
+.modelo .line .v{font-weight:700}
+.modelo .line.net .v{font-family:var(--display);font-size:20px}
+.modelo .split-note{font-size:15px;color:var(--muted)}
+.modelo .compare{background:var(--bg);border-radius:12px;padding:12px 14px;font-size:15px}
+.modelo .warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:12px 14px;font-size:15px;font-weight:600}
+.modelo .mfoot{color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:2px solid var(--line);padding-top:16px}
+@media (prefers-reduced-motion:reduce){.modelo .bar div{transition:none}}
+</style>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="index.html" data-inicio><img src="img/logo-brokers-network.png" alt=""><span><b>BROKERS NETWORK</b><small>Soluciones inmobiliarias</small></span></a>
+    <a class="cta-fuera" href="registro.html">Quiero afiliarme</a>
+    <button class="mmenu" type="button" id="mmenu" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    <nav id="menu" aria-label="Menú principal">
+      <a href="index.html" data-inicio>Inicio</a>
+      <a href="index.html#quienes">Quiénes somos</a>
+      <div class="dd"><button class="ddb" type="button" aria-expanded="false">Nuestros servicios <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Si eres propietario</p>
+          <a href="servicios.html#propietarios">Vender o rentar mi propiedad<small>Toda la red trabaja tu propiedad</small></a>
+          <a href="servicios.html#requisitos">Requisitos<small>Documentos para vender, comprar o rentar</small></a>
+          <p class="ddt">Si buscas un inmueble</p>
+          <a href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades<small>Más de 500 en venta y renta</small></a>
+          <a href="servicios.html#asesor">Elige tu asesor<small>Asesores por zona</small></a>
+          <a href="servicios.html#credito">Crédito hipotecario<small>Te apoyamos con tu crédito</small></a>
+          <a href="servicios.html#renta">Renta con o sin aval<small>Póliza jurídica en lugar de fiador</small></a>
+          <a href="servicios.html#servicios">Todos los servicios<small>Inversión, administración, mudanza y más</small></a>
+        </div>
+      </div>
+      <div class="dd actual"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Para asesores inmobiliarios</p>
+          <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
+          <a href="como-trabajamos.html#comisiones">Modelo de comisiones<small>Tres niveles según tu experiencia</small></a>
+          <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="registro.html">Quiero afiliarme<small>Únete a la red de asesores</small></a>
+        </div>
+      </div>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cta" href="registro.html">Quiero afiliarme</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="phead" aria-label="Cómo trabajamos">
+    <div class="wrap">
+      <h1>Cómo <span>trabajamos</span></h1>
+      <p>Reglas claras para compartir operaciones entre asesores y un modelo de comisiones que crece contigo.</p>
+      <nav class="subnav" aria-label="En esta página">
+        <a href="#operaciones">Operaciones compartidas</a>
+        <a href="#comisiones">Modelo de comisiones</a>
+        <a href="#documentos">Documentos</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="blk ops-blk" id="operaciones" aria-labelledby="ops-t">
+    <div class="wrap">
+      <p class="eyebrow">Operaciones compartidas</p>
+      <h2 id="ops-t">¿Traes un cliente? Lo registramos y cuidamos tu comisión.</h2>
+      <p class="lead">Cuando un asesor de la red, o de fuera, trae un cliente a una de nuestras propiedades, queda registrado con folio y fecha. Así damos seguimiento juntos hasta el cierre.</p>
+      <div class="ops">
+        <ol class="pasos">
+          <li><i>1</i><b>Mándanos el registro</b><span>Nombre de tu cliente, tu nombre y la propiedad que le interesa. Basta con un mensaje de WhatsApp.</span></li>
+          <li><i>2</i><b>Avisamos al dueño</b><span>Le enviamos el registro con folio y el título de la propiedad. Tus datos de contacto y la comisión no se comparten.</span></li>
+          <li><i>3</i><b>Seguimos la operación por etapas</b><span>Cita, visita, oferta y cierre. Te avisamos en cada paso y la comisión se comparte según lo acordado.</span></li>
+        </ol>
+      </div>
+      <div class="contacto">
+        <a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20tengo%20un%20cliente%20interesado%20en%20una%20propiedad%20de%20Brokers%20Network" target="_blank" rel="noopener">Registrar a mi cliente por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="comisiones" aria-labelledby="mc-t">
+    <div class="wrap">
+      <div class="minfo">
+        <div>
+          <p class="eyebrow">Para asesores · Modelo de comisiones</p>
+          <h2 id="mc-t">Tres niveles según tu experiencia</h2>
+          <p class="lead">Empiezas acompañado. Subes cuando cierras.</p>
+        </div>
+        <span class="mtag">Propuesta · cifras de referencia</span>
+      </div>
+      <div class="modelo"><div class="modelo-main" style="padding-top:28px">
+  <section aria-label="Versiones del modelo">
+    <div class="vpick">
+      <div class="vpick-title">Elige la versión que quieres ver</div>
+      <div class="vswitch" role="radiogroup" aria-label="Versión del modelo">
+        <input type="radio" name="ver" id="v-a" value="70" checked>
+        <label for="v-a"><span class="vk">Versión A</span><span class="vv">Profesional 70/30</span></label>
+        <input type="radio" name="ver" id="v-b" value="60">
+        <label for="v-b"><span class="vk">Versión B</span><span class="vv">Profesional 60/40</span></label>
+      </div>
+    </div>
+
+    <div id="panel" style="padding-top:28px">
+      <div class="section-head">
+        <h2>Split de comisión por nivel</h2>
+        <div class="legend"><span><i class="sw" style="background:var(--accent)"></i>Asesor</span><span><i class="sw" style="background:var(--house)"></i>Inmobiliaria</span></div>
+      </div>
+
+      <div class="levels">
+        <div class="level">
+          <div class="level-head"><h3>Arranque</h3><span>Sin experiencia · 50/50 en todo</span></div>
+          <div class="bar"><div class="a" style="width:50%">50%</div><div class="h" style="width:50%">50%</div></div>
+          <div class="cases">
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Consigues tu cliente</span><b class="pct">50%</b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Traes una propiedad nueva</span><b class="pct">50%</b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>La inmobiliaria te pasa un cliente</span><b class="pct">50%</b></div>
+          </div>
+          <div class="incl"><span class="price">$499/mes</span><span class="tag">Plataforma</span><span class="tag">Acompañamiento operativo</span><span class="tag">Portales: 5 anuncios</span></div>
+        </div>
+        <div class="level">
+          <div class="level-head"><h3>Profesional</h3><span>Consigues tus clientes y propiedades · operas sola</span></div>
+          <div class="bar va"><div class="a" style="width:70%">70%</div><div class="h" style="width:30%">30%</div></div>
+          <div class="bar vb"><div class="a" style="width:60%">60%</div><div class="h" style="width:40%">40%</div></div>
+          <div class="cases">
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Consigues tu cliente</span><b class="pct"><span class="va">70%</span><span class="vb">60%</span></b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Traes tu propiedad</span><b class="pct"><span class="va">70%</span><span class="vb">60%</span></b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>La inmobiliaria te pasa un cliente</span><b class="pct">50%</b></div>
+          </div>
+          <div class="incl"><span class="price">$499/mes</span><span class="tag">Plataforma</span><span class="tag">Apoyo operativo</span><span class="tag">Portales: 10 anuncios</span></div>
+        </div>
+        <div class="level">
+          <div class="level-head"><h3>Independiente</h3><span>Operas solo, con la marca y el equipo</span></div>
+          <div class="bar"><div class="a" style="width:100%">100%</div></div>
+          <div class="cases">
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Consigues tu cliente</span><b class="pct">100%</b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Traes tu propiedad</span><b class="pct">100%</b></div>
+            <div class="case yes"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>La inmobiliaria te pasa un cliente</span><b class="pct">50%</b></div>
+          </div>
+          <div class="incl"><span class="price">$499/mes</span><span class="tag">Plataforma</span><span class="tag">Portales: pagas según tu inventario</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="calc" aria-labelledby="calc-title">
+    <div class="calc-head">
+      <h2 id="calc-title" style="font-size:24px;font-weight:800">Calcula una operación</h2>
+      <p>Usa el split de la versión seleccionada arriba (<b class="va">Versión A · 70/30</b><b class="vb">Versión B · 60/40</b>). Cifras sin IVA.</p>
+    </div>
+    <div class="calc-body">
+      <form id="calc" novalidate>
+        <fieldset class="field"><legend>Tipo de operación</legend>
+          <div class="seg">
+            <input type="radio" name="tipo" id="t-venta" value="venta" checked><label for="t-venta">Venta</label>
+            <input type="radio" name="tipo" id="t-renta" value="renta"><label for="t-renta">Renta</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="valor" id="valor-lbl">Precio de venta</label>
+          <div class="money"><span class="pre" aria-hidden="true">$</span><input type="text" class="has-pre num" id="valor" value="3,000,000" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="field">
+          <label for="com" id="com-lbl">Comisión (%)</label>
+          <div class="money"><input type="number" class="has-suf" id="com" min="0" step="0.5" value="5" inputmode="decimal"><span class="suf" id="com-suf" aria-hidden="true">%</span></div>
+          <span class="hint" id="com-hint">Porcentaje sobre el precio de venta.</span>
+        </div>
+        <fieldset class="field"><legend>Nivel del asesor</legend>
+          <div class="seg">
+            <input type="radio" name="nivel" id="n-arr" value="arranque" checked><label for="n-arr">Arranque</label>
+            <input type="radio" name="nivel" id="n-pro" value="profesional"><label for="n-pro">Profesional</label>
+            <input type="radio" name="nivel" id="n-ind" value="independiente"><label for="n-ind">Independiente</label>
+          </div>
+        </fieldset>
+        <fieldset class="field"><legend>¿Quién puso el cliente o la propiedad?</legend>
+          <div class="seg">
+            <input type="radio" name="origen" id="o-ase" value="asesor" checked><label for="o-ase">El asesor</label>
+            <input type="radio" name="origen" id="o-inm" value="inmobiliaria"><label for="o-inm">La inmobiliaria</label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="result" aria-live="polite">
+        <div class="total"><span>Comisión total</span><strong class="num" id="r-total">$150,000</strong></div>
+        <div class="bar" id="r-bar"><div class="a" id="r-bar-a" style="width:50%">50%</div><div class="h" id="r-bar-h" style="width:50%">50%</div></div>
+        <div class="split-note" id="r-note">Split 50/50 · Arranque</div>
+        <div class="lines num">
+          <div class="line"><span class="k"><i class="sw" style="background:var(--accent)"></i>Asesor</span><span class="v" id="r-ase">$75,000</span></div>
+          <div class="line"><span class="k"><i class="sw" style="background:var(--house)"></i>Inmobiliaria</span><span class="v" id="r-inm">$75,000</span></div>
+        </div>
+        <div class="compare" id="r-compare" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Reglas y ejemplo">
+    <div>
+      <div class="grid2">
+        <div class="card"><h3>Regla para todos los niveles</h3><p>Lo que pone la inmobiliaria siempre va <span class="hl">50/50</span>. Lo que consigues tú mejora según tu nivel.</p></div>
+        <div class="card"><h3>Cómo subes a Profesional</h3><p>Al cerrar <b>3 rentas y 2 ventas</b>. Desde ese momento operas sola y tu split mejora.</p></div>
+      </div>
+
+      <div class="coord">
+        <h3>Acompañamiento operativo en Arranque</h3>
+        <p>La coordinación operativa te enseña a hacer búsquedas, te supervisa y confirma citas al inicio, para que pronto lo hagas sola. En Profesional ya no participa.</p>      </div>
+
+      <div class="example">
+        <h3>Ejemplo · venta de $3,000,000 con 5% de comisión = $150,000</h3>
+        <div class="ex-row num">
+          <div><span class="lbl">Arranque</span><span class="big">$75,000</span><span class="sub">asesor · casa $75,000</span></div>
+          <div><span class="lbl">Profesional</span><span class="big va">$105,000</span><span class="big vb">$90,000</span><span class="sub va">asesor · casa $45,000</span><span class="sub vb">asesor · casa $60,000</span></div>
+          <div><span class="lbl">Independiente</span><span class="big">$150,000</span><span class="sub">asesor</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="mfoot"><span>brokersnetwork.mx</span><span>Propuesta · cifras de referencia</span></div>
+</div></div>
+    </div>
+  </section>
+
+  <section class="blk gris" id="documentos" aria-labelledby="d-t">
+    <div class="wrap">
+      <p class="eyebrow">Documentos</p>
+      <h2 id="d-t">Lo que nos rige</h2>
+      <div class="docs">
+        <a class="doc" href="https://www.brokersnetwork.mx/servicios.html" target="_blank" rel="noopener"><b>Servicios</b><span>Bienes raíces, créditos, pólizas jurídicas, inversión, administración y más.</span><em>Ver servicios</em></a>
+        <a class="doc" href="https://www.brokersnetwork.mx/coacutedigo-de-eacutetica.html" target="_blank" rel="noopener"><b>Código de ética</b><span>Los principios que comparten todos los asesores de la red.</span><em>Leer el código</em></a>
+        <a class="doc" href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener"><b>EC0110.02 y NOM-247</b><span>Certificación oficial y la norma de información comercial inmobiliaria.</span><em>Conocer más</em></a>
+        <a class="doc" href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener"><b>Aviso de privacidad</b><span>Cómo cuidamos y usamos tus datos personales.</span><em>Leer el aviso</em></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div>
+      <div class="fmarca"><img src="img/logo-brokers-network.png" alt=""><div><b style="color:#fff;letter-spacing:.06em">BROKERS NETWORK</b><br><span style="font-size:12px;letter-spacing:.2em">SOLUCIONES INMOBILIARIAS</span></div></div>
+      <p style="margin:0">Homero 1425, desp. 105, Col. Polanco, C.P. 11560, CDMX<br>(55) 2282 2287 · oficina@brokersnetwork.mx</p>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/brokersnetworkmx/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/brokersnetworkmx/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://twitter.com/BrokersNetwork_/" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a href="https://www.pinterest.com.mx/brokersnetworkm/" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/company/brokersnetworkmx" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Afiliados a</h3>
+      <ul>
+        <li><a href="https://conocer.gob.mx" target="_blank" rel="noopener">CONOCER · EC0110.02</a></li>
+        <li><a href="https://upim.org" target="_blank" rel="noopener">UPIM</a></li>
+        <li><a href="https://www.broktool.com" target="_blank" rel="noopener">Broktool</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
+</footer>
+<script src="js/menu.js"></script>
+
+<script>
+(function(){
+  var b=document.getElementById('mmenu'),n=document.getElementById('menu');
+  function set(o){n.classList.toggle('abierto',o);b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(){set(!n.classList.contains('abierto'));});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    var orig=btn.textContent;
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Seleccionado';}
+      try{navigator.clipboard.writeText(el.textContent).then(function(){btn.textContent='Copiado';},sel);}catch(e){sel();}
+      setTimeout(function(){btn.textContent=orig;},2000);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var prof = 70;
+  var fmt = new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0});
+  var $ = function(id){return document.getElementById(id)};
+
+  function calcOp(o, profSplit){
+    var total = o.tipo==='venta' ? o.valor*o.com/100 : o.valor*o.com;
+    var pct;
+    if(o.origen==='inmobiliaria') pct = 50;
+    else if(o.nivel==='arranque') pct = 50;
+    else if(o.nivel==='profesional') pct = profSplit;
+    else pct = 100;
+    var ase = total*pct/100;
+    return {total:total,pct:pct,ase:ase,inm:total-ase};
+  }
+
+  function read(){
+    var g = function(n){return document.querySelector('input[name="'+n+'"]:checked').value};
+    return {tipo:g('tipo'),nivel:g('nivel'),origen:g('origen'),
+      valor:Math.max(0,parseFloat($('valor').value.replace(/[^\d.]/g,''))||0),com:Math.max(0,parseFloat($('com').value)||0)};
+  }
+
+  function update(){
+    var o = read(), r = calcOp(o, prof);
+    $('com-suf').textContent = o.tipo==='venta' ? '%' : (o.com===1?'mes':'meses');
+    $('r-total').textContent = fmt.format(r.total);
+    $('r-bar-a').style.width = r.pct+'%'; $('r-bar-a').textContent = r.pct+'%';
+    $('r-bar-h').style.width = (100-r.pct)+'%'; $('r-bar-h').textContent = (100-r.pct)+'%';
+    $('r-bar-h').hidden = r.pct===100;
+    var nivelTxt = {arranque:'Arranque',profesional:'Profesional',independiente:'Independiente'}[o.nivel];
+    $('r-note').textContent = 'Split '+r.pct+'/'+(100-r.pct)+' · '+nivelTxt+(o.origen==='inmobiliaria'?' · lo puso la inmobiliaria':' · lo consiguió el asesor');
+    $('r-ase').textContent = fmt.format(r.ase);
+    $('r-inm').textContent = fmt.format(r.inm);
+    var cmp = $('r-compare');
+    if(o.nivel==='profesional' && o.origen==='asesor'){
+      var other = prof===70?60:70, r2 = calcOp(o, other);
+      cmp.hidden = false;
+      cmp.textContent = 'Con Profesional '+other+'/'+(100-other)+' el asesor recibiría '+fmt.format(r2.ase)+' y la inmobiliaria '+fmt.format(r2.inm)+'.';
+    } else cmp.hidden = true;
+  }
+
+  function setTipo(){
+    var venta = read().tipo==='venta';
+    $('valor-lbl').textContent = venta ? 'Precio de venta' : 'Renta mensual';
+    $('com-lbl').textContent = venta ? 'Comisión (%)' : 'Comisión (meses de renta)';
+    $('com-hint').textContent = venta ? 'Porcentaje sobre el precio de venta.' : 'Normalmente un mes de renta.';
+  }
+
+  function setVersion(p){
+    prof = p;
+    $(p===60?'v-b':'v-a').checked = true;
+    try{ localStorage.setItem('bn-version', p); }catch(e){}
+    update();
+  }
+
+  document.querySelectorAll('input[name="ver"]').forEach(function(r){
+    r.addEventListener('change', function(){ if(r.checked) setVersion(+r.value); });
+  });
+
+  var tipoPrev = 'venta';
+  $('calc').addEventListener('submit', function(e){ e.preventDefault(); });
+  $('calc').addEventListener('change', function(){ update(); });
+  var nf = new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
+  $('valor').addEventListener('input', function(){
+    var el = this, fromEnd = el.value.length - (el.selectionStart||0);
+    var digits = el.value.replace(/\D/g,'');
+    el.value = digits ? nf.format(+digits) : '';
+    var pos = Math.max(0, el.value.length - fromEnd);
+    try{ el.setSelectionRange(pos,pos); }catch(e){}
+  });
+  $('calc').addEventListener('input', function(e){
+    if(e.target.name==='tipo'){
+      var t = read().tipo;
+      if(t!==tipoPrev){
+        if(t==='renta'){ $('valor').value = '25,000'; $('com').value = 1; }
+        else { $('valor').value = '3,000,000'; $('com').value = 5; }
+        tipoPrev = t;
+      }
+      setTipo();
+    }
+    update();
+  });
+
+  var start = 70;
+  if(location.hash==='#b') start = 60; else if(location.hash==='#a') start = 70;
+  else { try{ var s = +localStorage.getItem('bn-version'); if(s===60||s===70) start = s; }catch(e){} }
+  setVersion(start);
+})();
+</script>
+
+</body>
+</html>

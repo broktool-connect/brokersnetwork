@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nuestros servicios · Brokers Network</title>
+<meta name="description" content="Compra, vende o renta con un asesor de Brokers Network: elige tu asesor, crédito hipotecario, renta con o sin aval y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/sitio.css">
+</head>
+<body>
+<style>
+.phead{background:var(--azul-o2);color:#fff;position:relative;overflow:hidden}
+.phead::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.phead .wrap{position:relative;z-index:1;padding-block:56px 50px}
+.phead h1{font-size:clamp(34px,4.4vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.phead h1 span{color:var(--naranja)}
+.phead p{color:#C9D4E0;font-size:18px;max-width:60ch;margin:14px 0 26px}
+.subnav{display:flex;gap:10px;flex-wrap:wrap}
+.subnav a{color:#fff;text-decoration:none;font-weight:700;font-size:14px;border:1.5px solid rgba(255,255,255,.35);border-radius:99px;padding:9px 16px}
+.subnav a:hover{border-color:var(--naranja);background:rgba(221,86,53,.15)}
+.prop2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.pcard{background:var(--azul);color:#fff;border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px}
+.pcard h3{font-size:24px}
+.pcard p{margin:0;color:#C9D4E0}
+.pcard ol{margin:4px 0 8px;padding-left:20px;display:grid;gap:6px;color:#E6ECF2;font-size:15px}
+.pcard{min-width:0}
+.pcard .btn{align-self:flex-start;white-space:normal;text-align:center}
+@media (max-width:420px){.pcard{padding:22px}}
+.pcard .btn.nar{margin-top:auto}
+.zonas{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px;align-items:start}
+.zona{background:#fff;border:1px solid var(--linea);border-top:3px solid var(--naranja);border-radius:0 0 16px 16px;padding:18px}
+.zona h3{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t);margin-bottom:10px}
+.zona ul{list-style:none;margin:0;padding:0;display:grid}
+.zona li{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--linea)}
+.zona li:first-child{border-top:0}
+.zona .av{width:36px;height:36px;border-radius:50%;background:var(--azul-c);color:var(--azul);display:grid;place-items:center;font-weight:800;font-size:12.5px}
+.zona b{display:block;font-size:14.5px;color:var(--azul);line-height:1.25}
+.zona small{display:block;font-size:12px;color:var(--gris-m);line-height:1.3}
+.zona li a{font-size:12.5px;font-weight:700;text-decoration:none;color:var(--ok);border:1.5px solid #CFE7D9;border-radius:99px;padding:5px 10px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.caja{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.caja .ic{width:52px;height:52px;border-radius:16px;background:var(--naranja-c);color:var(--naranja-t);display:grid;place-items:center}
+.caja .ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.caja h3{font-size:22px;color:var(--azul)}
+.caja p{margin:0;color:var(--gris-m)}
+.caja ul{margin:0;padding-left:18px;color:var(--gris);display:grid;gap:5px;font-size:15px}
+.caja .btn{align-self:flex-start;margin-top:6px}
+.serv{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;border-top:1px solid var(--linea);margin-top:30px}
+.sv{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--linea)}
+.sv i{font-style:normal;width:38px;height:38px;border-radius:12px;background:var(--naranja-c);color:var(--naranja-t);display:grid;place-items:center;font-weight:800;font-size:14px}
+.sv h3{font-size:16.5px;color:var(--azul);margin-bottom:2px}
+.sv p{margin:0;font-size:14.5px;color:var(--gris-m)}
+.fz{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.fz button{border:1.5px solid var(--linea);background:#fff;color:var(--azul);font:700 13.5px var(--f);border-radius:99px;padding:8px 15px;cursor:pointer}
+.fz button.on{background:var(--azul);border-color:var(--azul);color:#fff}
+.eq{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+.ac{background:#fff;border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ac .ft{aspect-ratio:4/5;background:linear-gradient(160deg,var(--azul),var(--azul-o2));display:grid;place-items:center;max-width:100%}
+.ac .ft img{width:100%;height:100%;object-fit:cover;display:block}
+.ac .ini{width:84px;height:84px;border-radius:50%;border:3px solid var(--naranja);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:800;letter-spacing:.02em}
+.ac .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.ac h3{font-size:16.5px;color:var(--azul)}
+.ac p{margin:0;font-size:13.5px;color:var(--gris-m);flex:1}
+.ac a{align-self:flex-start;margin-top:8px;font-size:13.5px;font-weight:700;text-decoration:none;color:#fff;background:var(--ok);border-radius:99px;padding:7px 14px}
+.mas{font-size:18px;color:var(--azul);margin:40px 0 0}
+.eq2{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.ac.sin{flex-direction:row;align-items:center;gap:14px;padding:12px 14px;border-radius:14px}
+.ac.sin .ft{aspect-ratio:auto;width:50px;height:50px;border-radius:50%;flex:none}
+.ac.sin .ini{width:50px;height:50px;border-width:2px;font-size:16px}
+.ac.sin .bd{padding:0;flex-direction:row;align-items:center;gap:10px;flex-wrap:wrap}
+.ac.sin .bd>div{flex:1;min-width:0}
+.ac.sin h3{font-size:15px}
+.ac.sin a{margin:0}
+@media (max-width:1100px){.eq2{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.eq2{grid-template-columns:1fr}}
+.rtabs{display:inline-flex;background:var(--azul-c);border-radius:99px;padding:5px;margin-top:26px;gap:4px}
+.rtabs button{border:0;background:none;font:700 15px var(--f);color:var(--azul);padding:10px 24px;border-radius:99px;cursor:pointer}
+.rtabs button[aria-selected="true"]{background:var(--azul);color:#fff}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;align-items:start}
+.rg{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:20px}
+.rg h3{font-size:16px;color:var(--azul);margin-bottom:10px;display:flex;gap:8px;align-items:center}
+.rg ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.rg li{position:relative;padding-left:22px;font-size:14.5px;color:var(--gris)}
+.rg li::before{content:"✓";position:absolute;left:0;color:var(--naranja);font-weight:800}
+.rshare{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rshare .btn{white-space:normal;text-align:center;max-width:100%}
+.tyc{font-size:13.5px;color:var(--gris-m);margin:16px 0 0}
+.tyc a{font-weight:700}
+@media (max-width:1000px){.rgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rgrid{grid-template-columns:1fr}.rtabs button{padding:9px 16px}}
+@media (max-width:1100px){.eq{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.eq{grid-template-columns:1fr 1fr;gap:12px}.ac .bd{padding:12px}.ac h3{font-size:15px}}
+@media (max-width:1100px){.serv{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.prop2,.dos,.zonas,.serv{grid-template-columns:1fr}}
+</style>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="index.html" data-inicio><img src="img/logo-brokers-network.png" alt=""><span><b>BROKERS NETWORK</b><small>Soluciones inmobiliarias</small></span></a>
+    <a class="cta-fuera" href="registro.html">Quiero afiliarme</a>
+    <button class="mmenu" type="button" id="mmenu" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    <nav id="menu" aria-label="Menú principal">
+      <a href="index.html" data-inicio>Inicio</a>
+      <a href="index.html#quienes">Quiénes somos</a>
+      <div class="dd actual"><button class="ddb" type="button" aria-expanded="false">Nuestros servicios <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Si eres propietario</p>
+          <a href="servicios.html#propietarios">Vender o rentar mi propiedad<small>Toda la red trabaja tu propiedad</small></a>
+          <a href="servicios.html#requisitos">Requisitos<small>Documentos para vender, comprar o rentar</small></a>
+          <p class="ddt">Si buscas un inmueble</p>
+          <a href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades<small>Más de 500 en venta y renta</small></a>
+          <a href="servicios.html#asesor">Elige tu asesor<small>Asesores por zona</small></a>
+          <a href="servicios.html#credito">Crédito hipotecario<small>Te apoyamos con tu crédito</small></a>
+          <a href="servicios.html#renta">Renta con o sin aval<small>Póliza jurídica en lugar de fiador</small></a>
+          <a href="servicios.html#servicios">Todos los servicios<small>Inversión, administración, mudanza y más</small></a>
+        </div>
+      </div>
+      <div class="dd"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Para asesores inmobiliarios</p>
+          <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
+          <a href="como-trabajamos.html#comisiones">Modelo de comisiones<small>Tres niveles según tu experiencia</small></a>
+          <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="registro.html">Quiero afiliarme<small>Únete a la red de asesores</small></a>
+        </div>
+      </div>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cta" href="registro.html">Quiero afiliarme</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="phead" aria-label="Nuestros servicios">
+    <div class="wrap">
+      <h1>Nuestros <span>servicios</span></h1>
+      <p>Si buscas un inmueble, o quieres vender o rentar tu propiedad, un asesor de la red te acompaña de principio a fin.</p>
+      <nav class="subnav" aria-label="En esta página">
+        <a href="#propietarios">Vender o rentar mi propiedad</a>
+        <a href="#asesor">Elige tu asesor</a>
+        <a href="#credito">Crédito hipotecario</a>
+        <a href="#renta">Renta con o sin aval</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#servicios">Todos los servicios</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="blk" id="propietarios" aria-labelledby="p-t">
+    <div class="wrap">
+      <p class="eyebrow">Si eres propietario</p>
+      <h2 id="p-t">Toda la red trabaja tu propiedad</h2>
+      <p class="lead">Tu propiedad no la mueve un solo asesor: se comparte con toda la red y en los principales portales.</p>
+      <div class="prop2">
+        <article class="pcard"><h3>Vender mi propiedad</h3><p>Te ayudamos a venderla al mejor precio y sin sorpresas.</p>
+          <ol><li>Valuamos tu propiedad con un estudio de mercado.</li><li>Revisamos la documentación y la situación legal.</li><li>La promovemos en la red y en portales.</li><li>Te acompañamos en la negociación, la promesa y la escrituración.</li></ol>
+          <a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20vender%20mi%20propiedad%20con%20Brokers%20Network" target="_blank" rel="noopener">Quiero vender</a><a class="btn bor" href="#requisitos" data-req="venta">Ver requisitos de venta</a></article>
+        <article class="pcard"><h3>Rentar mi propiedad</h3><p>Encontramos al inquilino indicado y protegemos tu patrimonio.</p>
+          <ol><li>Definimos la renta y los requisitos.</li><li>Promovemos tu propiedad y filtramos candidatos.</li><li>Investigación del inquilino y póliza jurídica.</li><li>Contrato, inventario y entrega ordenada.</li></ol>
+          <a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20rentar%20mi%20propiedad%20con%20Brokers%20Network" target="_blank" rel="noopener">Quiero rentar mi propiedad</a><a class="btn bor" href="#requisitos" data-req="renta">Ver requisitos de renta</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="requisitos" aria-labelledby="r-t">
+    <div class="wrap">
+      <p class="eyebrow">Requisitos</p>
+      <h2 id="r-t">Qué documentos necesitas</h2>
+      <p class="lead">Elige el tipo de operación y comparte la lista por WhatsApp con quien la necesite.</p>
+      <div class="rtabs" role="tablist" aria-label="Tipo de operación">
+        <button type="button" role="tab" id="rt-venta" aria-selected="true" aria-controls="rp" data-r="venta">Venta</button>
+        <button type="button" role="tab" id="rt-renta" aria-selected="false" aria-controls="rp" data-r="renta">Renta</button>
+        <button type="button" role="tab" id="rt-aval" aria-selected="false" aria-controls="rp" data-r="aval">Aval</button>
+      </div>
+      <div id="rp" role="tabpanel" class="rgrid"></div>
+      <div class="rshare">
+        <a class="btn wa" id="r-wa" href="#" target="_blank" rel="noopener">Compartir requisitos por WhatsApp</a>
+        <a class="btn borg" id="r-bn" href="#" target="_blank" rel="noopener">Enviar mis documentos a Brokers Network</a>
+      </div>
+      <p class="tyc">Consulta nuestros <a href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</p>
+    </div>
+  </section>
+
+  <section class="blk gris" id="asesor" aria-labelledby="a-t">
+    <div class="wrap">
+      <p class="eyebrow">Elige tu asesor</p>
+      <h2 id="a-t">Un equipo de profesionales dispuestos a ayudarte</h2>
+      <p class="lead">Filtra por zona, elige a tu asesor y escríbenos por WhatsApp: te ponemos en contacto.</p>
+      <div class="fz" role="group" aria-label="Filtrar por zona"><button type="button" class="on" data-f="todas" aria-pressed="true">Todas</button><button type="button" data-f="cdmx-poniente" aria-pressed="false">CDMX Poniente</button><button type="button" data-f="cdmx-sur" aria-pressed="false">CDMX Sur</button><button type="button" data-f="cdmx-benito-juarez" aria-pressed="false">CDMX Benito Juárez</button><button type="button" data-f="interlomas" aria-pressed="false">Interlomas</button><button type="button" data-f="toda-la-cdmx" aria-pressed="false">Toda la CDMX</button><button type="button" data-f="guadalajara" aria-pressed="false">Guadalajara</button><button type="button" data-f="queretaro" aria-pressed="false">Querétaro</button></div><div class="eq"><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/gabriela-mingramm.jpg" alt="Gabriela Mingramm" loading="lazy"></div><div class="bd"><h3>Gabriela Mingramm</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Gabriela%20Mingramm%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/ludy-escalante.jpg" alt="Ludy Escalante" loading="lazy"></div><div class="bd"><h3>Ludy Escalante</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Ludy%20Escalante%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/marigu-gomez-galas.jpg" alt="Marigu Gómez Galas" loading="lazy"></div><div class="bd"><h3>Marigu Gómez Galas</h3><p>CDMX Poniente · Cuauhtémoc, Condesa y Roma</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Marigu%20G%C3%B3mez%20Galas%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/alejandra-ozuna.jpg" alt="Alejandra Ozuna" loading="lazy"></div><div class="bd"><h3>Alejandra Ozuna</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Alejandra%20Ozuna%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/eloisa-esparza.jpg" alt="Eloisa Esparza" loading="lazy"></div><div class="bd"><h3>Eloisa Esparza</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Eloisa%20Esparza%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/lisa-la-madrid.jpg" alt="Lisa La Madrid" loading="lazy"></div><div class="bd"><h3>Lisa La Madrid</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Lisa%20La%20Madrid%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-poniente"><div class="ft"><img src="img/equipo/laura-fernandez.jpg" alt="Laura Fernández" loading="lazy"></div><div class="bd"><h3>Laura Fernández</h3><p>CDMX Poniente</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Laura%20Fern%C3%A1ndez%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-sur"><div class="ft"><img src="img/equipo/nadia-olivares.jpg" alt="Nadia Olivares" loading="lazy"></div><div class="bd"><h3>Nadia Olivares</h3><p>CDMX Sur</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Nadia%20Olivares%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-sur"><div class="ft"><img src="img/equipo/mila-velasco.jpg" alt="Mila Velasco" loading="lazy"></div><div class="bd"><h3>Mila Velasco</h3><p>CDMX Sur</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Mila%20Velasco%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-sur"><div class="ft"><img src="img/equipo/lizet-lechuga.jpg" alt="Lizet Lechuga" loading="lazy"></div><div class="bd"><h3>Lizet Lechuga</h3><p>CDMX Sur</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Lizet%20Lechuga%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac" data-z="cdmx-benito-juarez"><div class="ft"><img src="img/equipo/leonardo-izquierdo.jpg" alt="Leonardo Izquierdo" loading="lazy"></div><div class="bd"><h3>Leonardo Izquierdo</h3><p>CDMX Benito Juárez</p><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Leonardo%20Izquierdo%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article></div><h3 class="mas" id="mas-t">Más asesores de la red</h3><div class="eq2"><article class="ac sin" data-z="cdmx-poniente"><div class="ft"><span class="ini" aria-hidden="true">FC</span></div><div class="bd"><div><h3>Francisca Castro</h3><p>CDMX Poniente</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Francisca%20Castro%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-poniente"><div class="ft"><span class="ini" aria-hidden="true">MM</span></div><div class="bd"><div><h3>María Montes</h3><p>CDMX Poniente</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Mar%C3%ADa%20Montes%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-poniente"><div class="ft"><span class="ini" aria-hidden="true">MB</span></div><div class="bd"><div><h3>Martha Bohigas</h3><p>CDMX Poniente</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Martha%20Bohigas%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-sur"><div class="ft"><span class="ini" aria-hidden="true">IG</span></div><div class="bd"><div><h3>Ignacio González</h3><p>CDMX Sur · También Poniente</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Ignacio%20Gonz%C3%A1lez%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-sur"><div class="ft"><span class="ini" aria-hidden="true">EM</span></div><div class="bd"><div><h3>Eunice Maday</h3><p>CDMX Sur</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Eunice%20Maday%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-sur"><div class="ft"><span class="ini" aria-hidden="true">MC</span></div><div class="bd"><div><h3>María del Carmen Guzmán</h3><p>CDMX Sur</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Mar%C3%ADa%20del%20Carmen%20Guzm%C3%A1n%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="cdmx-sur"><div class="ft"><span class="ini" aria-hidden="true">MV</span></div><div class="bd"><div><h3>Martina Vrankova</h3><p>CDMX Sur</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Martina%20Vrankova%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="interlomas"><div class="ft"><span class="ini" aria-hidden="true">MF</span></div><div class="bd"><div><h3>Mónica Franco</h3><p>Interlomas</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20M%C3%B3nica%20Franco%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="toda-la-cdmx"><div class="ft"><span class="ini" aria-hidden="true">EM</span></div><div class="bd"><div><h3>Elvira Martínez</h3><p>Toda la CDMX</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Elvira%20Mart%C3%ADnez%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="toda-la-cdmx"><div class="ft"><span class="ini" aria-hidden="true">VG</span></div><div class="bd"><div><h3>Verónica García</h3><p>Toda la CDMX</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Ver%C3%B3nica%20Garc%C3%ADa%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="toda-la-cdmx"><div class="ft"><span class="ini" aria-hidden="true">JM</span></div><div class="bd"><div><h3>John MacCarthy</h3><p>Toda la CDMX</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20John%20MacCarthy%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="toda-la-cdmx"><div class="ft"><span class="ini" aria-hidden="true">LL</span></div><div class="bd"><div><h3>Laura Lira</h3><p>Toda la CDMX</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Laura%20Lira%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="guadalajara"><div class="ft"><span class="ini" aria-hidden="true">NG</span></div><div class="bd"><div><h3>Norma González</h3><p>Guadalajara</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Norma%20Gonz%C3%A1lez%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="guadalajara"><div class="ft"><span class="ini" aria-hidden="true">RO</span></div><div class="bd"><div><h3>Rosario Ozuna</h3><p>Guadalajara</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Rosario%20Ozuna%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article><article class="ac sin" data-z="queretaro"><div class="ft"><span class="ini" aria-hidden="true">KD</span></div><div class="bd"><div><h3>Karina Duarte</h3><p>Querétaro</p></div><a href="https://wa.me/525520612236?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20atienda%20Karina%20Duarte%20de%20Brokers%20Network" target="_blank" rel="noopener">Contactar</a></div></article></div>
+    </div>
+  </section>
+
+  <section class="blk" aria-label="Crédito y renta">
+    <div class="wrap dos">
+      <article class="caja" id="credito"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+        <p class="eyebrow" style="margin:0">Si buscas un inmueble</p>
+        <h3>Te apoyamos con tu crédito hipotecario</h3>
+        <p>Asesores hipotecarios expertos comparan las opciones del mercado y te acompañan en todo el trámite.</p>
+        <ul><li>Bancario, Infonavit o Fovissste</li><li>Precalificación y comparativo de tasas</li><li>Acompañamiento hasta la firma</li></ul>
+        <a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20asesor%C3%ADa%20para%20un%20cr%C3%A9dito%20hipotecario" target="_blank" rel="noopener">Pedir asesoría</a></article>
+      <article class="caja" id="renta"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M15 8l2 2"/></svg></span>
+        <p class="eyebrow" style="margin:0">Si buscas un inmueble</p>
+        <h3>Renta con o sin aval</h3>
+        <p>¿No tienes fiador? Rentas con póliza jurídica, que respalda al propietario de forma legal y segura.</p>
+        <ul><li>Sin necesidad de fiador con inmueble</li><li>Investigación ágil del inquilino</li><li>Respaldo legal para ambas partes</li></ul>
+        <div class="hb" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20rentar%20con%20o%20sin%20aval" target="_blank" rel="noopener">Quiero rentar</a><a class="btn borg" href="https://asesor.moradaunoapp.com" target="_blank" rel="noopener">Conocer opciones</a></div></article>
+    </div>
+  </section>
+
+  <section class="blk gris" id="servicios" aria-labelledby="s-t">
+    <div class="wrap">
+      <p class="eyebrow">Todos los servicios</p>
+      <h2 id="s-t">Todo lo que necesitas, en un solo lugar</h2>
+      <p class="lead">Trabajamos con aliados estratégicos para darte soluciones integrales.</p>
+      <div class="serv"><div class="sv"><i>01</i><div><h3>Bienes raíces</h3><p>Compra, venta, traspaso, renta y valuación, con asesoría legal y fiscal.</p></div></div><div class="sv"><i>02</i><div><h3>Créditos hipotecarios</h3><p>Asesores expertos para encontrar el mejor crédito del mercado.</p></div></div><div class="sv"><i>03</i><div><h3>Pólizas jurídicas</h3><p>Protege tu patrimonio y renta con respaldo legal, con o sin aval.</p></div></div><div class="sv"><i>04</i><div><h3>Inversión</h3><p>Las mejores preventas y desarrollos, o haz crecer tu capital con socios de negocio.</p></div></div><div class="sv"><i>05</i><div><h3>Administración</h3><p>Administradores de condominios y edificios, y gestión de rentas temporales.</p></div></div><div class="sv"><i>06</i><div><h3>Arquitectura</h3><p>Remodelación, reparaciones, decoración y amueblado.</p></div></div><div class="sv"><i>07</i><div><h3>Amueblado</h3><p>Departamentos amueblados según lo que necesitas.</p></div></div><div class="sv"><i>08</i><div><h3>Concierge</h3><p>Limpieza profunda, albañilería y plomería, por evento o servicio mensual.</p></div></div><div class="sv"><i>09</i><div><h3>Mudanza</h3><p>Acompañamiento para que tu cambio sea fácil de principio a fin.</p></div></div><div class="sv"><i>10</i><div><h3>Reubicación</h3><p>Agencias de relocation para extranjeros y personas que llegan a la ciudad.</p></div></div><div class="sv"><i>11</i><div><h3>Seguridad</h3><p>Seguros, alarmas y protección patrimonial, personal y familiar.</p></div></div><div class="sv"><i>12</i><div><h3>Facturación</h3><p>Soluciones para que la factura no sea un obstáculo para rentar.</p></div></div></div>
+      <div class="contacto"><a class="btn wa" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20servicios%20de%20Brokers%20Network" target="_blank" rel="noopener">Pedir informes por WhatsApp</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div>
+      <div class="fmarca"><img src="img/logo-brokers-network.png" alt=""><div><b style="color:#fff;letter-spacing:.06em">BROKERS NETWORK</b><br><span style="font-size:12px;letter-spacing:.2em">SOLUCIONES INMOBILIARIAS</span></div></div>
+      <p style="margin:0">Homero 1425, desp. 105, Col. Polanco, C.P. 11560, CDMX<br>(55) 2282 2287 · oficina@brokersnetwork.mx</p>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/brokersnetworkmx/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/brokersnetworkmx/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://twitter.com/BrokersNetwork_/" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a href="https://www.pinterest.com.mx/brokersnetworkm/" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/company/brokersnetworkmx" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Afiliados a</h3>
+      <ul>
+        <li><a href="https://conocer.gob.mx" target="_blank" rel="noopener">CONOCER · EC0110.02</a></li>
+        <li><a href="https://upim.org" target="_blank" rel="noopener">UPIM</a></li>
+        <li><a href="https://www.broktool.com" target="_blank" rel="noopener">Broktool</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
+</footer>
+<script src="js/menu.js"></script>
+<script>
+(function(){
+  var REQ={"venta": {"t": "Venta", "g": [["📁", "Vendedor (Persona Física)", ["INE vigente", "Comprobante de domicilio", "Constancia de Situación Fiscal", "Escritura del inmueble que acredite propiedad con sello del Registro Público", "Carátula de Estado de Cuenta"]], ["📁", "Vendedor (Persona Moral)", ["Acta Constitutiva", "Poder del representante legal", "INE vigente del representante legal", "Comprobante de domicilio", "Constancia de Situación Fiscal", "Escritura del inmueble que acredite propiedad con sello del Registro Público", "Carátula de Estado de Cuenta"]], ["📁", "Vendedor (Preventa)", ["Régimen en condominio", "Certificado de Zonificación"]], ["📁", "Comprador (Persona Física)", ["INE vigente", "Comprobante de domicilio", "Constancia de Situación Fiscal"]], ["📁", "Comprador (Persona Moral)", ["Acta Constitutiva", "Poder del representante legal", "INE vigente del representante legal", "Comprobante de domicilio", "Constancia de Situación Fiscal"]]]}, "renta": {"t": "Renta", "g": [["🏡", "Arrendador (Persona Física)", ["Identificación oficial vigente", "Comprobante de domicilio", "Constancia de situación fiscal", "Escritura del inmueble que acredite propiedad con sello del Registro Público de la Propiedad", "Carátula del Estado de Cuenta", "No adeudo de mantenimiento (si aplica)", "Firmar de enterado el Aviso de Privacidad"]], ["🏡", "Arrendador (Persona Moral)", ["Acta constitutiva", "Poder del representante legal", "Identificación del representante legal", "Comprobante de domicilio", "Carátula del Estado de Cuenta", "Constancia de situación fiscal", "No adeudo de mantenimiento", "Firmar de enterado el Aviso de Privacidad"]], ["📂", "Arrendatario mexicano (Persona Física) 🇲🇽", ["Identificación oficial vigente", "Comprobante de domicilio", "Constancia de situación fiscal", "Últimos 3 Estados de Cuenta donde acredite solvencia", "2 referencias laborales y personales", "Pago de investigación de Aval o Póliza Jurídica, en su caso", "Firmar de enterado el Aviso de Privacidad"]], ["📂", "Arrendatario extranjero (Persona Física)", ["Identificación oficial vigente", "Forma migratoria o Tarjeta de residencia temporal", "Carta de Certificado Laboral", "Últimos 3 Estados de Cuenta donde acredite solvencia", "2 referencias laborales y personales", "Pago de investigación de Aval o Póliza Jurídica, en su caso", "Firmar de enterado el Aviso de Privacidad"]], ["🏢", "Arrendatario (Persona Moral)", ["Acta constitutiva", "Poder del representante legal", "Identificación del representante legal", "Comprobante de domicilio", "Carátula del Estado de Cuenta", "Constancia de situación fiscal", "Últimos 3 Estados de Cuenta donde acredite solvencia", "Pago de investigación de Aval o Póliza Jurídica, en su caso", "2 referencias de clientes y proveedores", "Firmar de enterado el Aviso de Privacidad"]]]}, "aval": {"t": "Aval", "g": [["📂", "Obligado solidario (Persona Física) 🇲🇽", ["Identificación oficial vigente", "Comprobante de domicilio", "Constancia de situación fiscal", "Últimos 3 Estados de Cuenta donde acredite solvencia", "2 referencias laborales y personales", "Firmar de enterado el Aviso de Privacidad"]], ["🏡", "Aval con bien raíz", ["Identificación oficial vigente", "Comprobante de domicilio", "Constancia de Situación Fiscal", "Escritura del inmueble que acredite propiedad con sello del Registro Público de la Propiedad", "Firmar de enterado el Aviso de Privacidad"]], ["🏢", "Aval empresa (Persona Moral)", ["Acta constitutiva", "Poder del representante legal", "Identificación del representante legal", "Comprobante de domicilio", "Constancia de situación fiscal", "Últimos 3 Estados de Cuenta donde acredite solvencia", "2 referencias de clientes y proveedores", "Firmar de enterado el Aviso de Privacidad"]]]}};
+  var TC='Consulta nuestros Términos y Condiciones y Aviso de privacidad según la NOM-247 y EC0110.02: https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html · https://www.brokersnetwork.mx/aviso-de-privacidad.html';
+  var panel=document.getElementById('rp'),tabs=document.querySelectorAll('.rtabs button'),wa=document.getElementById('r-wa'),bn=document.getElementById('r-bn');
+  function esc(t){return t.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function texto(k){var r=REQ[k],t='*Brokers Network · Requisitos de '+r.t.toLowerCase()+'*\n';
+    r.g.forEach(function(g){t+='\n'+g[0]+' *'+g[1]+'*\n'+g[2].map(function(x){return '• '+x}).join('\n')+'\n';});
+    return t+'\n'+TC;}
+  function ver(k){
+    tabs.forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-r')===k?'true':'false')});
+    panel.setAttribute('aria-labelledby','rt-'+k);
+    panel.innerHTML=REQ[k].g.map(function(g){return '<article class="rg"><h3><span aria-hidden="true">'+g[0]+'</span>'+esc(g[1])+'</h3><ul>'+g[2].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></article>'}).join('');
+    wa.href='https://wa.me/?text='+encodeURIComponent(texto(k));
+    wa.textContent='Compartir requisitos de '+REQ[k].t.toLowerCase()+' por WhatsApp';
+    bn.href='https://wa.me/525520612236?text='+encodeURIComponent('Hola, quiero enviar mis documentos para una operación de '+REQ[k].t.toLowerCase()+' con Brokers Network.');
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){ver(b.getAttribute('data-r'))})});
+  var h=(location.hash||'').replace('#','');
+  ver(h==='requisitos-renta'?'renta':h==='requisitos-aval'?'aval':'venta');
+  if(h.indexOf('requisitos-')===0){document.getElementById('requisitos').scrollIntoView();}
+  document.querySelectorAll('a[data-req]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();ver(a.getAttribute('data-req'));document.getElementById('requisitos').scrollIntoView({behavior:'smooth'});});});
+})();
+</script>
+
+<script>
+(function(){var bs=document.querySelectorAll('.fz button'),cs=document.querySelectorAll('.ac');
+bs.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-f');
+bs.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
+cs.forEach(function(c){c.hidden=!(f==='todas'||c.getAttribute('data-z')===f);});var m=[].some.call(document.querySelectorAll('.ac.sin'),function(c){return !c.hidden});document.getElementById('mas-t').hidden=!m;});});})();
+</script>
+
+
+<script>
+(function(){
+  var b=document.getElementById('mmenu'),n=document.getElementById('menu');
+  function set(o){n.classList.toggle('abierto',o);b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(){set(!n.classList.contains('abierto'));});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    var orig=btn.textContent;
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Seleccionado';}
+      try{navigator.clipboard.writeText(el.textContent).then(function(){btn.textContent='Copiado';},sel);}catch(e){sel();}
+      setTimeout(function(){btn.textContent=orig;},2000);
+    });
+  });
+})();
+</script>
+
+
+</body>
+</html>

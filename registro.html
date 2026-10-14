@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afiliación Brokers Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: columna izquierda azul con logo y pasos; columna derecha con el formulario por pasos. En celular, una sola columna. */
+:root{
+  --naranja:#DD5635; --naranja-t:#B8401F;
+  --azul:#30445A; --azul-o:#283A4D; --azul-c:#E7EDF3;
+  --gris:#3B3B3B; --gris-m:#666666; --gris-c:#F2F2F2; --linea:#E3E3E3; --blanco:#FFFFFF;
+  --ok:#1E8A4C;
+  --f:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--gris-c);color:var(--gris);font-family:var(--f);font-size:15px;line-height:1.55;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:var(--naranja-t)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--naranja);outline-offset:2px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.borrador{background:#FFF4E5;color:#7A3E0A;font-size:13px;text-align:center;padding:7px 16px;font-weight:600;margin:0}
+.top{background:#fff;border-bottom:1px solid var(--linea)}
+.top .w{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca img{width:44px;height:44px;display:block}
+.marca b{display:block;color:var(--azul);font-weight:700;font-size:16px;letter-spacing:.06em;line-height:1.1}
+.marca small{display:block;font-size:10px;letter-spacing:.3em;color:var(--gris-m);text-transform:uppercase}
+.volver{font-weight:700;font-size:13.5px;text-decoration:none}
+
+.pant{max-width:1100px;margin:28px auto 56px;padding-inline:20px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:start}
+.lado{background:var(--azul);color:#fff;padding:28px;position:sticky;top:20px}
+.lado .eb{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFB59E;margin:0 0 8px}
+.lado h1{font-size:24px;line-height:1.2;font-weight:700}
+.lado p{color:#D3DDE8;font-size:14px;margin:10px 0 0}
+.pasos{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.pasos li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;font-size:14px;color:#B9C6D4}
+.pasos i{font-style:normal;width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;font-weight:800;font-size:13px}
+.pasos li.on{color:#fff;font-weight:700}
+.pasos li.on i{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.pasos li.hecho i{background:#fff;border-color:#fff;color:var(--azul)}
+.resumen{margin-top:24px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px;font-size:14px}
+.resumen b{display:block;font-size:16px}
+.resumen span{color:#D3DDE8}
+
+.caja{background:#fff;border:1px solid var(--linea);padding:32px;min-width:0}
+.paso-t{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 8px}
+.caja h2{font-size:24px;color:var(--azul);font-weight:700}
+.caja .s{color:var(--gris-m);margin:6px 0 24px}
+.planes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.plan{position:relative;border:1.5px solid var(--linea);padding:16px;cursor:pointer;display:block}
+.plan input{position:absolute;opacity:0;pointer-events:none}
+.plan b{display:block;color:var(--azul);font-size:16px}
+.plan .pr{font-size:24px;font-weight:800;color:var(--gris);margin:4px 0 0;font-variant-numeric:tabular-nums}
+.plan .pr small{font-size:13px;font-weight:600;color:var(--gris-m)}
+.plan .pp{font-size:12.5px;color:var(--gris-m)}
+.plan ul{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--gris-m)}
+.plan:has(input:checked){border-color:var(--naranja);background:#FFF6F2;box-shadow:inset 0 0 0 1px var(--naranja)}
+.plan:has(input:focus-visible){outline:2px solid var(--naranja);outline-offset:2px}
+.plan .ok{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;border:2px solid var(--linea)}
+.plan:has(input:checked) .ok{background:var(--naranja);border-color:var(--naranja);box-shadow:inset 0 0 0 4px #fff}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-weight:600;font-size:13.5px;margin:0 0 14px}
+label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
+.campo{display:block;width:100%;margin-top:6px;border:1.5px solid var(--linea);border-radius:10px;padding:11px 13px;font:inherit;background:#fff;color:var(--gris)}
+.campo:focus{border-color:var(--azul)}
+.campo,.plan .pp,.plan ul{font-weight:500}
+.campo[disabled]{background:var(--gris-c);color:var(--gris-m)}
+.campo.err{border-color:#C62828}
+.lbl{font-weight:600;font-size:13.5px;margin:4px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chp{border:1.5px solid var(--linea);border-radius:99px;padding:7px 13px;font:600 13px var(--f);color:var(--gris);background:#fff;cursor:pointer}
+.chp[aria-pressed="true"]{border-color:var(--azul);background:var(--azul);color:#fff}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--gris-m);margin:2px 0 18px;font-weight:500}
+.chk input{margin-top:3px}
+.msg{color:#C62828;font-size:13.5px;font-weight:600;margin:0 0 14px}
+.acc{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:99px;padding:13px 24px;font:700 14.5px/1 var(--f);text-decoration:none;border:1.5px solid transparent;cursor:pointer}
+.btn.nar{background:var(--naranja);color:#fff}
+.btn.nar:hover{background:var(--naranja-t)}
+.btn.wa{background:var(--ok);color:#fff}
+.btn.wa:hover{background:#176B3B}
+.res dt{color:var(--gris-m);font-size:13px}
+.res .fila{display:grid;grid-template-columns:150px 1fr;gap:12px;margin:6px 0}
+.res .fila b{font-weight:600;color:var(--gris);overflow-wrap:anywhere}
+@media (max-width:520px){.res .fila{grid-template-columns:1fr;gap:0}}
+.btn.lin{background:#fff;border-color:var(--linea);color:var(--gris)}
+.alt{font-size:13.5px;color:var(--gris-m);margin:18px 0 0}
+.res{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:14px 0;margin:0 0 20px;font-size:14.5px}
+.res div{display:flex;justify-content:space-between;gap:12px;margin:5px 0}
+.res .tot{font-weight:800;font-size:17px;color:var(--azul)}
+.nota{font-size:12.5px;color:var(--gris-m);background:var(--azul-c);padding:12px 14px;margin:0 0 20px}
+.pagado{margin-top:18px;border:1.5px solid var(--azul);background:var(--azul-c);padding:14px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px}
+.pagado p{margin:0;max-width:44ch}
+.listo{text-align:center;padding:12px 0}
+.listo .ico{width:64px;height:64px;border-radius:50%;background:var(--azul-c);color:var(--azul);display:grid;place-items:center;font-size:30px;font-weight:800;margin:0 auto 16px}
+.sig{list-style:none;padding:0;margin:20px auto;max-width:440px;text-align:left;display:grid;gap:10px}
+.sig li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px}
+.sig li::before{content:"✓";font-weight:800;color:var(--naranja)}
+
+@media (max-width:860px){
+  .pant{grid-template-columns:1fr}
+  .lado{position:static}
+  .lado .pasos{grid-template-columns:repeat(4,auto);justify-content:start;gap:8px 14px}
+  .lado .pasos li span{display:none}
+  .resumen{display:none}
+}
+@media (max-width:520px){
+  .caja{padding:22px 18px}
+  .planes,.g2{grid-template-columns:1fr}
+  .marca small{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="w">
+  <a class="marca" href="index.html"><img src="img/logo-brokers-network.png" alt=""><span><b>BROKERS NETWORK</b><small>Soluciones inmobiliarias</small></span></a>
+  <a class="volver" href="index.html">← Volver al sitio</a>
+</div></header>
+
+<div class="pant">
+  <aside class="lado" aria-label="Tu avance">
+    <p class="eb">Afiliación</p>
+    <h1>Únete a la red de asesores independientes</h1>
+    <p>Te toma menos de cinco minutos. Al terminar nos envías tus respuestas por WhatsApp y te contactamos para darte la bienvenida.</p>
+    <ol class="pasos" id="pasos">
+      <li data-p="1"><i>1</i><span>Tus datos</span></li>
+      <li data-p="2"><i>2</i><span>Tu perfil</span></li>
+      <li data-p="3"><i>3</i><span>Enviar</span></li>
+      <li data-p="4"><i>4</i><span>Listo</span></li>
+    </ol>
+  </aside>
+
+  <main class="caja">
+    <form id="f" novalidate>
+      <!-- Paso 1 -->
+      <section data-paso="1">
+        <p class="paso-t">Paso 1 de 4 · Tus datos</p>
+        <h2>¿Cómo te contactamos?</h2>
+        <p class="s">Escribe tus datos de contacto.</p>
+        <label for="nombre">Nombre completo<input class="campo" id="nombre" type="text" autocomplete="name" placeholder="Ana Ruiz" required></label>
+        <div class="g2">
+          <label for="correo">Correo<input class="campo" id="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
+          <label for="cel">Celular (WhatsApp)<input class="campo" id="cel" type="tel" autocomplete="tel" inputmode="tel" placeholder="10 dígitos" required></label>
+        </div>
+        <label class="chk" for="terminos"><input type="checkbox" id="terminos"> <span>Acepto los <a href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a>, el <a href="https://www.brokersnetwork.mx/coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">código de ética</a> y el <a href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> de Brokers Network, según la NOM-247 y EC0110.02.</span></label>
+        <p class="msg" id="m1" hidden></p>
+        <div class="acc"><span></span><button class="btn nar" type="button" data-sig="2">Continuar</button></div>
+      </section>
+
+      <!-- Paso 2 -->
+      <section data-paso="2" hidden>
+        <p class="paso-t">Paso 2 de 4 · Tu perfil</p>
+        <h2>Cuéntanos un poco de ti</h2>
+        <p class="s">Así te recomendamos tu siguiente paso dentro de la red.</p>
+        <div class="g2">
+          <label for="ciudad">Ciudad<input class="campo" id="ciudad" type="text" placeholder="¿Desde dónde operas?"></label>
+          <label for="inmo">Inmobiliaria o agencia <span class="opc">(opcional)</span><input class="campo" id="inmo" type="text" placeholder="Si aplica"></label>
+        </div>
+        <div class="g2">
+          <label for="perfil">¿Cuál es tu perfil?
+            <select class="campo" id="perfil"><option value="">Elige una opción</option><option>Quiero empezar como asesor</option><option>Asesor independiente</option><option>Asesor en una inmobiliaria</option><option>Líder de equipo</option><option>Dueño de inmobiliaria</option><option>Desarrollador</option><option>Proveedor de servicios inmobiliarios</option></select></label>
+          <label for="exp">Experiencia inmobiliaria
+            <select class="campo" id="exp"><option value="">Elige una opción</option><option>Estoy empezando (menos de 1 año)</option><option>1 a 3 años</option><option>3 a 5 años</option><option>5 a 10 años</option><option>Más de 10 años</option></select></label>
+        </div>
+        <p class="lbl">¿Qué te interesa de la red? <span class="opc">(puedes elegir varias)</span></p>
+        <div class="chips" id="chips">
+          <button type="button" class="chp" aria-pressed="false">Comisiones justas</button>
+          <button type="button" class="chp" aria-pressed="false">Equipo para citas y firmas</button>
+          <button type="button" class="chp" aria-pressed="false">Destacados en portales</button>
+          <button type="button" class="chp" aria-pressed="false">Desarrollos en convenio</button>
+          <button type="button" class="chp" aria-pressed="false">Capacitación y certificación EC0110.02</button>
+          <button type="button" class="chp" aria-pressed="false">Oficina en Polanco</button>
+          <button type="button" class="chp" aria-pressed="false">CRM y herramientas</button>
+        </div>
+        <label for="conociste">¿Cómo nos conociste?
+          <select class="campo" id="conociste"><option value="">Elige una opción</option><option>Me lo recomendó un asesor de la red</option><option>Presentación para interesados</option><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>Google</option><option>En un evento</option><option>Otro</option></select></label>
+        <div class="acc"><button class="btn lin" type="button" data-sig="1">Atrás</button><button class="btn nar" type="button" data-sig="3">Revisar y enviar</button></div>
+      </section>
+
+      <!-- Paso 3 -->
+      <section data-paso="3" hidden>
+        <p class="paso-t">Paso 3 de 4 · Enviar</p>
+        <h2>Revisa tus respuestas</h2>
+        <p class="s">Al enviar se abre WhatsApp con este resumen listo para mandarlo a Brokers Network.</p>
+        <div class="res" id="resumen"></div>
+        <p class="nota">Te contactamos por WhatsApp para darte la bienvenida, resolver tus dudas y explicarte los siguientes pasos.</p>
+        <div class="acc"><button class="btn lin" type="button" data-sig="2">Atrás</button><a class="btn wa" id="enviar" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
+      </section>
+
+      <!-- Paso 4 -->
+      <section data-paso="4" hidden>
+        <div class="listo">
+          <div class="ico" aria-hidden="true">✓</div>
+          <p class="paso-t">Paso 4 de 4 · Listo</p>
+          <h2 id="bien">¡Gracias por tu interés!</h2>
+          <p class="s" id="bien-s">Recibimos tu solicitud por WhatsApp.</p>
+          <ul class="sig">
+            <li>Te escribimos por WhatsApp para darte la bienvenida y resolver tus dudas.</li>
+            <li>Te invitamos a la presentación del último miércoles de cada mes, de 10:00 a 13:00, en Polanco.</li>
+            <li>Agendamos tu inducción a la red.</li>
+          </ul>
+          <p class="alt" style="text-align:center">¿No se abrió WhatsApp? <a href="#" id="reenviar" target="_blank" rel="noopener">Envíalo de nuevo</a></p>
+          <div class="acc" style="justify-content:center"><a class="btn lin" href="index.html">Volver al sitio</a></div>
+        </div>
+      </section>
+    </form>
+  </main>
+</div>
+
+<script>
+(function(){
+  var WA='525520612236';
+  var f=document.getElementById('f');
+
+  function ir(n){
+    f.querySelectorAll('[data-paso]').forEach(function(s){s.hidden=(s.getAttribute('data-paso')!==String(n));});
+    document.querySelectorAll('#pasos li').forEach(function(li){var k=+li.getAttribute('data-p');li.classList.toggle('on',k===n);li.classList.toggle('hecho',k<n);
+      li.querySelector('i').textContent=k<n?'✓':k;});
+    if(n===3)pintaResumen();
+    if(n===4){var nom=document.getElementById('nombre').value.trim().split(' ')[0];
+      document.getElementById('bien').textContent='¡Gracias'+(nom?', '+nom:'')+'!';}
+    document.querySelector('.caja').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function valida1(){
+    var ok=true,m=document.getElementById('m1'),err=[];
+    [['nombre',function(v){return v.length>2;}],['correo',function(v){return /^\S+@\S+\.\S+$/.test(v);}],['cel',function(v){return v.replace(/\D/g,'').length>=10;}]]
+      .forEach(function(c){var el=document.getElementById(c[0]),bien=c[1](el.value.trim());el.classList.toggle('err',!bien);el.setAttribute('aria-invalid',bien?'false':'true');if(!bien)ok=false;});
+    if(!ok)err.push('Revisa tu nombre, correo y celular de 10 dígitos.');
+    if(!document.getElementById('terminos').checked){ok=false;err.push('Acepta los Términos y Condiciones, el código de ética y el aviso de privacidad para continuar.');}
+    m.textContent=err.join(' ');m.hidden=ok;return ok;
+  }
+  f.querySelectorAll('[data-sig]').forEach(function(b){b.addEventListener('click',function(){
+    var n=+b.getAttribute('data-sig'); if(n===2&&b.closest('[data-paso="1"]')&&!valida1())return; ir(n);});});
+  document.querySelectorAll('.chp').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
+  f.addEventListener('submit',function(e){e.preventDefault();});
+  function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+  function datos(){
+    var ch=[].slice.call(document.querySelectorAll('.chp[aria-pressed="true"]')).map(function(c){return c.textContent;});
+    return [['Nombre',v('nombre')],['Correo',v('correo')],['Celular',v('cel')],
+      ['Ciudad',v('ciudad')],['Inmobiliaria',v('inmo')],['Perfil',v('perfil')],['Experiencia',v('exp')],
+      ['Le interesa',ch.join(', ')],['Nos conoció por',v('conociste')]].filter(function(r){return r[1];});}
+  function esc(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function pintaResumen(){
+    document.getElementById('resumen').innerHTML=datos().map(function(r){return '<div class="fila"><span>'+r[0]+'</span><b>'+esc(r[1])+'</b></div>';}).join('');
+    var u=urlWA();document.getElementById('enviar').href=u;document.getElementById('reenviar').href=u;}
+  function urlWA(){
+    var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
+      '\n\nAcepto los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
+    return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);}
+  document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
+  ir(1);
+})();
+</script>
+</body>
+</html>

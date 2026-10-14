@@ -1,0 +1,354 @@
+<title>Brokers Network</title>
+<meta name="description" content="La red de brokers que trabaja para ti. Vende, renta o compra con un asesor inmobiliario de la red.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/sitio.css">
+<style>
+/* Inicio: portada azul noche con teléfono de la app en colores BN y las fotos de los modelos; luego quiénes somos, cifras, qué necesitas y contacto. */
+.hero{position:relative;color:#fff;background:radial-gradient(1100px 600px at 85% 30%,#2E4560 0%,var(--azul-o2) 60%);overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:center;padding-block:70px 78px;max-width:1320px}
+.hero h1{font-size:clamp(36px,4.6vw,66px);font-weight:800;line-height:1.03;letter-spacing:-.025em}
+.hero h1 span{display:block;color:var(--naranja)}
+.hero .sub2{font-size:clamp(19px,1.8vw,24px);margin:22px 0 0;font-weight:500}
+.hero p.txt{font-size:17px;color:#C9D4E0;margin:16px 0 34px;max-width:48ch;line-height:1.7}
+.hb{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn{padding:17px 28px;font-size:16px}
+
+/* composición: teléfono con la app real y el equipo conectado en red */
+.visual{position:relative;height:580px;max-width:600px;width:100%;justify-self:end}
+.red{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tel{position:absolute;left:0;top:30px;width:250px;height:520px;border-radius:40px;background:#111;padding:9px;box-shadow:0 34px 60px rgba(0,0,0,.5);z-index:2}
+.tel .pant{position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:#fff}
+.tel .pant img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:22px;background:#111;border-radius:0 0 14px 14px;z-index:3}
+.ase{position:absolute;border-radius:50%;overflow:hidden;box-shadow:0 0 0 5px #fff,0 0 0 9px var(--naranja),0 22px 40px rgba(0,0,0,.4);z-index:1}
+.ase img{width:100%;height:100%;object-fit:cover;display:block}
+.ase.a1{left:58%;top:0;width:150px;height:150px}
+.ase.a2{left:76%;top:180px;width:150px;height:150px}
+.ase.a3{left:50%;top:300px;width:140px;height:140px}
+.ase.a4{left:78%;top:430px;width:124px;height:124px}
+.chip{position:absolute;left:150px;bottom:-30px;z-index:3;background:#fff;color:var(--azul-o2);border-radius:14px;padding:12px 16px;font-size:13.5px;font-weight:700;box-shadow:0 14px 30px rgba(0,0,0,.3);display:flex;gap:10px;align-items:center}
+.chip i{font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-weight:800}
+.chip small{display:block;color:var(--gris-m);font-weight:500;font-size:12px}
+
+/* pantalla de la app, estilizada en HTML */
+.app{position:relative;height:100%;display:flex;flex-direction:column;background:#F5F6F8;font-family:var(--f);color:var(--gris)}
+.app-hd{background:linear-gradient(160deg,#F2783F,#DD5635 70%);color:#fff;padding:10px 14px 34px;border-radius:0 0 22px 22px}
+.app-st{display:flex;justify-content:space-between;font-size:9.5px;font-weight:700;padding:2px 6px 10px}
+.app-ti{display:flex;align-items:center;gap:8px}
+.app-ti b{font-size:17px;font-weight:800;flex:1;letter-spacing:-.01em}
+.app-ti svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round}
+.app-ti .bell{position:relative}
+.app-ti .bell em{position:absolute;top:-5px;right:-6px;font-style:normal;font-size:7px;font-weight:800;background:#fff;color:var(--naranja);border-radius:99px;padding:1px 3px}
+.app-bus{margin:-20px 12px 0;background:#fff;border-radius:99px;padding:9px 12px;font-size:10px;color:#8A94A2;display:flex;align-items:center;gap:6px;box-shadow:0 6px 14px rgba(31,45,61,.12)}
+.app-bus i{font-style:normal;color:var(--naranja);font-size:11px}
+.app-ch{display:flex;gap:5px;padding:10px 12px 6px;white-space:nowrap}
+.app-ch span{font-size:9px;font-weight:700;border:1px solid #DDE2E8;background:#fff;border-radius:99px;padding:5px 9px;color:var(--gris-m)}
+.app-ch span.on{background:var(--azul-o2);border-color:var(--azul-o2);color:#fff}
+.app-ls{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:9px;padding:4px 12px}
+.pc{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(31,45,61,.08);flex:none}
+.pc .im{position:relative;height:82px}
+.pc .im img{width:100%;height:100%;object-fit:cover;display:block}
+.pc .im em{position:absolute;top:7px;left:7px;font-style:normal;font-size:8.5px;font-weight:800;color:#fff;background:var(--naranja);border-radius:99px;padding:3px 8px}
+.pc .im em.r{background:var(--azul)}
+.pc .im s{position:absolute;top:7px;right:7px;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;text-decoration:none;color:var(--naranja);font-size:10px}
+.pc .bd{padding:7px 10px 9px}
+.pc .pr{font-size:13px;font-weight:800;color:var(--azul-o2);letter-spacing:-.01em}
+.pc .pr small{font-size:9px;font-weight:600;color:var(--gris-m)}
+.pc .tt{font-size:9.5px;font-weight:600;color:var(--gris);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc .mt{display:flex;justify-content:space-between;align-items:center;margin-top:5px;font-size:8.5px;color:#8A94A2}
+.pc .ag{display:flex;align-items:center;gap:4px;font-weight:700;color:var(--azul)}
+.pc .ag img{width:14px;height:14px;border-radius:50%;object-fit:cover}
+.app-fab{position:absolute;right:14px;bottom:58px;width:38px;height:38px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:600;box-shadow:0 8px 16px rgba(221,86,53,.45)}
+.app-nv{display:flex;justify-content:space-around;background:#fff;padding:7px 4px 12px;border-top:1px solid #ECEEF1}
+.app-nv span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:7.5px;font-weight:700;color:#9AA3AE}
+.app-nv svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.app-nv span.on{color:var(--naranja)}
+
+/* quiénes somos */
+.somos{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.somos p{margin:0 0 16px;max-width:60ch}
+.somos .lead{color:var(--gris);margin:18px 0 16px}
+.valores{list-style:none;margin:6px 0 0;padding:0;display:grid}
+.valores li{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:18px 0;border-top:1px solid var(--linea)}
+.valores li:first-child{border-top:0;padding-top:0}
+.valores i{font-style:normal;width:42px;height:42px;border-radius:50%;background:var(--naranja-c);color:var(--naranja-t);display:grid;place-items:center}
+.valores i svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.valores b{display:block;font-size:16.5px;color:var(--azul)}
+.valores span{font-size:15px;color:var(--gris-m)}
+
+/* cifras */
+.cifras{background:var(--azul);color:#fff}
+.cifras .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.cifras div.c{padding:40px 28px;border-left:1px solid rgba(255,255,255,.14)}
+.cifras div.c:first-child{border-left:0;padding-left:0}
+.cifras b{display:block;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.cifras b.t{font-size:clamp(22px,2.4vw,30px);line-height:1.25}
+.cifras span{font-size:15px;color:#C9D4E0}
+
+/* qué necesitas */
+.necesito{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.op{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.op .ic{width:48px;height:48px;border-radius:14px;background:var(--naranja-c);color:var(--naranja-t);display:grid;place-items:center}
+.op .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.op h3{font-size:18px;color:var(--azul)}
+.op p{margin:0;font-size:14.5px;color:var(--gris-m);flex:1}
+.op a{font-weight:700;font-size:14.5px;text-decoration:none}
+.op a::after{content:" →"}
+.op a.req{font-size:13.5px;opacity:.85}
+.op.dest{background:var(--azul);border-color:var(--azul)}
+.op.dest h3{color:#fff}.op.dest p{color:#C9D4E0}.op.dest a{color:#FFB59E}
+.op.dest .ic{background:rgba(255,255,255,.12);color:#FFB59E}
+
+/* contacto */
+.cont>*{min-width:0}
+.dato b{overflow-wrap:anywhere;text-align:right}
+.cont{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.datos{display:grid}
+.dato{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px 0;border-top:1px solid var(--linea)}
+.dato:first-child{border-top:0;padding-top:0}
+.dato small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gris-m)}
+.dato b{font-size:17px;color:var(--azul);font-variant-numeric:tabular-nums}
+.mapa{background:var(--azul);color:#fff;border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;min-height:280px;justify-content:flex-end;position:relative;overflow:hidden}
+.mapa::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:34px 34px}
+.mapa .pin{position:absolute;top:44px;right:56px;width:54px;height:54px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--naranja);box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.mapa .pin::after{content:"";position:absolute;inset:17px;border-radius:50%;background:#fff}
+.mapa h3{position:relative;font-size:22px}
+.mapa p{position:relative;margin:0;color:#C9D4E0}
+.mapa .btn{position:relative;align-self:flex-start}
+
+@media (max-width:1100px){.necesito{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:30px;padding-block:44px 48px}
+  .visual{height:470px;max-width:520px;justify-self:start}
+  .tel{top:20px;transform:scale(.8);transform-origin:top left}
+  .ase.a1,.ase.a2,.ase.a3{width:120px;height:120px}
+  .ase.a1{top:0}.ase.a2{top:150px}.ase.a3{top:250px}
+  .ase.a4{width:100px;height:100px;top:360px}
+  .chip{left:110px}
+  .somos,.cont{grid-template-columns:1fr;gap:32px}
+  .cifras .wrap{grid-template-columns:1fr}
+  .cifras div.c{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:24px 0}
+  .cifras div.c:first-child{border-top:0}
+}
+@media (max-width:520px){
+  .necesito{grid-template-columns:1fr}
+  .visual{height:420px}
+  .tel{transform:scale(.68)}
+  .ase.a1,.ase.a2,.ase.a3{width:96px;height:96px}
+  .ase.a1{left:52%;top:0}.ase.a2{left:72%;top:120px}.ase.a3{left:50%;top:220px}
+  .ase.a4{width:84px;height:84px;left:72%;top:310px}
+  .chip{display:none}
+}
+</style>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="index.html" data-inicio><img src="img/logo-brokers-network.png" alt=""><span><b>BROKERS NETWORK</b><small>Soluciones inmobiliarias</small></span></a>
+    <a class="cta-fuera" href="registro.html">Quiero afiliarme</a>
+    <button class="mmenu" type="button" id="mmenu" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    <nav id="menu" aria-label="Menú principal">
+      <a href="index.html" data-inicio aria-current="page">Inicio</a>
+      <a href="index.html#quienes">Quiénes somos</a>
+      <div class="dd"><button class="ddb" type="button" aria-expanded="false">Nuestros servicios <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Si eres propietario</p>
+          <a href="servicios.html#propietarios">Vender o rentar mi propiedad<small>Toda la red trabaja tu propiedad</small></a>
+          <a href="servicios.html#requisitos">Requisitos<small>Documentos para vender, comprar o rentar</small></a>
+          <p class="ddt">Si buscas un inmueble</p>
+          <a href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades<small>Más de 500 en venta y renta</small></a>
+          <a href="servicios.html#asesor">Elige tu asesor<small>Asesores por zona</small></a>
+          <a href="servicios.html#credito">Crédito hipotecario<small>Te apoyamos con tu crédito</small></a>
+          <a href="servicios.html#renta">Renta con o sin aval<small>Póliza jurídica en lugar de fiador</small></a>
+          <a href="servicios.html#servicios">Todos los servicios<small>Inversión, administración, mudanza y más</small></a>
+        </div>
+      </div>
+      <div class="dd"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Para asesores inmobiliarios</p>
+          <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
+          <a href="como-trabajamos.html#comisiones">Modelo de comisiones<small>Tres niveles según tu experiencia</small></a>
+          <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="registro.html">Quiero afiliarme<small>Únete a la red de asesores</small></a>
+        </div>
+      </div>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cta" href="registro.html">Quiero afiliarme</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Presentación">
+    <div class="wrap">
+      <div>
+        <h1>La red de brokers <span>que trabaja para ti.</span></h1>
+        <p class="sub2">Una red de asesores inmobiliarios.</p>
+        <p class="txt">¿Vendes, rentas o buscas propiedad? Un asesor de la red te acompaña de principio a fin, con cientos de propiedades y aliados para tu crédito, póliza jurídica y escrituración.</p>
+        <div class="hb">
+          <a class="btn bl" href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades</a>
+          <a class="btn bor" href="#necesitas">Vender o rentar mi propiedad</a>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="La red de asesores de Brokers Network y la app de propiedades">
+        <svg class="red" id="red" aria-hidden="true"></svg>
+        <div class="tel"><div class="pant"><span class="notch"></span><div class="app">
+            <div class="app-hd">
+              <div class="app-st"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="app-ti"><b>Propiedades</b>
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg>
+                <span class="bell"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 004 0"/></svg><em>9+</em></span>
+              </div>
+            </div>
+            <div class="app-bus"><i>⌖</i>Ubicación (ciudad, colonia…)</div>
+            <div class="app-ch"><span>Todas</span><span>Mías</span><span class="on">Mi organización</span></div>
+            <div class="app-ls">
+              <div class="pc"><div class="im"><img src="img/prop-casa-valle.jpg" alt=""><em>Venta</em><s>♥</s></div><div class="bd"><div class="pr">$24,000,000</div><div class="tt">Privada en Valle de Bravo, Edo. de México</div><div class="mt"><span>4 rec · 4.5 baños · 680 m²</span><span class="ag"><img src="img/asesor-4.jpg" alt="">Norma</span></div></div></div>
+              <div class="pc"><div class="im"><img src="img/prop-depto.jpg" alt=""><em class="r">Renta</em><s>♥</s></div><div class="bd"><div class="pr">$45,000 <small>/ mes</small></div><div class="tt">Depto. con terraza · Lomas de Memetla</div><div class="mt"><span>3 rec · 3 baños · 127 m²</span><span class="ag"><img src="img/asesor-1.jpg" alt="">Regina</span></div></div></div>
+              <div class="pc"><div class="im"><img src="img/prop-3.jpg" alt=""><em class="r">Renta</em><s>♥</s></div><div class="bd"><div class="pr">$95,000 <small>/ mes</small></div><div class="tt">Depto. en Palmas Park · Lomas de Chapultepec</div><div class="mt"><span>3 rec · 3 baños · 300 m²</span><span class="ag"><img src="img/asesor-3.jpg" alt="">Norma</span></div></div></div>
+            </div>
+            <span class="app-fab">+</span>
+            <div class="app-nv">
+              <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9.5 9.5c0-1 1-1.5 2.5-1.5s2.5.6 2.5 1.7c0 2.6-5 1.3-5 4 0 1.1 1 1.8 2.5 1.8s2.5-.6 2.5-1.6"/></svg>Comisiones</span>
+              <span><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 1 6 4"/></svg>Red</span>
+              <span class="on"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9h-5v-6h-6v6H4z"/></svg>Propiedades</span>
+              <span><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3 20c0-4 3-6 7-6M17 13a3 3 0 100 6 3 3 0 000-6zM21 21l-2-2"/></svg>Prospectos</span>
+              <span><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menú</span>
+            </div>
+          </div></div></div>
+        <div class="ase a1"><img src="img/asesor-1.jpg" alt="Asesora de la red"></div>
+        <div class="ase a2"><img src="img/asesor-2.jpg" alt="Asesor de la red"></div>
+        <div class="ase a3"><img src="img/asesor-3.jpg" alt="Asesora de la red"></div>
+        <div class="ase a4"><img src="img/asesor-4.jpg" alt="Asesora de la red"></div>
+        <div class="chip"><i>✓</i><div>Toda la red trabaja tu propiedad<small>Asesores certificados EC0110.02</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="quienes" aria-labelledby="q-t">
+    <div class="wrap somos">
+      <div>
+        <p class="eyebrow">Quiénes somos</p>
+        <h2 id="q-t">Una red de brokers que comparte, colabora y cierra.</h2>
+        <p class="lead">Brokers Network es una red de asesores inmobiliarios independientes, especializados en todas las áreas del sector.</p>
+        <p>Cuando nos confías tu propiedad, no la mueve un solo asesor: la conoce toda la red. Y si buscas dónde vivir o invertir, tienes acceso al inventario de todos nuestros asesores.</p>
+        <p>Trabajamos con un mismo código de ética y te acompañamos de la primera visita a la firma.</p>
+      </div>
+      <ul class="valores">
+        <li><i><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><div><b>Asesores certificados</b><span>Profesionales con la certificación oficial EC0110.02 del CONOCER.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.9l7.6-3.8M8.2 13.1l7.6 3.8"/></svg></i><div><b>Más exposición para tu propiedad</b><span>Tu propiedad se comparte con toda la red y en los principales portales.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></i><div><b>Acompañamiento completo</b><span>Aliados para tu crédito hipotecario, póliza jurídica, fideicomiso y escrituración.</span></div></li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/></svg></i><div><b>Ética y transparencia</b><span>Un código de ética común y reglas claras en cada operación.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cifras" aria-label="La red en números">
+    <div class="wrap">
+      <div class="c"><b>+500</b><span>propiedades en venta y renta</span></div>
+      <div class="c"><b>9 ciudades</b><span>en México, con presencia en EUA y Europa</span></div>
+      <div class="c"><b class="t">Aliados estratégicos</b><span>créditos, pólizas jurídicas, fideicomisos y más</span></div>
+    </div>
+  </section>
+
+  <section class="blk gris" id="necesitas" aria-labelledby="n-t">
+    <div class="wrap">
+      <p class="eyebrow">¿Qué necesitas?</p>
+      <h2 id="n-t">Cuéntanos y te conectamos con el asesor indicado</h2>
+      <div class="necesito">
+        <article class="op dest"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M12 10v6M9 13h6"/></svg></span><h3>Vender mi propiedad</h3><p>Valuamos tu propiedad, la promovemos en toda la red y te acompañamos hasta la escrituración.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20vender%20mi%20propiedad%20con%20Brokers%20Network" target="_blank" rel="noopener">Quiero vender</a><a href="servicios.html#requisitos-venta" class="req">Ver requisitos</a></article>
+        <article class="op dest"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M15 8l2 2"/></svg></span><h3>Rentar mi propiedad</h3><p>Encontramos al inquilino indicado, con investigación y póliza jurídica para protegerte.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20rentar%20mi%20propiedad%20con%20Brokers%20Network" target="_blank" rel="noopener">Quiero rentar mi propiedad</a><a href="servicios.html#requisitos-renta" class="req">Ver requisitos</a></article>
+        <article class="op"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span><h3>Comprar o rentar</h3><p>Más de 500 propiedades y un asesor que busca contigo en toda la red.</p><a href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades</a></article>
+        <article class="op"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><h3>Crédito hipotecario</h3><p>Asesores hipotecarios te ayudan a encontrar el mejor crédito del mercado.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20asesor%C3%ADa%20para%20un%20cr%C3%A9dito%20hipotecario" target="_blank" rel="noopener">Pedir asesoría</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="contacto" aria-labelledby="c-t">
+    <div class="wrap cont">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2 id="c-t">Ven y conócenos</h2>
+        <div class="datos" style="margin-top:26px">
+          <div class="dato"><div><small>Dirección</small><b>Homero 1425, desp. 105, Col. Polanco, CDMX</b></div></div>
+          <div class="dato"><div><small>Correo</small><b id="mail">oficina@brokersnetwork.mx</b></div><button class="copy" type="button" data-copy="mail">Copiar</button></div>
+          <div class="dato"><div><small>Conmutador</small><b id="tel">(55) 2282 2287</b></div><button class="copy" type="button" data-copy="tel">Copiar</button></div>
+        </div>
+        <div class="contacto">
+          <a class="btn wa" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Brokers%20Network" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
+      </div>
+      <div class="mapa">
+        <span class="pin" aria-hidden="true"></span>
+        <h3>Oficinas en Polanco</h3>
+        <p>Homero 1425, desp. 105, C.P. 11560, Ciudad de México</p>
+        <a class="btn nar" href="https://www.google.com/maps/search/?api=1&amp;query=Homero+1425+Polanco+CDMX" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div>
+      <div class="fmarca"><img src="img/logo-brokers-network.png" alt=""><div><b style="color:#fff;letter-spacing:.06em">BROKERS NETWORK</b><br><span style="font-size:12px;letter-spacing:.2em">SOLUCIONES INMOBILIARIAS</span></div></div>
+      <p style="margin:0">Homero 1425, desp. 105, Col. Polanco, C.P. 11560, CDMX<br>(55) 2282 2287 · oficina@brokersnetwork.mx</p>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/brokersnetworkmx/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/brokersnetworkmx/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://twitter.com/BrokersNetwork_/" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a href="https://www.pinterest.com.mx/brokersnetworkm/" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/company/brokersnetworkmx" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Afiliados a</h3>
+      <ul>
+        <li><a href="https://conocer.gob.mx" target="_blank" rel="noopener">CONOCER · EC0110.02</a></li>
+        <li><a href="https://upim.org" target="_blank" rel="noopener">UPIM</a></li>
+        <li><a href="https://www.broktool.com" target="_blank" rel="noopener">Broktool</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
+</footer>
+<script src="js/menu.js"></script>
+
+<script>
+(function(){
+  var b=document.getElementById('mmenu'),n=document.getElementById('menu');
+  function set(o){n.classList.toggle('abierto',o);b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(){set(!n.classList.contains('abierto'));});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    var orig=btn.textContent;
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Seleccionado';}
+      try{navigator.clipboard.writeText(el.textContent).then(function(){btn.textContent='Copiado';},sel);}catch(e){sel();}
+      setTimeout(function(){btn.textContent=orig;},2000);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var v=document.querySelector('.visual'),svg=document.getElementById('red'); if(!v||!svg)return;
+  function c(el){var r=el.getBoundingClientRect(),b=v.getBoundingClientRect();return [r.left-b.left+r.width/2,r.top-b.top+r.height/2,r];}
+  function draw(){
+    var t=v.querySelector('.tel').getBoundingClientRect(),b=v.getBoundingClientRect(),tx=t.right-b.left-6;
+    var as=[].map.call(v.querySelectorAll('.ase'),c),h='';
+    var pares=[[0,1],[1,2],[2,3],[0,2],[1,3]];
+    as.forEach(function(p){h+='<line x1="'+tx+'" y1="'+p[1]+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="#DD5635" stroke-width="2.5" stroke-dasharray="7 7" opacity=".85"/><circle cx="'+tx+'" cy="'+p[1]+'" r="6" fill="#DD5635" stroke="#fff" stroke-width="2.5"/>';});
+    pares.forEach(function(q){var a=as[q[0]],d=as[q[1]];h+='<line x1="'+a[0]+'" y1="'+a[1]+'" x2="'+d[0]+'" y2="'+d[1]+'" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="2"/>';});
+    svg.innerHTML=h;
+  }
+  draw(); addEventListener('resize',draw); addEventListener('load',draw);
+})();
+</script>
