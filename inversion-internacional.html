@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inversión internacional · Brokers Network</title>
+<meta name="description" content="Invierte en bienes raíces en Estados Unidos, Canadá, Panamá o España con el equipo internacional de Brokers Network y Prosperity Bridge. Créditos para extranjeros en EUA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/sitio.css">
+</head>
+<body>
+<style>
+.phead{background:var(--azul-o2);color:#fff;position:relative;overflow:hidden}
+.phead::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.phead .wrap{position:relative;z-index:1;padding-block:56px 50px}
+.phead h1{font-size:clamp(34px,4.4vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.phead h1 span{color:var(--naranja)}
+.phead p{color:#C9D4E0;font-size:18px;max-width:62ch;margin:14px 0 24px}
+.hb{display:flex;gap:10px;flex-wrap:wrap}
+.intl{background:var(--azul-o2);color:#fff;position:relative;overflow:hidden}
+.intl::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.intl .wrap{position:relative;z-index:1}
+.intl h2{color:#fff}.intl .eyebrow{color:#FFB59E}.intl .lead{color:#C9D4E0}
+.paises{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:30px}
+.pais{background:#fff;color:var(--gris);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.pais .flag{font-size:34px;line-height:1}
+.pais h3{color:var(--azul);font-size:20px;margin-top:6px}
+.pais p{margin:0;color:var(--gris-m);font-size:14.5px}
+.pais a{margin-top:auto;padding-top:10px;font-weight:700;text-decoration:none;font-size:14.5px}
+.ipasos{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:i}
+.ipasos li{align-content:start;counter-increment:i;border-top:2px solid rgba(255,255,255,.18);padding-top:14px;display:grid;gap:4px}
+.ipasos li::before{content:counter(i);width:30px;height:30px;border-radius:50%;background:var(--naranja);display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:6px}
+.ipasos b{font-size:16px}.ipasos span{color:#C9D4E0;font-size:14.5px}
+.equipo-i{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.pi{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px}
+.pi .foto{width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--naranja)}
+.pi h3{color:#fff;font-size:19px}
+.pi p{margin:2px 0 8px;color:#C9D4E0;font-size:14px}
+.tag-i{display:inline-block;background:var(--naranja);color:#fff;font-size:12px;font-weight:700;border-radius:99px;padding:4px 10px}
+.pi .lg{height:52px;width:auto;max-width:120px;border-radius:8px;object-fit:contain}
+.aliados-i{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.aliados-i span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFB59E;margin-right:4px}
+.aliados-i img{height:56px;width:auto;border-radius:10px;background:#fff}
+.aliados-i img.bl{padding:4px 10px}
+@media (max-width:860px){.equipo-i{grid-template-columns:1fr}}
+@media (max-width:460px){.pi{grid-template-columns:72px 1fr}.pi .foto{width:72px;height:72px}.pi .lg{display:none}}
+@media (max-width:960px){.paises{grid-template-columns:1fr 1fr}.ipasos{grid-template-columns:1fr}}
+@media (max-width:420px){.paises{grid-template-columns:1fr}}
+
+.equipo-i{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pi{grid-template-columns:80px 1fr;}
+.pi .foto{width:80px;height:80px}
+.pi .lg{grid-column:1/-1;justify-self:start;height:44px}
+.pi .lg.wbg{background:#fff;padding:4px 8px}
+.pi .mono{display:grid;place-items:center;background:var(--azul);color:#fff;font-weight:800;font-size:24px}
+.perfil{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;background:var(--naranja-c);border:1px solid #F6D3C6;border-radius:22px;padding:30px}
+.perfil h2{font-size:clamp(22px,2.6vw,30px)}
+.perfil p{margin:8px 0 0;color:var(--gris)}
+.perfil .hb{justify-content:flex-end}
+.dos-c{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.lista li{position:relative;padding-left:26px;font-size:15px}
+.lista li::before{content:"✓";position:absolute;left:0;top:0;color:var(--naranja);font-weight:800}
+.ciudades{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ciudades span{background:#fff;border:1px solid var(--linea);border-radius:99px;padding:6px 12px;font-size:13.5px;font-weight:600;color:var(--azul)}
+.fn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+.fn div{background:#fff;border:1px solid var(--linea);border-top:3px solid var(--naranja);padding:18px}
+.fn b{display:block;color:var(--azul);font-size:15px;margin-bottom:4px}
+.fn span{font-size:14px;color:var(--gris-m)}
+.caja-b{background:#fff;border:1px solid var(--linea);padding:24px;border-radius:18px}
+.caja-b h3{color:var(--azul);font-size:18px;margin-bottom:12px}
+.nota-l{font-size:12.5px;color:var(--gris-m);margin:18px 0 0}
+.des{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.de{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.de .loc{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t)}
+.de h3{color:var(--azul);font-size:22px}
+.de .pr{font-size:15px;color:var(--gris)}
+.de .pr b{font-size:22px;color:var(--azul)}
+.de ul{margin:0;padding-left:18px;color:var(--gris-m);font-size:14.5px;display:grid;gap:4px}
+.de .hb{margin-top:auto;padding-top:8px}
+.vids{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.vid{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--linea);border-radius:16px;padding:16px;text-decoration:none;color:var(--gris)}
+.vid i{flex:none;width:46px;height:46px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px}
+.vid b{display:block;color:var(--azul)}
+.vid span{font-size:13.5px;color:var(--gris-m)}
+@media (max-width:1100px){.equipo-i{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.perfil,.dos-c,.des,.vids{grid-template-columns:1fr}.perfil .hb{justify-content:flex-start}.fn{grid-template-columns:1fr 1fr}.equipo-i{grid-template-columns:1fr}}
+@media (max-width:480px){.fn{grid-template-columns:1fr}}
+</style>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="index.html" data-inicio><img src="img/logo-brokers-network.png" alt=""><span><b>BROKERS NETWORK</b><small>Soluciones inmobiliarias</small></span></a>
+    <a class="cta-fuera" href="registro.html">Quiero afiliarme</a>
+    <button class="mmenu" type="button" id="mmenu" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    <nav id="menu" aria-label="Menú principal">
+      <a href="index.html" data-inicio>Inicio</a>
+      <a href="index.html#quienes">Quiénes somos</a>
+      <div class="dd actual"><button class="ddb" type="button" aria-expanded="false">Nuestros servicios <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Si eres propietario</p>
+          <a href="servicios.html#propietarios">Vender o rentar mi propiedad<small>Toda la red trabaja tu propiedad</small></a>
+          <a href="servicios.html#requisitos">Requisitos<small>Documentos para vender, comprar o rentar</small></a>
+          <p class="ddt">Si buscas un inmueble</p>
+          <a href="https://brokers-network.easybroker.com" target="_blank" rel="noopener">Ver propiedades<small>Más de 500 en venta y renta</small></a>
+          <a href="servicios.html#asesor">Elige tu asesor<small>Asesores por zona</small></a>
+          <a href="servicios.html#credito">Crédito hipotecario<small>Te apoyamos con tu crédito</small></a>
+          <a href="servicios.html#renta">Renta con o sin aval<small>Póliza jurídica en lugar de fiador</small></a>
+          <a href="servicios.html#servicios">Todos los servicios<small>Inversión, administración, mudanza y más</small></a>
+          <p class="ddt">Si quieres invertir</p>
+          <a href="inversion-internacional.html">Inversión internacional<small>Estados Unidos, Canadá, Panamá y España</small></a>
+        </div>
+      </div>
+      <div class="dd"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
+        <div class="ddp">
+          <p class="ddt">Para asesores inmobiliarios</p>
+          <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
+          <a href="como-trabajamos.html#comisiones">Modelo de comisiones<small>Tres niveles según tu experiencia</small></a>
+          <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="como-trabajamos.html#capacitacion-usa">Capacitación: inversión en EUA<small>Grabaciones y presentaciones para asesores</small></a>
+          <a href="registro.html">Quiero afiliarme<small>Únete a la red de asesores</small></a>
+        </div>
+      </div>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cta" href="registro.html">Quiero afiliarme</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="phead" aria-label="Inversión internacional">
+    <div class="wrap">
+      <h1>Invierte <span>fuera de México</span></h1>
+      <p>Bienes raíces en Estados Unidos, Canadá, Panamá y España, de la mano de Prosperity Bridge International Advisors y nuestro equipo internacional para inversionistas.</p>
+      <div class="hb"><a class="btn bl" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a><a class="btn bor" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar por WhatsApp</a></div>
+    </div>
+  </section>
+
+  <section class="blk intl" id="equipo" aria-labelledby="e-t">
+    <div class="wrap">
+      <p class="eyebrow">Nuestro equipo internacional</p>
+      <h2 id="e-t">Te acompañamos en cada paso de tu inversión</h2>
+      <p class="lead">De la mano de <b style="color:#fff">Prosperity Bridge International Advisors</b> encontramos la propiedad indicada para ti y te conectamos con el financiamiento para extranjeros.</p>
+      <div class="equipo-i">
+        <article class="pi"><img class="foto" src="img/intl/mari-del-rio.jpg" alt="Mari del Río" width="480" height="480" loading="lazy">
+          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div>
+          <img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"></article>
+        <article class="pi"><img class="foto" src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" width="480" height="480" loading="lazy">
+          <div><h3>Paulina Arceo</h3><p>Paulina Arceo Global Real Estate</p><span class="tag-i">Especialista en Houston, Texas</span></div>
+          <img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"></article>
+        <article class="pi"><span class="foto mono" aria-hidden="true">JP</span>
+          <div><h3>Jimena Pérez Gil</h3><p>Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><span class="tag-i">Créditos Foreign National en EUA</span></div>
+          <img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></article>
+      </div>
+      <div class="paises"><article class="pais"><span class="flag" aria-hidden="true">🇺🇸</span><h3>Estados Unidos</h3><p>Especialmente en Florida y Texas (Houston). Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Estados%20Unidos.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇨🇦</span><h3>Canadá</h3><p>Inversión en dólares canadienses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇵🇦</span><h3>Panamá</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇪🇸</span><h3>España</h3><p>Inversión en euros.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article></div>
+      <ol class="ipasos">
+        <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión: renta, patrimonio o segunda residencia.</span></li>
+        <li><b>Te presentamos opciones</b><span>Nuestro equipo internacional selecciona propiedades que se ajustan a lo que buscas.</span></li>
+        <li><b>Te acompañamos hasta el cierre</b><span>Resolvemos tus dudas en cada paso de la compra.</span></li>
+      </ol>
+      <div class="aliados-i"><span>Aliados</span><img src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><img src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><img class="bl" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="blk" id="perfil">
+    <div class="wrap">
+      <div class="perfil">
+        <div><p class="eyebrow">Primer paso</p><h2>Conozcamos tu perfil</h2>
+          <p>Completa este breve formulario para identificar tus objetivos, necesidades y preferencias de inversión. Así te presentamos alternativas inmobiliarias internacionales acordes con tu perfil.</p></div>
+        <div class="hb"><a class="btn nar" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Llenar el formulario</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk gris" id="florida" aria-labelledby="f-t">
+    <div class="wrap">
+      <p class="eyebrow">Estados Unidos</p>
+      <h2 id="f-t">¿Por qué invertir en Florida?</h2>
+      <div class="dos-c">
+        <ul class="lista">
+          <li>Alta demanda de alquiler en ciudades como Orlando, Kissimmee, Miami y Tampa.</li>
+          <li>Potencial de valorización y crecimiento económico estable.</li>
+          <li>Legislación favorable para los propietarios.</li>
+          <li>Opciones para renta a corto o largo plazo.</li>
+        </ul>
+        <div class="caja-b"><h3>Ciudades con mayor rentabilidad</h3>
+          <div class="ciudades"><span>Orlando</span><span>Kissimmee</span><span>Davenport</span><span>Tampa</span><span>St. Petersburg</span><span>Jacksonville</span><span>St. Augustine</span><span>Palm Beach</span><span>Fort Myers / Cape Coral</span><span>Fort Walton Beach</span><span>Ocala</span><span>Spring Hill</span></div>
+          <p class="nota-l">También trabajamos en Texas, con especialidad en Houston.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="financiamiento" aria-labelledby="fi-t">
+    <div class="wrap">
+      <p class="eyebrow">Financiamiento para extranjeros</p>
+      <h2 id="fi-t">Créditos Foreign National en Estados Unidos</h2>
+      <p class="lead">Con 1st Capital Lending Group puedes financiar tu propiedad en EUA sin ser residente.</p>
+      <div class="fn">
+        <div><b>Sin historial de crédito en EUA</b><span>No requiere calificación de crédito.</span></div>
+        <div><b>Sin comprobar ingresos</b><span>El avalúo determina el ingreso por renta de la propiedad.</span></div>
+        <div><b>Enganche desde 25%</b><span>Se requieren reservas adicionales.</span></div>
+        <div><b>Tasa fija o variable</b><span>Elige la que mejor se adapte a tu inversión.</span></div>
+        <div><b>Sin seguro del préstamo</b><span>No requiere seguro hipotecario.</span></div>
+        <div><b>Créditos del vendedor</b><span>Concesiones de hasta 2%.</span></div>
+      </div>
+      <div class="dos-c">
+        <div class="caja-b"><h3>Documentos para la preaprobación</h3>
+          <ul class="lista"><li>Pasaporte</li><li>Carta de referencia del banco con el que trabajas</li><li>Estado de cuenta donde está el dinero para el cierre</li></ul>
+          <p class="nota-l">Durante el proceso pueden pedirse documentos adicionales.</p></div>
+        <div class="caja-b"><h3>Qué incluye tu pago y tus gastos</h3>
+          <ul class="lista"><li><b>Pago mensual:</b> capital e intereses, impuestos, seguro de la casa y HOA.</li><li><b>Al inicio:</b> depósito (escrow), inspección, avalúo y planos (survey).</li><li><b>Al cierre:</b> titulación, gastos del crédito, seguro e impuestos, abogados y enganche.</li></ul></div>
+      </div>
+      <p class="nota-l">Información de referencia de 1st Capital Lending Group (NMLS 2583704). Todo crédito está sujeto a evaluación y aprobación.</p>
+      <div class="vids"><a class="vid" href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Financiamiento para extranjeros en EUA</b><span>Ver la capacitación en video</span></div></a></div>
+    </div>
+  </section>
+
+  <section class="blk gris" id="desarrollos" aria-labelledby="d-t">
+    <div class="wrap">
+      <p class="eyebrow">Desarrollos destacados</p>
+      <h2 id="d-t">Proyectos en Miami</h2>
+      <div class="des">
+        <article class="de"><span class="loc">Wynwood · Miami, FL</span><h3>Frida Kahlo Wynwood Residences</h3>
+          <p class="pr">Desde <b>$533,000 USD</b></p>
+          <ul><li>Estudios, Jr Suite + Den, 1, 2 y 3 recámaras y penthouses</li><li>Dos torres: 139 unidades en la Torre Sur y 105 en la Torre Norte</li><li>Plan de pagos: 25% antes de la entrega y 75% al cierre (4.º trimestre de 2028)</li></ul>
+          <div class="hb"><a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20Frida%20Kahlo%20Wynwood%20Residences%20en%20Miami.%20%C2%BFMe%20comparten%20disponibilidad%20y%20precios%3F" target="_blank" rel="noopener">Pedir disponibilidad</a><a class="btn borg" href="https://youtu.be/b9vfuqcD2f8" target="_blank" rel="noopener">Ver video</a></div></article>
+        <article class="de"><span class="loc">Miami, FL</span><h3>Vista Harbor Residences &amp; Yacht Club</h3>
+          <p class="pr">Residencias con club de yates</p>
+          <ul><li>Conoce el concepto y la guía del comprador</li><li>Inventario y precios disponibles a solicitud</li></ul>
+          <div class="hb"><a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20Vista%20Harbor%20Residences%20%26%20Yacht%20Club%20en%20Miami.%20%C2%BFMe%20comparten%20disponibilidad%20y%20precios%3F" target="_blank" rel="noopener">Pedir disponibilidad</a><a class="btn borg" href="https://youtu.be/3Y6KkaG1v2k" target="_blank" rel="noopener">Ver video</a></div></article>
+      </div>
+      <p class="nota-l">Precios y disponibilidad sujetos a cambio sin previo aviso.</p>
+      <div class="vids"><a class="vid" href="https://youtu.be/V3r6MfNdiFI" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Proceso de inversión en EUA</b><span>Ver el video explicativo</span></div></a></div>
+      <div class="contacto"><a class="btn wa" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar con el equipo internacional</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div>
+      <div class="fmarca"><img src="img/logo-brokers-network.png" alt=""><div><b style="color:#fff;letter-spacing:.06em">BROKERS NETWORK</b><br><span style="font-size:12px;letter-spacing:.2em">SOLUCIONES INMOBILIARIAS</span></div></div>
+      <p style="margin:0">Homero 1425, desp. 105, Col. Polanco, C.P. 11560, CDMX<br>(55) 2282 2287 · oficina@brokersnetwork.mx</p>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/brokersnetworkmx/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/brokersnetworkmx/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://twitter.com/BrokersNetwork_/" target="_blank" rel="noopener">X (Twitter)</a></li>
+        <li><a href="https://www.pinterest.com.mx/brokersnetworkm/" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/company/brokersnetworkmx" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Afiliados a</h3>
+      <ul>
+        <li><a href="https://conocer.gob.mx" target="_blank" rel="noopener">CONOCER · EC0110.02</a></li>
+        <li><a href="https://upim.org" target="_blank" rel="noopener">UPIM</a></li>
+        <li><a href="https://www.broktool.com" target="_blank" rel="noopener">Broktool</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
+</footer>
+<script src="js/menu.js"></script>
+</body>
+</html>
