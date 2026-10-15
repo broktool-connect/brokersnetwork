@@ -224,7 +224,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
         <h2>Revisa tus respuestas</h2>
         <p class="s">Al enviar se abre WhatsApp con este resumen listo para mandarlo a Brokers Network.</p>
         <div class="res" id="resumen"></div>
-        <p class="nota">Te contactamos por WhatsApp para darte la bienvenida, resolver tus dudas y explicarte los siguientes pasos.</p>
+        <p class="nota"><b>Ten a la mano tus documentos:</b> identificación oficial, CURP y RFC, comprobante de domicilio y fotografía. Cuando se abra WhatsApp, envía el resumen y adjúntalos en ese mismo chat.</p>
         <div class="acc"><button class="btn lin" type="button" data-sig="2">Atrás</button><a class="btn wa" id="enviar" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
       </section>
 
@@ -237,7 +237,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
           <p class="s" id="bien-s">Recibimos tu solicitud por WhatsApp.</p>
           <ul class="sig">
             <li>Te escribimos por WhatsApp para darte la bienvenida y resolver tus dudas.</li>
-            <li>Envíanos tu documentación (identificación oficial, CURP y RFC, comprobante de domicilio y fotografía) por correo o WhatsApp para preparar tu Convenio de Afiliación. <a href="#requisitos">Ver requisitos</a></li>
+            <li><b>Adjunta tus documentos en ese mismo chat de WhatsApp:</b> identificación oficial, CURP y RFC, comprobante de domicilio y fotografía. Con ellos preparamos tu Convenio de Afiliación. Si prefieres, mándalos a <a href="mailto:oficina@brokersnetwork.mx">oficina@brokersnetwork.mx</a>.</li>
             <li>Te invitamos a la presentación del último miércoles de cada mes, de 10:00 a 13:00, en Polanco.</li>
             <li>Agendamos tu inducción a la red.</li>
           </ul>
@@ -353,6 +353,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     var u=urlWA();document.getElementById('enviar').href=u;document.getElementById('reenviar').href=u;}
   function urlWA(){
     var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
+      '\n\nEn seguida adjunto mis documentos: identificación oficial, CURP y RFC, comprobante de domicilio y fotografía.'+
       '\n\nAcepto las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
     return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);}
   document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
