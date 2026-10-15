@@ -195,6 +195,15 @@
 .de-lg{height:38px;width:auto;border-radius:8px}
 @media (max-width:760px){.tx.exp.con-lg{grid-template-columns:72px 1fr}.exlogo{grid-column:1/-1}.tx.exp .exlogo img.lg2{height:44px}}
 @media (max-width:560px){.equipo-i .pi .lg{display:block;height:30px;max-width:110px}}
+
+/* Créditos: lista compacta */
+.sp .fn{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.sp .fn div{border:1px solid var(--linea);border-top:1px solid var(--linea);border-radius:12px;padding:10px 12px 10px 38px;position:relative;background:#fff}
+.sp .fn div::before{content:"✓";position:absolute;left:12px;top:10px;width:18px;height:18px;border-radius:50%;background:var(--naranja);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
+.sp .fn b{font-size:14px;margin:0;line-height:1.3}
+.sp .fn span{font-size:12.5px;line-height:1.35;display:block}
+@media (max-width:960px){.sp .fn{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.sp .fn{grid-template-columns:1fr}}
 </style>
 
 
