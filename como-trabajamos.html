@@ -163,6 +163,61 @@ div.doc span{flex:1}
 .rol ul.no li::before{content:"✕";position:absolute;left:0;color:#B8401F;font-weight:800}
 .nota-ref{font-size:13px;color:var(--gris-m);margin:16px 0 0}
 @media (max-width:960px){.roles{grid-template-columns:1fr}}
+
+:root{--verde:#2E9E6A;--verde-c:#E8F6EE;--azulv:#3567D8;--azulv-c:#EAF0FD;--oro:#B8954E}
+.roles2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.r2{border-radius:20px;padding:22px;background:#fff;border:1px solid var(--linea);border-top:6px solid var(--verde);display:flex;flex-direction:column;gap:10px}
+.r2.act{border-top-color:var(--azulv);box-shadow:0 14px 30px rgba(53,103,216,.12)}
+.r2h{display:flex;align-items:center;gap:12px}
+.r2h .ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--verde-c);flex:none}
+.r2.act .r2h .ico{background:var(--azulv-c)}
+.r2h small{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-m)}
+.r2h h3{font-size:20px;color:var(--azul)}
+.r2h .pct{margin-left:auto;font-size:32px;font-weight:800;color:var(--verde)}
+.r2.act .r2h .pct{color:var(--azulv)}
+.r2 .rd{margin:0;color:var(--gris-m);font-size:14.5px}
+.r2 .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.r2 .ct{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.r2 .ct.si{color:var(--verde)}.r2.act .ct.si{color:var(--azulv)}.r2 .ct.no{color:#C2334B}
+.r2 ul{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:14px}
+.r2 li{position:relative;padding-left:22px}
+.r2 ul.si li::before{content:"✓";position:absolute;left:0;font-weight:800;color:var(--verde)}
+.r2.act ul.si li::before{color:var(--azulv)}
+.r2 ul.no li{color:var(--gris-m)}.r2 ul.no li::before{content:"✕";position:absolute;left:0;font-weight:800;color:#C2334B}
+.r2 .ben{background:var(--azul-o2);color:#fff;border-radius:14px;padding:14px;align-self:start}
+.r2 .ben .ct{color:#D9B86A}.r2 .ben p:last-child{margin:0;font-size:14px}
+.r2 .fee{margin:auto 0 0;padding:10px 12px;border-radius:10px;background:var(--gris-c);font-size:14px}
+.r2 .fee b{color:var(--azul)}
+.sub{color:var(--azul);font-size:22px;margin:34px 0 0}
+.tipos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.tp{border-radius:16px;overflow:hidden;border:1px solid var(--linea);background:#fff}
+.tp .th{margin:0;padding:12px 16px;color:#fff;font-weight:800;font-size:14.5px;letter-spacing:.02em}
+.t1 .th{background:#E07B39}.t2 .th{background:var(--azul-o2)}.t3 .th{background:var(--oro)}
+.tp .tc{margin:12px 16px 10px;font-size:14.5px}
+.tv{display:grid;gap:6px;margin:0 16px 16px}
+.tv span{display:flex;justify-content:space-between;gap:8px;border-radius:10px;padding:8px 10px;font-size:13.5px}
+.tv .pas{background:var(--verde-c);color:#1F6E49}.tv .act{background:var(--azulv-c);color:#2A50A8}
+.calc2{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:30px;border-radius:22px;overflow:hidden;border:1px solid var(--linea);box-shadow:0 16px 36px rgba(31,45,61,.1)}
+.cin{padding:24px;background:#fff;display:grid;gap:12px;align-content:start}
+.cin h3{color:var(--azul);font-size:21px}
+.cin label{display:grid;gap:6px;font-weight:700;font-size:13.5px;color:var(--gris)}
+.campo2{border:1.5px solid var(--linea);border-radius:12px;padding:12px;font:600 16px var(--f);color:var(--azul);background:#fff;width:100%}
+.lbl2{margin:4px 0 0;font-weight:700;font-size:13.5px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{border:1.5px solid var(--linea);background:#fff;border-radius:12px;padding:12px;font:700 14px var(--f);cursor:pointer;color:var(--gris)}
+.seg button[data-rol=pas][aria-pressed=true]{background:var(--verde);border-color:var(--verde);color:#fff}
+.seg button[data-rol=act][aria-pressed=true]{background:var(--azulv);border-color:var(--azulv);color:#fff}
+.cout{background:var(--azul-o2);color:#E6ECF2;padding:24px;display:grid;gap:10px;align-content:start}
+.cout .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px;font-size:14.5px}
+.cout .row b{color:#fff;font-variant-numeric:tabular-nums}
+.cout .big{margin-top:6px;background:rgba(255,255,255,.08);border-radius:16px;padding:16px}
+.cout .big span{display:block;font-size:13px;color:#C9D4E0}
+.cout .big b{display:block;font-size:clamp(30px,4vw,42px);color:#fff;font-variant-numeric:tabular-nums}
+.cout.pas .big{border-left:5px solid var(--verde)}.cout.act .big{border-left:5px solid #7FA3F5}
+.cmp{margin:0;font-size:13.5px;color:#C9D4E0}
+.cmp b{color:#FFB59E}
+@media (max-width:900px){.roles2,.calc2{grid-template-columns:1fr}.tipos{grid-template-columns:1fr}}
+@media (max-width:520px){.r2 .cols{grid-template-columns:1fr}}
 </style>
 
 
@@ -384,17 +439,49 @@ div.doc span{flex:1}
     <div class="wrap">
       <p class="eyebrow">Para asesores · Inversión internacional</p>
       <h2 id="ref-t">Gana comisión en dólares refiriendo inversionistas</h2>
-      <p class="lead">Si tienes clientes que quieren invertir en Estados Unidos, Canadá, Panamá o España, refiérelos a nuestro equipo internacional y gana comisión por cada operación cerrada. Tú eliges cómo participar.</p>
-      <div class="roles">
-        <article class="rol"><span class="rt">Opción 1</span><h3>Socio referidor</h3><p class="rd">Conectas al inversionista y nuestro equipo se encarga del resto.</p>
-          <ul class="si"><li>Identificas y calificas al prospecto</li><li>Le presentas la oportunidad de inversión</li><li>Lo conectas con el equipo experto</li><li>Lo registras formalmente</li></ul>
-          <ul class="no"><li>No gestionas la operación en EUA</li><li>No negocias ni cierras la venta</li><li>No das asesoría legal ni fiscal</li></ul></article>
-        <article class="rol dest"><span class="rt">Opción 2 · Mayor comisión</span><h3>Socio activo</h3><p class="rd">Participas en todo el proceso y recibes un mayor porcentaje de la comisión.</p>
-          <ul class="si"><li>Das seguimiento comercial a tu cliente</li><li>Perfilas en detalle al inversionista</li><li>Integras su expediente</li><li>Lo acompañas y mantienes la comunicación</li></ul></article>
-        <article class="rol"><span class="rt">Te respalda</span><h3>Equipo líder y aliados</h3><p class="rd">Coordinación, CRM, capacitación y el equipo en EUA para búsqueda de propiedades, visitas, negociación, contratos y cierre legal.</p>
-          <ul class="si"><li>Ingresos en dólares (USD)</li><li>Portafolio de propiedades high-end</li><li>Capacitación en real estate global</li><li>Materiales de marketing y soporte continuo</li></ul></article>
+      <p class="lead">Refiere a tus clientes que quieren invertir en Estados Unidos con nuestro aliado IBA y gana un porcentaje de la comisión total. Tú eliges cuánto te involucras.</p>
+
+      <div class="roles2">
+        <article class="r2 pas"><div class="r2h"><span class="ico" aria-hidden="true">👥</span><div><small>Opción 1</small><h3>Socio referidor / pasivo</h3></div><b class="pct">12%</b></div>
+          <p class="rd">Conecta inversionistas y refiere oportunidades.</p>
+          <div class="cols"><div><p class="ct si">Qué hace</p><ul class="si"><li>Identifica y califica prospectos</li><li>Presenta la oportunidad de inversión</li><li>Conecta al cliente con el equipo experto</li><li>Registra formalmente al prospecto</li></ul></div>
+          <div><p class="ct no">Qué no hace</p><ul class="no"><li>Gestión operativa o técnica en EUA</li><li>Negociación directa o cierre</li><li>Estructuración del proyecto</li><li>Asesoría legal, fiscal o tributaria</li></ul></div></div>
+          <p class="fee">Fee operativo internacional: <b>USD 1,000</b> aprox. por operación</p></article>
+        <article class="r2 act"><div class="r2h"><span class="ico" aria-hidden="true">🚀</span><div><small>Opción 2 · Mayor comisión</small><h3>Socio activo</h3></div><b class="pct">28%</b></div>
+          <p class="rd">Participación activa en todo el proceso, con acompañamiento estratégico en cada fase.</p>
+          <div class="cols"><div><p class="ct si">Gestión operativa</p><ul class="si"><li>Seguimiento comercial riguroso</li><li>Perfilamiento detallado del cliente</li><li>Integración eficiente de expediente</li><li>Acompañamiento y comunicación continua</li></ul></div>
+          <div class="ben"><p class="ct">Beneficio estratégico</p><p>Mayor porcentaje de participación en la comisión.</p></div></div>
+          <p class="fee">Fee operativo internacional: <b>USD 500</b> aprox. por operación</p></article>
       </div>
-      <p class="nota-ref">Los porcentajes de comisión y el fee operativo internacional dependen del tipo de operación y del rol que elijas. Te compartimos el esquema completo al registrarte.</p>
+
+      <h3 class="sub">Comisión por tipo de operación</h3>
+      <div class="tipos">
+        <article class="tp t1"><p class="th">Preconstrucción (Florida)</p><p class="tc">Comisión del desarrollador a IBA: <b>6%</b></p><div class="tv"><span class="pas">Referidor <b>USD 3,600</b></span><span class="act">Activo <b>USD 8,400</b></span></div></article>
+        <article class="tp t2"><p class="th">Usadas con exclusiva (listing)</p><p class="tc">Comisión total a IBA: <b>5% a 6%</b></p><div class="tv"><span class="pas">Referidor <b>USD 3,000–3,600</b></span><span class="act">Activo <b>USD 7,000–8,400</b></span></div></article>
+        <article class="tp t3"><p class="th">Usadas con comisión compartida</p><p class="tc">Lado comprador a IBA: <b>3%</b></p><div class="tv"><span class="pas">Referidor <b>USD 1,800</b></span><span class="act">Activo <b>USD 4,200</b></span></div></article>
+      </div>
+      <p class="nota-ref">Ejemplos con una propiedad de USD 500,000. Los porcentajes pueden variar según el tipo de proyecto y el acuerdo específico de la alianza IBA + Brokers Network.</p>
+
+      <div class="calc2" id="calculadora">
+        <div class="cin">
+          <h3>Calcula tu comisión</h3>
+          <label>Tipo de operación
+            <select id="c-tipo" class="campo2"><option value="6">Preconstrucción · 6%</option><option value="6x">Usada con exclusiva · 6%</option><option value="5">Usada con exclusiva · 5%</option><option value="3">Comisión compartida · 3%</option></select></label>
+          <label>Precio de la propiedad (USD)
+            <input id="c-precio" class="campo2" type="text" inputmode="numeric" value="500,000"></label>
+          <p class="lbl2">¿Cómo participas?</p>
+          <div class="seg" role="radiogroup"><button type="button" data-rol="pas" aria-pressed="true">👥 Referidor · 12%</button><button type="button" data-rol="act" aria-pressed="false">🚀 Activo · 28%</button></div>
+        </div>
+        <div class="cout">
+          <div class="row"><span>Comisión total de la operación</span><b id="o-total">—</b></div>
+          <div class="row"><span>Tu participación (<span id="o-pct">12%</span>)</span><b id="o-bruto">—</b></div>
+          <div class="row"><span>Fee operativo internacional (aprox.)</span><b id="o-fee">—</b></div>
+          <div class="big"><span>Recibirías aproximadamente</span><b id="o-neto">—</b></div>
+          <p class="cmp" id="o-cmp"></p>
+        </div>
+      </div>
+      <p class="nota-ref">Cálculo ilustrativo y aproximado; no constituye una oferta. El monto final depende de la operación y del acuerdo firmado.</p>
+
       <div class="hb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn nar" href="https://api.whatsapp.com/send?phone=525520603432&text=Hola%2C%20soy%20asesor%20y%20quiero%20referir%20a%20un%20cliente%20inversionista.%20%C2%BFMe%20comparten%20el%20esquema%20de%20comisiones%3F" target="_blank" rel="noopener">Quiero referir a un cliente</a><a class="btn borg" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Formulario de perfil para tu cliente</a><a class="btn borg" href="inversion-internacional.html">Más información para presentar a tu cliente →</a></div>
     </div>
   </section>
@@ -564,5 +651,30 @@ div.doc span{flex:1}
 })();
 </script>
 
+<script>
+(function(){
+  var tipo=document.getElementById('c-tipo'),precio=document.getElementById('c-precio'),rol='pas';
+  if(!tipo)return;
+  var PCT={pas:.12,act:.28},FEE={pas:1000,act:500};
+  function num(v){return +String(v).replace(/[^0-9.]/g,'')||0}
+  function usd(n){return 'USD '+Math.round(n).toLocaleString('en-US')}
+  function calc(){
+    var p=num(precio.value),r=parseFloat(tipo.value)/100,total=p*r;
+    function neto(k){return Math.max(0,total*PCT[k]-FEE[k])}
+    document.getElementById('o-total').textContent=usd(total);
+    document.getElementById('o-pct').textContent=(PCT[rol]*100)+'%';
+    document.getElementById('o-bruto').textContent=usd(total*PCT[rol]);
+    document.getElementById('o-fee').textContent='− '+usd(FEE[rol]);
+    document.getElementById('o-neto').textContent=usd(neto(rol));
+    var otro=rol==='pas'?'act':'pas';
+    document.getElementById('o-cmp').innerHTML=rol==='pas'?'Como <b>socio activo</b> recibirías aprox. <b>'+usd(neto('act'))+'</b>.':'Como <b>socio referidor</b> recibirías aprox. <b>'+usd(neto('pas'))+'</b>.';
+    document.querySelector('.cout').className='cout '+rol;
+  }
+  precio.addEventListener('input',function(){var n=num(precio.value);precio.value=n?n.toLocaleString('en-US'):'';calc();});
+  tipo.addEventListener('change',calc);
+  document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){rol=b.getAttribute('data-rol');document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});calc();});});
+  calc();
+})();
+</script>
 </body>
 </html>
