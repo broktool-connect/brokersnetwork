@@ -102,6 +102,27 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
 .sig li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px}
 .sig li::before{content:"✓";font-weight:800;color:var(--naranja)}
 
+/* Beneficios de la afiliación */
+.ben{max-width:1100px;margin:0 auto 64px;padding-inline:20px}
+.ben-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.ben-h .eb{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px}
+.ben-h h2{font-size:clamp(24px,3vw,32px);color:var(--azul);font-weight:800;line-height:1.15}
+.ben-h p{margin:8px 0 0;color:var(--gris-m);max-width:60ch}
+.bgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.bc{background:#fff;border:1px solid var(--linea);border-top:4px solid var(--naranja);padding:22px 22px 18px}
+.bc.ancho{grid-column:span 2}
+.bc.todo{grid-column:1/-1}
+.bc h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--azul);margin:0 0 10px;display:flex;gap:10px;align-items:center}
+.bc h3 i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--azul-c);display:grid;place-items:center;font-size:15px;flex:none}
+.bc p{margin:0 0 8px;font-size:14px;color:var(--gris)}
+.bc ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px;color:var(--gris-m)}
+.bc ul.dos{columns:2;column-gap:28px;display:block}
+.bc ul.dos li{break-inside:avoid;margin-bottom:5px}
+.reserva{font-size:12px;color:var(--gris-m);margin:18px 0 0;line-height:1.5}
+.lado .verben{display:inline-block;margin-top:14px;color:#FFB59E;font-weight:700;font-size:13.5px;text-decoration:none}
+@media (max-width:960px){.bgrid{grid-template-columns:1fr 1fr}.bc.ancho{grid-column:1/-1}}
+@media (max-width:620px){.bgrid{grid-template-columns:1fr}.bc ul.dos{columns:1}}
+
 @media (max-width:860px){
   .pant{grid-template-columns:1fr}
   .lado{position:static}
@@ -127,6 +148,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     <p class="eb">Afiliación</p>
     <h1>Únete a la red de asesores independientes</h1>
     <p>Te toma menos de cinco minutos. Al terminar nos envías tus respuestas por WhatsApp y te contactamos para darte la bienvenida.</p>
+    <a class="verben" href="#beneficios">Ver qué incluye tu afiliación ↓</a>
     <ol class="pasos" id="pasos">
       <li data-p="1"><i>1</i><span>Tus datos</span></li>
       <li data-p="2"><i>2</i><span>Tu perfil</span></li>
@@ -211,6 +233,45 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     </form>
   </main>
 </div>
+
+<section class="ben" id="beneficios" aria-labelledby="ben-t">
+  <div class="ben-h">
+    <div><p class="eb">Beneficios</p><h2 id="ben-t">¿Qué incluye tu afiliación?</h2>
+    <p>Con el pago anual de tu membresía, como afiliado tendrás derecho a:</p></div>
+  </div>
+  <div class="bgrid">
+    <article class="bc ancho"><h3><i aria-hidden="true">▤</i>Plataforma y soporte operativo</h3>
+      <p>Acceso a una carpeta compartida con más de 50 documentos y contratos de los que más se utilizan en materia inmobiliaria:</p>
+      <ul class="dos">
+        <li>Proceso inmobiliario de principio a fin</li>
+        <li>Carpeta con documentos para atender clientes (arrendamiento y compraventa)</li>
+        <li>Carpeta con documentos para promover propiedades (arrendamiento y compraventa)</li>
+        <li>Carpeta informativa sobre desarrollos, proyectos y preventas para afiliados a BN</li>
+        <li>Directorio de proveedores y socios de negocios</li>
+        <li>Tabla de comisiones</li>
+        <li>Carpeta con documentos de pólizas jurídicas</li>
+        <li>Carpeta con capacitaciones</li>
+        <li>Carpeta con inventario de desarrollos y preventas</li>
+        <li>Directorio de asesores afiliados para el apoyo mutuo en la promoción de inmuebles</li>
+      </ul></article>
+    <article class="bc"><h3><i aria-hidden="true">✆</i>Acceso a chats</h3>
+      <ul><li>Acceso a los chats oficiales de BN, así como a algunos chats eficientes de asesores inmobiliarios para la promoción de tus propiedades.</li></ul></article>
+    <article class="bc"><h3><i aria-hidden="true">◈</i>Imagen corporativa</h3>
+      <ul><li>Diseño digital en PDF de tarjetas de presentación de 9×5 cm, para imprimir en couché de 250 g, a color frente y vuelta, con tu nombre y el color que elijas.</li>
+      <li>Diseño digital en PDF de 3 lonas promocionales (venta y renta) de 1×1 m, con doblez y ojillos, con tu número de teléfono.</li>
+      <li>Precios preferenciales si necesitas más material corporativo.</li></ul></article>
+    <article class="bc"><h3><i aria-hidden="true">$</i>Precios preferenciales</h3>
+      <ul><li>Para la promoción de tu inventario, BN pone a tu disposición precios preferenciales en los principales portales inmobiliarios.</li></ul></article>
+    <article class="bc"><h3><i aria-hidden="true">✎</i>Capacitación constante</h3>
+      <ul><li>Capacitaciones gratuitas por Zoom, que se convocan oportunamente en el “Chat de Capacitaciones”.</li>
+      <li>Invitación a eventos y congresos del sector con costos preferenciales.</li>
+      <li>Invitación y asesoría para obtener tu Certificación Inmobiliaria.</li></ul></article>
+    <article class="bc todo"><h3><i aria-hidden="true">⇄</i>Network para apoyo de promoción</h3>
+      <ul><li>El directorio de los asesores afiliados a BN, que podrán apoyarte en citas, recorridos, firmas, etc.</li>
+      <li>Una tabla de comisiones convenida con todos los afiliados, para que el trabajo en equipo sea transparente y quede claramente definido entre todos los participantes.</li></ul></article>
+  </div>
+  <p class="reserva">* Nos reservamos el derecho de modificar o discontinuar los servicios (o cualquier parte del contenido) en cualquier momento sin previo aviso, con base en las alianzas obtenidas con nuestros socios de negocio.</p>
+</section>
 
 <script>
 (function(){
