@@ -1,3 +1,11 @@
+/* Botón Menú (celular y tableta): abre y cierra el menú; se cierra al elegir una opción. */
+(function(){
+  var b=document.getElementById('mmenu'),n=document.getElementById('menu');
+  if(!b||!n)return;
+  function set(o){n.classList.toggle('abierto',o);b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!n.classList.contains('abierto'));});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+})();
 /* Submenús del encabezado: abren con clic (y con el mouse en escritorio), cierran con Esc o al dar clic fuera. */
 (function(){
   var dds=[].slice.call(document.querySelectorAll('.dd'));
