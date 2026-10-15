@@ -118,6 +118,21 @@
 .zpanel .vids{margin-top:20px}
 @media (max-width:960px){.flujo{grid-template-columns:1fr}.eq-h{grid-template-columns:1fr}.eq-h .pb{height:80px}.zcorta{grid-template-columns:1fr}}
 @media (max-width:560px){.zpanel{padding:18px 14px}.tx{grid-template-columns:1fr}.tx img{width:110px;height:110px}.equipo-i .pi{grid-template-columns:72px 1fr}.equipo-i .pi .lg{display:none}}
+
+.seguro{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.seguro li{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px}
+.seguro i{font-style:normal;font-size:22px;line-height:1}
+.seguro b{display:block;color:#fff;font-size:14.5px}
+.seguro span{display:block;color:#C9D4E0;font-size:13px;line-height:1.45;margin-top:2px}
+.zlabel{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--gris-m)}
+.ztabs2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-bottom:0;padding-bottom:0}
+.ztabs2 button{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;border:1.5px solid var(--linea);color:var(--azul);font-size:14.5px;padding:13px 12px;border-radius:14px;box-shadow:none;text-align:center}
+.ztabs2 button i{font-style:normal;font-size:18px}
+.ztabs2 button:hover{border-color:var(--naranja)}
+.ztabs2 button[aria-selected="true"]{background:var(--naranja);border-color:var(--naranja);color:#fff;box-shadow:0 8px 18px rgba(221,86,53,.28)}
+.sp{margin-top:16px;background:#fff;border:1px solid var(--linea);border-radius:18px;padding:22px}
+@media (max-width:960px){.seguro{grid-template-columns:1fr 1fr}.ztabs2{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.seguro{grid-template-columns:1fr}.sp{padding:16px}}
 </style>
 
 
@@ -163,9 +178,15 @@
 <main>
   <section class="phead" aria-label="Inversión internacional">
     <div class="wrap">
-      <h1>Invierte <span>fuera de México</span></h1>
-      <p>Bienes raíces en Estados Unidos, Canadá, Panamá y España con nuestro equipo internacional para inversionistas.</p>
+      <h1>Invierte fuera de México <span>de forma segura</span></h1>
+      <p>Bienes raíces en Estados Unidos, Canadá, Panamá y España, con un equipo internacional que te acompaña de principio a fin para que inviertas con certeza.</p>
       <div class="hb"><a class="btn bl" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a><a class="btn bor" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar por WhatsApp</a></div>
+      <ul class="seguro">
+        <li><i aria-hidden="true">🛡️</i><div><b>Aliados especializados</b><span>Prosperity Bridge y expertos locales en cada mercado.</span></div></li>
+        <li><i aria-hidden="true">🏦</i><div><b>Financiamiento regulado</b><span>Créditos para extranjeros con 1st Capital Lending Group (NMLS 2583704).</span></div></li>
+        <li><i aria-hidden="true">📋</i><div><b>Costos claros desde el inicio</b><span>Sabes qué pagas al inicio, al cierre y cada mes.</span></div></li>
+        <li><i aria-hidden="true">🤝</i><div><b>Acompañamiento hasta el cierre</b><span>Un asesor contigo en cada paso de la compra.</span></div></li>
+      </ul>
     </div>
   </section>
 
@@ -211,11 +232,12 @@
       </div>
 
       <div class="zpanel" id="z-usa" role="tabpanel" aria-labelledby="t-usa">
+        <p class="zlabel">Elige qué quieres ver en Estados Unidos:</p>
         <div class="ztabs2" role="tablist" aria-label="Estados Unidos">
-          <button role="tab" aria-selected="true" aria-controls="u-fl">Florida</button>
-          <button role="tab" aria-selected="false" aria-controls="u-mia">Proyectos en Miami</button>
-          <button role="tab" aria-selected="false" aria-controls="u-tx">Texas · Houston</button>
-          <button role="tab" aria-selected="false" aria-controls="u-fin">Créditos para extranjeros</button>
+          <button role="tab" aria-selected="true" aria-controls="u-fl"><i aria-hidden="true">🌴</i>Florida</button>
+          <button role="tab" aria-selected="false" aria-controls="u-mia"><i aria-hidden="true">🏙️</i>Proyectos en Miami</button>
+          <button role="tab" aria-selected="false" aria-controls="u-tx"><i aria-hidden="true">🤠</i>Texas · Houston</button>
+          <button role="tab" aria-selected="false" aria-controls="u-fin"><i aria-hidden="true">🏦</i>Créditos para extranjeros</button>
         </div>
         <div class="sp" id="u-fl" role="tabpanel">
           <h3 class="zt">¿Por qué invertir en Florida?</h3>
