@@ -148,7 +148,7 @@ div.doc span{flex:1}
 .modelo .warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:12px 14px;font-size:15px;font-weight:600}
 .modelo .mfoot{color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:2px solid var(--line);padding-top:16px}
 @media (prefers-reduced-motion:reduce){.modelo .bar div{transition:none}}
-@media (min-width:1001px){#capacitacion-usa .docs{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#capacitacion-usa .doc{padding:18px}}
+@media (min-width:1001px){#capacitacion-usa .docs{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}#capacitacion-usa .doc{padding:18px}}
 
 .roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
 .rol{border:1px solid var(--linea);border-radius:18px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:8px}
@@ -230,6 +230,14 @@ div.doc span{flex:1}
 .dot{width:10px;height:10px;border-radius:50%;flex:none}.d1{background:#E07B39}.d2{background:var(--azul)}.d3{background:var(--oro)}
 @media (max-width:640px){.tabla-c .tr{grid-template-columns:1fr 1fr;row-gap:6px}.tabla-c .tr>span:first-child{grid-column:1/-1}.tabla-c .th>span:nth-child(2){display:none}.tabla-c .tr:not(.th)>span:nth-child(2){display:none}.tabla-c .tr:not(.th) span:first-child::after{content:""}}
 .mpct{display:none;font-weight:600;color:var(--gris-m)}@media (max-width:640px){.mpct{display:inline}.tabla-c .tr:not(.th) .cp,.tabla-c .tr:not(.th) .ca{white-space:nowrap;font-size:13px}}
+.calc-band{margin-top:34px;border-radius:26px;padding:26px;background:linear-gradient(135deg,var(--azulv) 0%,#2A50A8 55%,var(--azul-o2) 100%);box-shadow:0 22px 50px rgba(42,80,168,.28)}
+.cb-h{display:flex;gap:16px;align-items:center;color:#fff;margin-bottom:18px}
+.cb-ic{width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:28px;flex:none}
+.cb-k{margin:0;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C9D8FF}
+.cb-h h3{color:#fff;font-size:clamp(22px,2.8vw,30px);margin:2px 0}
+.cb-h p:last-child{margin:0;color:#DCE6FF;font-size:15px}
+.calc-band .calc2{margin-top:0;border:0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+@media (max-width:520px){.calc-band{padding:16px;border-radius:20px}.cb-ic{width:46px;height:46px;font-size:22px}}
 </style>
 
 
@@ -475,9 +483,11 @@ div.doc span{flex:1}
       </div>
       <p class="nota-ref">Ejemplos con una propiedad de USD 500,000, antes del fee operativo. Los porcentajes pueden variar según el tipo de proyecto y el acuerdo específico de la alianza IBA + Brokers Network.</p>
 
-      <div class="calc2" id="calculadora">
+      <div class="calc-band" id="calculadora">
+        <div class="cb-h"><span class="cb-ic" aria-hidden="true">🧮</span><div><p class="cb-k">Herramienta</p><h3>¿Cuánto ganarías por referir?</h3><p>Elige el tipo de operación, el precio y cómo participas.</p></div></div>
+      <div class="calc2">
         <div class="cin">
-          <h3>Calcula tu comisión</h3>
+          <h3>Datos de la operación</h3>
           <label>Tipo de operación
             <select id="c-tipo" class="campo2"><option value="6">Preconstrucción · 6%</option><option value="6x">Usada con exclusiva · 6%</option><option value="5">Usada con exclusiva · 5%</option><option value="3">Comisión compartida · 3%</option></select></label>
           <label>Precio de la propiedad (USD)
@@ -492,6 +502,7 @@ div.doc span{flex:1}
           <div class="big"><span>Recibirías aproximadamente</span><b id="o-neto">—</b></div>
           <p class="cmp" id="o-cmp"></p>
         </div>
+      </div>
       </div>
       <p class="nota-ref">Cálculo ilustrativo y aproximado; no constituye una oferta. El monto final depende de la operación y del acuerdo firmado.</p>
 
@@ -508,8 +519,9 @@ div.doc span{flex:1}
         <div class="doc"><b>1. Proceso de inversión en EUA</b><span>Cómo funciona una compra en Estados Unidos y cómo perfilar al inversionista.</span><em><a href="https://youtu.be/V3r6MfNdiFI" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/1OwG95y_sxXoiPvQEt4OLIcfRoA188X7y/view?usp=sharing" target="_blank" rel="noopener">Presentación</a></em><em><a href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Formulario de perfil para clientes</a></em></div>
         <div class="doc"><b>2. Miami Wynwood · Frida Kahlo Residences</b><span>Desarrollo en Wynwood, Miami: producto, precios y plan de pagos.</span><em><a href="https://youtu.be/b9vfuqcD2f8" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/1VAgPxk2j7K8kEksDWQwwADz8kEjsY8OE/view?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
         <div class="doc"><b>3. Vista Harbor Residences &amp; Yacht Club</b><span>Residencias con club de yates en Miami, FL.</span><em><a href="https://youtu.be/3Y6KkaG1v2k" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/1IE66RJ8i4l1Lo0wiBFMOYccTy-ssxwoE/view?usp=sharing" target="_blank" rel="noopener">Concept presentation</a></em><em><a href="https://drive.google.com/file/d/15sb_wcEB4u6ycd-WKMRhlOvQtEM-N_gj/view?usp=sharing" target="_blank" rel="noopener">Guía del comprador</a></em></div>
-        <div class="doc"><b>4. Financiamiento para extranjeros en EUA</b><span>Créditos Foreign National con 1st Capital Lending Group.</span><em><a href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://docs.google.com/presentation/d/1-C20RTArdzbw4VQOLXUH7lGMqTm4BBAuL2agTnloMYM/edit?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
-        <div class="doc"><b>5. Después del cierre y tu portafolio</b><span>Administración de propiedades, rentas cortas y largas, contabilidad, planeación sucesoria y cómo construir un portafolio de inversión.</span><em><a href="https://youtu.be/A-sKNZPjWa0" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/1ENb_8adXEU-OKMRPzK6v3-PU847tfCRj/view?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
+        <div class="doc"><b>4. Invierte en Houston, Texas</b><span>Oportunidades de inversión en Houston con nuestra especialista en la zona.</span><em><a href="https://youtu.be/w8hxHwevXBg" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/15OOPhP-LtU5OHQiZFuBRILmuH9bOHUEK/view?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
+        <div class="doc"><b>5. Financiamiento para extranjeros en EUA</b><span>Créditos Foreign National con 1st Capital Lending Group.</span><em><a href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://docs.google.com/presentation/d/1-C20RTArdzbw4VQOLXUH7lGMqTm4BBAuL2agTnloMYM/edit?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
+        <div class="doc"><b>6. Después del cierre y tu portafolio</b><span>Administración de propiedades, rentas cortas y largas, contabilidad, planeación sucesoria y cómo construir un portafolio de inversión.</span><em><a href="https://youtu.be/A-sKNZPjWa0" target="_blank" rel="noopener">Ver grabación</a></em><em><a href="https://drive.google.com/file/d/1ENb_8adXEU-OKMRPzK6v3-PU847tfCRj/view?usp=sharing" target="_blank" rel="noopener">Presentación</a></em></div>
       </div>
       <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn wa" data-share-usa href="https://api.whatsapp.com/send" target="_blank" rel="noopener">Compartir materiales por WhatsApp</a><button class="btn borg" type="button" data-copy-usa>Copiar acceso a materiales</button></div>
       <p style="margin:18px 0 0;font-size:14px;color:#C9D4E0">El inventario y los precios actualizados, y el grupo oficial de socios, se comparten con los afiliados por WhatsApp.</p>
@@ -558,7 +570,7 @@ div.doc span{flex:1}
   <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
 </footer>
 <script src="js/menu.js?v=20261015d"></script>
-<script src="js/resumen-usa.js?v=2"></script>
+<script src="js/resumen-usa.js?v=3"></script>
 
 <script>
 (function(){
