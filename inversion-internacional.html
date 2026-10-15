@@ -87,6 +87,37 @@
 @media (max-width:1100px){.equipo-i{grid-template-columns:1fr 1fr}}
 @media (max-width:860px){.perfil,.dos-c,.des,.vids{grid-template-columns:1fr}.perfil .hb{justify-content:flex-start}.fn{grid-template-columns:1fr 1fr}.equipo-i{grid-template-columns:1fr}}
 @media (max-width:480px){.fn{grid-template-columns:1fr}}
+.eq-h{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.eq-h .pb{height:110px;width:auto;border-radius:14px;border:1px solid rgba(255,255,255,.15)}
+.equipo-i .pi{grid-template-columns:80px 1fr}
+.equipo-i .pi .lg{display:none}
+.lista{align-content:start}
+.flujo{display:grid;grid-template-columns:1fr 280px;gap:18px;align-items:stretch;margin-top:26px}
+.flujo .ipasos{margin:0}
+.perfil-cta{display:flex;flex-direction:column;gap:4px;justify-content:center;background:var(--naranja);color:#fff;text-decoration:none;border-radius:18px;padding:18px 20px}
+.perfil-cta:hover{background:var(--naranja-t)}
+.perfil-cta small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.85}
+.perfil-cta b{font-size:19px}.perfil-cta span{font-size:13.5px;opacity:.9}
+.ztabs,.ztabs2{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.ztabs button{font:700 15px var(--f);border:1.5px solid var(--linea);background:#fff;color:var(--azul);border-radius:99px;padding:11px 18px;cursor:pointer}
+.ztabs button[aria-selected="true"]{background:var(--azul-o2);border-color:var(--azul-o2);color:#fff}
+.zpanel{margin-top:18px;border:1px solid var(--linea);border-radius:22px;padding:26px;background:var(--gris-c)}
+.ztabs2{margin-top:0;border-bottom:1px solid var(--linea);padding-bottom:12px}
+.ztabs2 button{font:700 14px var(--f);border:0;background:none;color:var(--gris-m);padding:8px 12px;border-radius:10px;cursor:pointer}
+.ztabs2 button[aria-selected="true"]{background:#fff;color:var(--naranja-t);box-shadow:0 1px 0 var(--linea)}
+.sp{padding-top:20px}
+.zt{color:var(--azul);font-size:20px;margin:0 0 6px}
+.zp{color:var(--gris-m);margin:0 0 6px}
+.sp .dos-c,.sp .des,.sp .fn{margin-top:16px}
+.mas{margin-top:16px}
+.mas summary{cursor:pointer;font-weight:700;color:var(--naranja-t);padding:8px 0}
+.tx{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center}
+.tx img{width:140px;height:140px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #fff,0 0 0 7px var(--naranja)}
+.tx p{color:var(--gris);margin:0 0 14px}
+.zcorta{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.zpanel .vids{margin-top:20px}
+@media (max-width:960px){.flujo{grid-template-columns:1fr}.eq-h{grid-template-columns:1fr}.eq-h .pb{height:80px}.zcorta{grid-template-columns:1fr}}
+@media (max-width:560px){.zpanel{padding:18px 14px}.tx{grid-template-columns:1fr}.tx img{width:110px;height:110px}.equipo-i .pi{grid-template-columns:72px 1fr}.equipo-i .pi .lg{display:none}}
 </style>
 
 
@@ -133,21 +164,22 @@
   <section class="phead" aria-label="Inversión internacional">
     <div class="wrap">
       <h1>Invierte <span>fuera de México</span></h1>
-      <p>Bienes raíces en Estados Unidos, Canadá, Panamá y España, de la mano de Prosperity Bridge International Advisors y nuestro equipo internacional para inversionistas.</p>
+      <p>Bienes raíces en Estados Unidos, Canadá, Panamá y España con nuestro equipo internacional para inversionistas.</p>
       <div class="hb"><a class="btn bl" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a><a class="btn bor" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar por WhatsApp</a></div>
-      <p style="margin:14px 0 0;font-size:14.5px">Informes de cartera internacional: <a style="color:#fff;font-weight:700" href="https://wa.me/525520603432" target="_blank" rel="noopener">55 2060 3432</a></p>
     </div>
   </section>
 
   <section class="blk intl" id="equipo" aria-labelledby="e-t">
     <div class="wrap">
-      <p class="eyebrow">Nuestro equipo internacional</p>
-      <h2 id="e-t">Te acompañamos en cada paso de tu inversión</h2>
-      <p class="lead">De la mano de <b style="color:#fff">Prosperity Bridge International Advisors</b> encontramos la propiedad indicada para ti y te conectamos con el financiamiento para extranjeros.</p>
+      <div class="eq-h">
+        <div><p class="eyebrow">Nuestro equipo internacional</p>
+          <h2 id="e-t">Te acompañamos en cada paso de tu inversión</h2>
+          <p class="lead">De la mano de <b style="color:#fff">Prosperity Bridge International Advisors</b> encontramos la propiedad indicada para ti y te conectamos con el financiamiento para extranjeros.</p></div>
+        <img class="pb" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors">
+      </div>
       <div class="equipo-i">
         <article class="pi"><img class="foto" src="img/intl/mari-del-rio.jpg" alt="Mari del Río" width="480" height="480" loading="lazy">
-          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div>
-          <img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"></article>
+          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div></article>
         <article class="pi"><img class="foto" src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" width="480" height="480" loading="lazy">
           <div><h3>Paulina Arceo</h3><p>Paulina Arceo Global Real Estate</p><span class="tag-i">Especialista en Houston, Texas</span></div>
           <img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"></article>
@@ -155,30 +187,38 @@
           <div><h3>Jimena Pérez Gil</h3><p>Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><span class="tag-i">Créditos Foreign National en EUA</span></div>
           <img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></article>
       </div>
-      <div class="paises"><article class="pais"><span class="flag" aria-hidden="true">🇺🇸</span><h3>Estados Unidos</h3><p>Especialmente en Florida y Texas (Houston). Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Estados%20Unidos.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇨🇦</span><h3>Canadá</h3><p>Inversión en dólares canadienses.</p><a href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇵🇦</span><h3>Panamá</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇪🇸</span><h3>España</h3><p>Inversión en euros.</p><a href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article></div>
-      <ol class="ipasos">
-        <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión: renta, patrimonio o segunda residencia.</span></li>
-        <li><b>Te presentamos opciones</b><span>Nuestro equipo internacional selecciona propiedades que se ajustan a lo que buscas.</span></li>
-        <li><b>Te acompañamos hasta el cierre</b><span>Resolvemos tus dudas en cada paso de la compra.</span></li>
-      </ol>
+      <div class="flujo">
+        <ol class="ipasos">
+          <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión.</span></li>
+          <li><b>Te presentamos opciones</b><span>Propiedades que se ajustan a lo que buscas.</span></li>
+          <li><b>Te acompañamos hasta el cierre</b><span>En cada paso de la compra.</span></li>
+        </ol>
+        <a class="perfil-cta" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener"><small>Primer paso</small><b>Conozcamos tu perfil →</b><span>Formulario breve sobre tus objetivos de inversión</span></a>
+      </div>
       <div class="aliados-i"><span>Aliados</span><img src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><img src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><img class="bl" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div>
     </div>
   </section>
 
-  <section class="blk" id="perfil">
+  <section class="blk" id="destinos" aria-labelledby="z-t">
     <div class="wrap">
-      <div class="perfil">
-        <div><p class="eyebrow">Primer paso</p><h2>Conozcamos tu perfil</h2>
-          <p>Completa este breve formulario para identificar tus objetivos, necesidades y preferencias de inversión. Así te presentamos alternativas inmobiliarias internacionales acordes con tu perfil.</p></div>
-        <div class="hb"><a class="btn nar" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Llenar el formulario</a></div>
+      <p class="eyebrow">Destinos</p>
+      <h2 id="z-t">¿Dónde quieres invertir?</h2>
+      <div class="ztabs" role="tablist" aria-label="Destinos">
+        <button role="tab" aria-selected="true" aria-controls="z-usa" id="t-usa">🇺🇸 Estados Unidos</button>
+        <button role="tab" aria-selected="false" aria-controls="z-can" id="t-can">🇨🇦 Canadá</button>
+        <button role="tab" aria-selected="false" aria-controls="z-pan" id="t-pan">🇵🇦 Panamá</button>
+        <button role="tab" aria-selected="false" aria-controls="z-esp" id="t-esp">🇪🇸 España</button>
       </div>
-    </div>
-  </section>
 
-  <section class="blk gris" id="florida" aria-labelledby="f-t">
-    <div class="wrap">
-      <p class="eyebrow">Estados Unidos</p>
-      <h2 id="f-t">¿Por qué invertir en Florida?</h2>
+      <div class="zpanel" id="z-usa" role="tabpanel" aria-labelledby="t-usa">
+        <div class="ztabs2" role="tablist" aria-label="Estados Unidos">
+          <button role="tab" aria-selected="true" aria-controls="u-fl">Florida</button>
+          <button role="tab" aria-selected="false" aria-controls="u-mia">Proyectos en Miami</button>
+          <button role="tab" aria-selected="false" aria-controls="u-tx">Texas · Houston</button>
+          <button role="tab" aria-selected="false" aria-controls="u-fin">Créditos para extranjeros</button>
+        </div>
+        <div class="sp" id="u-fl" role="tabpanel">
+          <h3 class="zt">¿Por qué invertir en Florida?</h3>
       <div class="dos-c">
         <ul class="lista">
           <li>Alta demanda de alquiler en ciudades como Orlando, Kissimmee, Miami y Tampa.</li>
@@ -190,38 +230,9 @@
           <div class="ciudades"><span>Orlando</span><span>Kissimmee</span><span>Davenport</span><span>Tampa</span><span>St. Petersburg</span><span>Jacksonville</span><span>St. Augustine</span><span>Palm Beach</span><span>Fort Myers / Cape Coral</span><span>Fort Walton Beach</span><span>Ocala</span><span>Spring Hill</span></div>
           <p class="nota-l">También trabajamos en Texas, con especialidad en Houston.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section class="blk" id="financiamiento" aria-labelledby="fi-t">
-    <div class="wrap">
-      <p class="eyebrow">Financiamiento para extranjeros</p>
-      <h2 id="fi-t">Créditos Foreign National en Estados Unidos</h2>
-      <p class="lead">Con 1st Capital Lending Group puedes financiar tu propiedad en EUA sin ser residente.</p>
-      <div class="fn">
-        <div><b>Sin historial de crédito en EUA</b><span>No requiere calificación de crédito.</span></div>
-        <div><b>Sin comprobar ingresos</b><span>El avalúo determina el ingreso por renta de la propiedad.</span></div>
-        <div><b>Enganche desde 25%</b><span>Se requieren reservas adicionales.</span></div>
-        <div><b>Tasa fija o variable</b><span>Elige la que mejor se adapte a tu inversión.</span></div>
-        <div><b>Sin seguro del préstamo</b><span>No requiere seguro hipotecario.</span></div>
-        <div><b>Créditos del vendedor</b><span>Concesiones de hasta 2%.</span></div>
-      </div>
-      <div class="dos-c">
-        <div class="caja-b"><h3>Documentos para la preaprobación</h3>
-          <ul class="lista"><li>Pasaporte</li><li>Carta de referencia del banco con el que trabajas</li><li>Estado de cuenta donde está el dinero para el cierre</li></ul>
-          <p class="nota-l">Durante el proceso pueden pedirse documentos adicionales.</p></div>
-        <div class="caja-b"><h3>Qué incluye tu pago y tus gastos</h3>
-          <ul class="lista"><li><b>Pago mensual:</b> capital e intereses, impuestos, seguro de la casa y HOA.</li><li><b>Al inicio:</b> depósito (escrow), inspección, avalúo y planos (survey).</li><li><b>Al cierre:</b> titulación, gastos del crédito, seguro e impuestos, abogados y enganche.</li></ul></div>
-      </div>
-      <p class="nota-l">Información de referencia de 1st Capital Lending Group (NMLS 2583704). Todo crédito está sujeto a evaluación y aprobación.</p>
-      <div class="vids"><a class="vid" href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Financiamiento para extranjeros en EUA</b><span>Ver la capacitación en video</span></div></a></div>
-    </div>
-  </section>
-
-  <section class="blk gris" id="desarrollos" aria-labelledby="d-t">
-    <div class="wrap">
-      <p class="eyebrow">Desarrollos destacados</p>
-      <h2 id="d-t">Proyectos en Miami</h2>
+        </div>
+        <div class="sp" id="u-mia" role="tabpanel" hidden>
+          <h3 class="zt">Proyectos destacados en Miami</h3>
       <div class="des">
         <article class="de"><span class="loc">Wynwood · Miami, FL</span><h3>Frida Kahlo Wynwood Residences</h3>
           <p class="pr">Desde <b>$533,000 USD</b></p>
@@ -232,8 +243,54 @@
           <ul><li>Conoce el concepto y la guía del comprador</li><li>Inventario y precios disponibles a solicitud</li></ul>
           <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20Vista%20Harbor%20Residences%20%26%20Yacht%20Club%20en%20Miami.%20%C2%BFMe%20comparten%20disponibilidad%20y%20precios%3F" target="_blank" rel="noopener">Pedir disponibilidad</a><a class="btn borg" href="https://youtu.be/3Y6KkaG1v2k" target="_blank" rel="noopener">Ver video</a></div></article>
       </div>
-      <p class="nota-l">Precios y disponibilidad sujetos a cambio sin previo aviso.</p>
-      <div class="vids"><a class="vid" href="https://youtu.be/V3r6MfNdiFI" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Proceso de inversión en EUA</b><span>Ver el video explicativo</span></div></a></div>
+          <p class="nota-l">Precios y disponibilidad sujetos a cambio sin previo aviso.</p>
+        </div>
+        <div class="sp" id="u-tx" role="tabpanel" hidden>
+          <div class="tx"><img src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" loading="lazy">
+            <div><h3 class="zt">Texas, con especialidad en Houston</h3>
+            <p>Paulina Arceo, de Paulina Arceo Global Real Estate, es nuestra especialista en la zona de Houston. Te ayuda a encontrar propiedades para renta o patrimonio y te acompaña en la compra.</p>
+            <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Houston%2C%20Texas." target="_blank" rel="noopener">Quiero invertir en Houston</a></div></div></div>
+        </div>
+        <div class="sp" id="u-fin" role="tabpanel" hidden>
+          <h3 class="zt">Créditos Foreign National en Estados Unidos</h3>
+          <p class="zp">Con 1st Capital Lending Group puedes financiar tu propiedad en EUA sin ser residente.</p>
+      <div class="fn">
+        <div><b>Sin historial de crédito en EUA</b><span>No requiere calificación de crédito.</span></div>
+        <div><b>Sin comprobar ingresos</b><span>El avalúo determina el ingreso por renta de la propiedad.</span></div>
+        <div><b>Enganche desde 25%</b><span>Se requieren reservas adicionales.</span></div>
+        <div><b>Tasa fija o variable</b><span>Elige la que mejor se adapte a tu inversión.</span></div>
+        <div><b>Sin seguro del préstamo</b><span>No requiere seguro hipotecario.</span></div>
+        <div><b>Créditos del vendedor</b><span>Concesiones de hasta 2%.</span></div>
+      </div>
+      <details class="mas"><summary>Documentos para la preaprobación y gastos</summary>
+      <div class="dos-c">
+        <div class="caja-b"><h3>Documentos para la preaprobación</h3>
+          <ul class="lista"><li>Pasaporte</li><li>Carta de referencia del banco con el que trabajas</li><li>Estado de cuenta donde está el dinero para el cierre</li></ul>
+          <p class="nota-l">Durante el proceso pueden pedirse documentos adicionales.</p></div>
+        <div class="caja-b"><h3>Qué incluye tu pago y tus gastos</h3>
+          <ul class="lista"><li><b>Pago mensual:</b> capital e intereses, impuestos, seguro de la casa y HOA.</li><li><b>Al inicio:</b> depósito (escrow), inspección, avalúo y planos (survey).</li><li><b>Al cierre:</b> titulación, gastos del crédito, seguro e impuestos, abogados y enganche.</li></ul></div>
+      </div>
+      </details>
+      <p class="nota-l">Información de referencia de 1st Capital Lending Group (NMLS 2583704). Todo crédito está sujeto a evaluación y aprobación.</p>
+        </div>
+        <div class="vids"><a class="vid" href="https://youtu.be/V3r6MfNdiFI" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Proceso de inversión en EUA</b><span>Ver el video explicativo</span></div></a><a class="vid" href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Financiamiento para extranjeros en EUA</b><span>Ver la capacitación en video</span></div></a></div>
+      </div>
+
+      <div class="zpanel" id="z-can" role="tabpanel" aria-labelledby="t-can" hidden>
+        <div class="zcorta"><div><h3 class="zt">Invierte en Canadá</h3><p class="zp">Inversión en dólares canadienses. Nuestro equipo internacional te presenta opciones de acuerdo con tu perfil y te acompaña hasta el cierre.</p></div>
+          <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir en Canadá</a><a class="btn borg" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a></div></div>
+      </div>
+
+      <div class="zpanel" id="z-pan" role="tabpanel" aria-labelledby="t-pan" hidden>
+        <div class="zcorta"><div><h3 class="zt">Invierte en Panamá</h3><p class="zp">Inversión en dólares estadounidenses. Nuestro equipo internacional te presenta opciones de acuerdo con tu perfil y te acompaña hasta el cierre.</p></div>
+          <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir en Panamá</a><a class="btn borg" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a></div></div>
+      </div>
+
+      <div class="zpanel" id="z-esp" role="tabpanel" aria-labelledby="t-esp" hidden>
+        <div class="zcorta"><div><h3 class="zt">Invierte en España</h3><p class="zp">Inversión en euros. Nuestro equipo internacional te presenta opciones de acuerdo con tu perfil y te acompaña hasta el cierre.</p></div>
+          <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir en España</a><a class="btn borg" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Conozcamos tu perfil</a></div></div>
+      </div>
+
       <div class="contacto"><a class="btn wa" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar con el equipo internacional</a></div>
     </div>
   </section>
@@ -267,5 +324,15 @@
   <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
 </footer>
 <script src="js/menu.js"></script>
+<script>
+(function(){
+  function tabs(sel){document.querySelectorAll(sel).forEach(function(list){
+    var bs=[].slice.call(list.querySelectorAll('button[role=tab]'));
+    bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});});});
+  });}
+  tabs('.ztabs');tabs('.ztabs2');
+})();
+</script>
+
 </body>
 </html>
