@@ -94,6 +94,22 @@
 @media (max-width:760px){.eq{grid-template-columns:1fr 1fr;gap:12px}.ac .bd{padding:12px}.ac h3{font-size:15px}}
 @media (max-width:1100px){.serv{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.prop2,.dos,.zonas,.serv{grid-template-columns:1fr}}
+.intl{background:var(--azul-o2);color:#fff;position:relative;overflow:hidden}
+.intl::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.intl .wrap{position:relative;z-index:1}
+.intl h2{color:#fff}.intl .eyebrow{color:#FFB59E}.intl .lead{color:#C9D4E0}
+.paises{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:30px}
+.pais{background:#fff;color:var(--gris);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.pais .flag{font-size:34px;line-height:1}
+.pais h3{color:var(--azul);font-size:20px;margin-top:6px}
+.pais p{margin:0;color:var(--gris-m);font-size:14.5px}
+.pais a{margin-top:auto;padding-top:10px;font-weight:700;text-decoration:none;font-size:14.5px}
+.ipasos{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:i}
+.ipasos li{align-content:start;counter-increment:i;border-top:2px solid rgba(255,255,255,.18);padding-top:14px;display:grid;gap:4px}
+.ipasos li::before{content:counter(i);width:30px;height:30px;border-radius:50%;background:var(--naranja);display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:6px}
+.ipasos b{font-size:16px}.ipasos span{color:#C9D4E0;font-size:14.5px}
+@media (max-width:960px){.paises{grid-template-columns:1fr 1fr}.ipasos{grid-template-columns:1fr}}
+@media (max-width:420px){.paises{grid-template-columns:1fr}}
 </style>
 
 
@@ -116,6 +132,8 @@
           <a href="servicios.html#credito">Crédito hipotecario<small>Te apoyamos con tu crédito</small></a>
           <a href="servicios.html#renta">Renta con o sin aval<small>Póliza jurídica en lugar de fiador</small></a>
           <a href="servicios.html#servicios">Todos los servicios<small>Inversión, administración, mudanza y más</small></a>
+          <p class="ddt">Si quieres invertir</p>
+          <a href="servicios.html#internacional">Inversión internacional<small>Estados Unidos, Canadá, Panamá y España</small></a>
         </div>
       </div>
       <div class="dd"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
@@ -143,6 +161,7 @@
         <a href="#asesor">Elige tu asesor</a>
         <a href="#credito">Crédito hipotecario</a>
         <a href="#renta">Renta con o sin aval</a>
+        <a href="#internacional">Invertir fuera de México</a>
         <a href="#requisitos">Requisitos</a>
         <a href="#servicios">Todos los servicios</a>
       </nav>
@@ -207,6 +226,22 @@
         <p>¿No tienes fiador? Rentas con póliza jurídica, que respalda al propietario de forma legal y segura.</p>
         <ul><li>Sin necesidad de fiador con inmueble</li><li>Investigación ágil del inquilino</li><li>Respaldo legal para ambas partes</li></ul>
         <div class="hb" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn nar" href="https://wa.me/525520612236?text=Hola%2C%20quiero%20rentar%20con%20o%20sin%20aval" target="_blank" rel="noopener">Quiero rentar</a><a class="btn borg" href="https://asesor.moradaunoapp.com" target="_blank" rel="noopener">Conocer opciones</a></div></article>
+    </div>
+  </section>
+
+
+  <section class="blk intl" id="internacional" aria-labelledby="i-t">
+    <div class="wrap">
+      <p class="eyebrow">Inversión internacional</p>
+      <h2 id="i-t">Invierte en Estados Unidos, Canadá, Panamá o España</h2>
+      <p class="lead">Contamos con un equipo internacional para inversionistas. Te ayudamos a encontrar la propiedad indicada fuera de México y te acompañamos en todo el proceso.</p>
+      <div class="paises"><article class="pais"><span class="flag" aria-hidden="true">🇺🇸</span><h3>Estados Unidos</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Estados%20Unidos.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇨🇦</span><h3>Canadá</h3><p>Inversión en dólares canadienses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇵🇦</span><h3>Panamá</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇪🇸</span><h3>España</h3><p>Inversión en euros.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article></div>
+      <ol class="ipasos">
+        <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión: renta, patrimonio o segunda residencia.</span></li>
+        <li><b>Te presentamos opciones</b><span>Nuestro equipo internacional selecciona propiedades que se ajustan a lo que buscas.</span></li>
+        <li><b>Te acompañamos hasta el cierre</b><span>Resolvemos tus dudas en cada paso de la compra.</span></li>
+      </ol>
+      <div class="contacto"><a class="btn wa" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar con el equipo internacional</a></div>
     </div>
   </section>
 
