@@ -218,6 +218,18 @@ div.doc span{flex:1}
 .cmp b{color:#FFB59E}
 @media (max-width:900px){.roles2,.calc2{grid-template-columns:1fr}.tipos{grid-template-columns:1fr}}
 @media (max-width:520px){.r2 .cols{grid-template-columns:1fr}}
+
+.tabla-c{margin-top:14px;border:1px solid var(--linea);border-radius:16px;overflow:hidden;background:#fff}
+.tabla-c .tr{display:grid;grid-template-columns:1.6fr .8fr 1fr 1fr;gap:10px;align-items:center;padding:12px 16px;border-top:1px solid var(--linea);font-size:14.5px}
+.tabla-c .tr:first-child{border-top:0}
+.tabla-c .th{background:var(--azul-o2);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em}
+.tabla-c .tr:not(.th) span:first-child{font-weight:700;color:var(--azul);display:flex;align-items:center;gap:8px}
+.tabla-c .tr:not(.th) .cp{color:#1F6E49;font-weight:800;background:var(--verde-c);border-radius:8px;padding:5px 8px;text-align:right}
+.tabla-c .tr:not(.th) .ca{color:#2A50A8;font-weight:800;background:var(--azulv-c);border-radius:8px;padding:5px 8px;text-align:right}
+.tabla-c .th .cp,.tabla-c .th .ca{text-align:right}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}.d1{background:#E07B39}.d2{background:var(--azul)}.d3{background:var(--oro)}
+@media (max-width:640px){.tabla-c .tr{grid-template-columns:1fr 1fr;row-gap:6px}.tabla-c .tr>span:first-child{grid-column:1/-1}.tabla-c .th>span:nth-child(2){display:none}.tabla-c .tr:not(.th)>span:nth-child(2){display:none}.tabla-c .tr:not(.th) span:first-child::after{content:""}}
+.mpct{display:none;font-weight:600;color:var(--gris-m)}@media (max-width:640px){.mpct{display:inline}.tabla-c .tr:not(.th) .cp,.tabla-c .tr:not(.th) .ca{white-space:nowrap;font-size:13px}}
 </style>
 
 
@@ -455,10 +467,11 @@ div.doc span{flex:1}
       </div>
 
       <h3 class="sub">Comisión por tipo de operación</h3>
-      <div class="tipos">
-        <article class="tp t1"><p class="th">Preconstrucción (Florida)</p><p class="tc">Comisión del desarrollador a IBA: <b>6%</b></p><div class="tv"><span class="pas">Referidor <b>USD 3,600</b></span><span class="act">Activo <b>USD 8,400</b></span></div></article>
-        <article class="tp t2"><p class="th">Usadas con exclusiva (listing)</p><p class="tc">Comisión total a IBA: <b>5% a 6%</b></p><div class="tv"><span class="pas">Referidor <b>USD 3,000–3,600</b></span><span class="act">Activo <b>USD 7,000–8,400</b></span></div></article>
-        <article class="tp t3"><p class="th">Usadas con comisión compartida</p><p class="tc">Lado comprador a IBA: <b>3%</b></p><div class="tv"><span class="pas">Referidor <b>USD 1,800</b></span><span class="act">Activo <b>USD 4,200</b></span></div></article>
+      <div class="tabla-c" role="table" aria-label="Comisión por tipo de operación">
+        <div class="tr th" role="row"><span role="columnheader">Tipo de operación</span><span role="columnheader">Comisión a IBA</span><span role="columnheader" class="cp">👥 Referidor 12%</span><span role="columnheader" class="ca">🚀 Activo 28%</span></div>
+        <div class="tr" role="row"><span role="cell"><i class="dot d1"></i>Preconstrucción (Florida)<small class="mpct"> · 6%</small></span><span role="cell">6%</span><span role="cell" class="cp">USD 3,600</span><span role="cell" class="ca">USD 8,400</span></div>
+        <div class="tr" role="row"><span role="cell"><i class="dot d2"></i>Usadas con exclusiva<small class="mpct"> · 5–6%</small></span><span role="cell">5% a 6%</span><span role="cell" class="cp">USD 3,000–3,600</span><span role="cell" class="ca">USD 7,000–8,400</span></div>
+        <div class="tr" role="row"><span role="cell"><i class="dot d3"></i>Usadas con comisión compartida<small class="mpct"> · 3%</small></span><span role="cell">3%</span><span role="cell" class="cp">USD 1,800</span><span role="cell" class="ca">USD 4,200</span></div>
       </div>
       <p class="nota-ref">Ejemplos con una propiedad de USD 500,000, antes del fee operativo. Los porcentajes pueden variar según el tipo de proyecto y el acuerdo específico de la alianza IBA + Brokers Network.</p>
 
