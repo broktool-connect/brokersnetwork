@@ -133,6 +133,19 @@
 .sp{margin-top:16px;background:#fff;border:1px solid var(--linea);border-radius:18px;padding:22px}
 @media (max-width:960px){.seguro{grid-template-columns:1fr 1fr}.ztabs2{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.seguro{grid-template-columns:1fr}.sp{padding:16px}}
+
+.flujo.hz{display:flex;align-items:stretch;gap:12px;margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+.flujo.hz .ipasos{flex:1;display:flex;gap:10px;margin:0}
+.flujo.hz .ipasos li{flex:1;border:0;padding:0;display:flex;align-items:center;gap:10px;position:relative}
+.flujo.hz .ipasos li::before{flex:none;margin:0}
+.flujo.hz .ipasos li:not(:last-child)::after{content:"→";color:#FFB59E;font-weight:800;margin-left:auto;padding-left:6px}
+.flujo.hz .ipasos b{font-size:14.5px;line-height:1.25}
+.flujo.hz .ipasos span{display:none}
+.flujo.hz .perfil-cta{flex:none;flex-direction:row;align-items:center;gap:10px;padding:12px 18px;border-radius:99px}
+.flujo.hz .perfil-cta small,.flujo.hz .perfil-cta span{display:none}
+.flujo.hz .perfil-cta b{font-size:15px;white-space:nowrap}
+@media (max-width:860px){.flujo.hz{flex-direction:column}.flujo.hz .perfil-cta{justify-content:center}}
+@media (max-width:520px){.flujo.hz .ipasos{gap:6px}.flujo.hz .ipasos li{flex-direction:column;align-items:flex-start;gap:6px}.flujo.hz .ipasos li:not(:last-child)::after{position:absolute;right:2px;top:6px}.flujo.hz .ipasos b{font-size:13px}}
 </style>
 
 
@@ -187,6 +200,14 @@
         <li><i aria-hidden="true">📋</i><div><b>Costos claros desde el inicio</b><span>Sabes qué pagas al inicio, al cierre y cada mes.</span></div></li>
         <li><i aria-hidden="true">🤝</i><div><b>Acompañamiento hasta el cierre</b><span>Un asesor contigo en cada paso de la compra.</span></div></li>
       </ul>
+      <div class="flujo hz">
+        <ol class="ipasos">
+          <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión.</span></li>
+          <li><b>Te presentamos opciones</b><span>Propiedades que se ajustan a lo que buscas.</span></li>
+          <li><b>Te acompañamos hasta el cierre</b><span>En cada paso de la compra.</span></li>
+        </ol>
+        <a class="perfil-cta" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener"><small>Primer paso</small><b>Conozcamos tu perfil →</b><span>Formulario breve sobre tus objetivos de inversión</span></a>
+      </div>
     </div>
   </section>
 
@@ -207,14 +228,6 @@
         <article class="pi"><span class="foto mono" aria-hidden="true">JP</span>
           <div><h3>Jimena Pérez Gil</h3><p>Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><span class="tag-i">Créditos Foreign National en EUA</span></div>
           <img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></article>
-      </div>
-      <div class="flujo">
-        <ol class="ipasos">
-          <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión.</span></li>
-          <li><b>Te presentamos opciones</b><span>Propiedades que se ajustan a lo que buscas.</span></li>
-          <li><b>Te acompañamos hasta el cierre</b><span>En cada paso de la compra.</span></li>
-        </ol>
-        <a class="perfil-cta" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener"><small>Primer paso</small><b>Conozcamos tu perfil →</b><span>Formulario breve sobre tus objetivos de inversión</span></a>
       </div>
       <div class="aliados-i"><span>Aliados</span><img src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><img src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><img class="bl" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div>
     </div>
