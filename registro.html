@@ -297,7 +297,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
       <li><i aria-hidden="true">🏠</i>Comprobante de domicilio</li>
       <li><i aria-hidden="true">📷</i>Fotografía</li>
     </ul>
-    <p style="margin:16px 0 0">Puedes enviarnos tus documentos por correo electrónico a <a href="mailto:oficina@brokersnetwork.mx">oficina@brokersnetwork.mx</a> o por <a href="https://wa.me/525520612236" target="_blank" rel="noopener">WhatsApp</a>. Quedamos atentos a tus dudas y comentarios.</p>
+    <p style="margin:16px 0 0">Puedes enviarnos tus documentos por correo electrónico a <a href="mailto:oficina@brokersnetwork.mx">oficina@brokersnetwork.mx</a> o por <a href="https://api.whatsapp.com/send?phone=525520612236" target="_blank" rel="noopener">WhatsApp</a>. Quedamos atentos a tus dudas y comentarios.</p>
   </div>
   <div class="pol" id="politicas">
     <p class="eb" style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px">Reglas de la red</p>
@@ -355,7 +355,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
       '\n\nEn seguida adjunto mis documentos: identificación oficial, CURP y RFC, comprobante de domicilio y fotografía.'+
       '\n\nAcepto las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
-    return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);}
+    return 'https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent(t);}
   document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
   ir(1);
 })();
