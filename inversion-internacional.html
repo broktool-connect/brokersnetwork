@@ -165,6 +165,24 @@
 .tx.exp .btn{white-space:normal;text-align:center}
 .exl{font-size:11px!important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 2px!important}
 @media (max-width:560px){.tx.exp{grid-template-columns:72px 1fr}.tx.exp img,.tx.exp .mono{width:72px;height:72px;font-size:20px}}
+
+/* Alternancia de secciones: azul, blanca, azul */
+.claro{background:#fff}
+.claro .pi{background:#fff;border:1px solid var(--linea);box-shadow:0 10px 26px rgba(31,45,61,.07)}
+.claro .pi h3{color:var(--azul)}
+.claro .pi p{color:var(--gris-m)}
+.claro .lead b{color:var(--azul)}
+.claro .eq-h .pb{border:0}
+.claro .aliados-i{border-top-color:var(--linea)}
+.claro .aliados-i span{color:var(--naranja-t)}
+.claro .aliados-i img{border:1px solid var(--linea)}
+.oscuro{background:var(--azul-o2);position:relative;overflow:hidden}
+.oscuro::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.3px);background-size:26px 26px;pointer-events:none}
+.oscuro .wrap{position:relative;z-index:1}
+.oscuro h2{color:#fff}.oscuro .eyebrow{color:#FFB59E}
+.oscuro .ztabs button{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+.oscuro .ztabs button[aria-selected="true"]{background:#fff;border-color:#fff;color:var(--azul-o2)}
+.oscuro .zpanel{border-color:transparent}
 </style>
 
 
@@ -230,12 +248,12 @@
     </div>
   </section>
 
-  <section class="blk intl" id="equipo" aria-labelledby="e-t">
+  <section class="blk claro" id="equipo" aria-labelledby="e-t">
     <div class="wrap">
       <div class="eq-h">
         <div><p class="eyebrow">Nuestro equipo internacional</p>
           <h2 id="e-t">Te acompañamos en cada paso de tu inversión</h2>
-          <p class="lead">De la mano de <b style="color:#fff">Prosperity Bridge International Advisors</b> encontramos la propiedad indicada para ti y te conectamos con el financiamiento para extranjeros.</p></div>
+          <p class="lead">De la mano de <b>Prosperity Bridge International Advisors</b> encontramos la propiedad indicada para ti y te conectamos con el financiamiento para extranjeros.</p></div>
         <img class="pb" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors">
       </div>
       <div class="equipo-i">
@@ -255,7 +273,7 @@
     </div>
   </section>
 
-  <section class="blk" id="destinos" aria-labelledby="z-t">
+  <section class="blk oscuro" id="destinos" aria-labelledby="z-t">
     <div class="wrap">
       <p class="eyebrow">Destinos</p>
       <h2 id="z-t">¿Dónde quieres invertir?</h2>
