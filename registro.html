@@ -118,6 +118,14 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
 .bc ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px;color:var(--gris-m)}
 .bc ul.dos{columns:2;column-gap:28px;display:block}
 .bc ul.dos li{break-inside:avoid;margin-bottom:5px}
+.pol{margin-top:40px;background:#fff;border:1px solid var(--linea);padding:28px}
+.pol h2{font-size:clamp(22px,2.6vw,28px);color:var(--azul);font-weight:800}
+.pol>p{color:var(--gris-m);margin:6px 0 18px;font-size:14.5px}
+.pol ol{margin:0;padding:0;list-style:none;counter-reset:p;display:grid;gap:14px}
+.pol li{counter-increment:p;display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:14.5px;line-height:1.55}
+.pol li::before{content:counter(p);width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.pol .resc{display:block;margin-top:4px;font-size:13px;color:#A3341A;font-weight:600}
+@media (max-width:520px){.pol{padding:20px 16px}}
 .reserva{font-size:12px;color:var(--gris-m);margin:18px 0 0;line-height:1.5}
 .lado .verben{display:inline-block;margin-top:14px;color:#FFB59E;font-weight:700;font-size:13.5px;text-decoration:none}
 @media (max-width:960px){.bgrid{grid-template-columns:1fr 1fr}.bc.ancho{grid-column:1/-1}}
@@ -148,7 +156,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     <p class="eb">Afiliación</p>
     <h1>Únete a la red de asesores independientes</h1>
     <p>Te toma menos de cinco minutos. Al terminar nos envías tus respuestas por WhatsApp y te contactamos para darte la bienvenida.</p>
-    <a class="verben" href="#beneficios">Ver qué incluye tu afiliación ↓</a>
+    <a class="verben" href="#beneficios">Ver beneficios y políticas ↓</a>
     <ol class="pasos" id="pasos">
       <li data-p="1"><i>1</i><span>Tus datos</span></li>
       <li data-p="2"><i>2</i><span>Tu perfil</span></li>
@@ -169,7 +177,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
           <label for="correo">Correo<input class="campo" id="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
           <label for="cel">Celular (WhatsApp)<input class="campo" id="cel" type="tel" autocomplete="tel" inputmode="tel" placeholder="10 dígitos" required></label>
         </div>
-        <label class="chk" for="terminos"><input type="checkbox" id="terminos"> <span>Acepto los <a href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a>, el <a href="https://www.brokersnetwork.mx/coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">código de ética</a> y el <a href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> de Brokers Network, según la NOM-247 y EC0110.02.</span></label>
+        <label class="chk" for="terminos"><input type="checkbox" id="terminos"> <span>Acepto las <a href="#politicas">Políticas de la empresa</a>, los <a href="https://www.brokersnetwork.mx/eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a>, el <a href="https://www.brokersnetwork.mx/coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">código de ética</a> y el <a href="https://www.brokersnetwork.mx/aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> de Brokers Network, según la NOM-247 y EC0110.02.</span></label>
         <p class="msg" id="m1" hidden></p>
         <div class="acc"><span></span><button class="btn nar" type="button" data-sig="2">Continuar</button></div>
       </section>
@@ -237,7 +245,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
 <section class="ben" id="beneficios" aria-labelledby="ben-t">
   <div class="ben-h">
     <div><p class="eb">Beneficios</p><h2 id="ben-t">¿Qué incluye tu afiliación?</h2>
-    <p>Con el pago anual de tu membresía, como afiliado tendrás derecho a:</p></div>
+    <p>Como afiliado tendrás derecho a:</p></div>
   </div>
   <div class="bgrid">
     <article class="bc ancho"><h3><i aria-hidden="true">▤</i>Plataforma y soporte operativo</h3>
@@ -270,6 +278,21 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
       <ul><li>El directorio de los asesores afiliados a BN, que podrán apoyarte en citas, recorridos, firmas, etc.</li>
       <li>Una tabla de comisiones convenida con todos los afiliados, para que el trabajo en equipo sea transparente y quede claramente definido entre todos los participantes.</li></ul></article>
   </div>
+
+  <div class="pol" id="politicas">
+    <p class="eb" style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px">Reglas de la red</p>
+    <h2>Políticas de la empresa</h2>
+    <p>Al afiliarte te comprometes a cumplir estas políticas, que protegen a todos los asesores de la red.</p>
+    <ol>
+      <li><div>El afiliado, una vez cobrada su comisión, se compromete a pagar a otros afiliados o a cualquier otro asesor inmobiliario su parte correspondiente el mismo día que reciba dicho pago, de manera completa y según la cantidad acordada.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una primera vez, o si no enmienda su error en un máximo de 5 días hábiles.</span></div></li>
+      <li><div>El afiliado se compromete, antes de iniciar formalmente una operación, a aclarar, informar y comunicar debida y claramente, por escrito, la comisión por compartir a otros afiliados o a cualquier otro asesor inmobiliario.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una segunda vez como máximo.</span></div></li>
+      <li><div>El afiliado se compromete a respetar los clientes y las propiedades opcionadas por otros afiliados o por cualquier otro asesor inmobiliario. Si de manera fortuita y sin intención ventajosa llegara a representar al mismo cliente o la misma propiedad, deberá informar de inmediato al afiliado que la tenga en su inventario, para competir de manera honesta y justa en cuanto a información y precio.<span class="resc">La afiliación se rescinde si el afiliado no cumple con esta política.</span></div></li>
+      <li><div>El afiliado se compromete a no fungir como contacto usando el inventario de las propiedades que manejan los demás afiliados de BN.</div></li>
+      <li><div>El afiliado que opcione proyectos, desarrollos o preventas entre afiliados se compromete a pagar a BN el 10% del total de la comisión pactada entre asesores. Dicha suma será pagadera el mismo día que reciba el pago de su comisión y se justifica por el contacto que BN le brinda con otros afiliados y asesores.<span class="resc">La afiliación se rescinde, sin opción a renovación, si el afiliado no cumple con esta política.</span></div></li>
+      <li><div>El afiliado se compromete a hacer un reporte mensual de las operaciones que haya cerrado satisfactoriamente, con el objeto de presentar a los clientes la efectividad global de la empresa por medio de sus afiliados.</div></li>
+      <li><div>El afiliado se compromete a respetar, cumplir y pagar en tiempo y forma la comisión propuesta en la Tabla de comisiones anexa.<span class="resc">Faltar a ella será motivo de rescisión de la afiliación.</span></div></li>
+    </ol>
+  </div>
   <p class="reserva">* Nos reservamos el derecho de modificar o discontinuar los servicios (o cualquier parte del contenido) en cualquier momento sin previo aviso, con base en las alianzas obtenidas con nuestros socios de negocio.</p>
 </section>
 
@@ -292,7 +315,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     [['nombre',function(v){return v.length>2;}],['correo',function(v){return /^\S+@\S+\.\S+$/.test(v);}],['cel',function(v){return v.replace(/\D/g,'').length>=10;}]]
       .forEach(function(c){var el=document.getElementById(c[0]),bien=c[1](el.value.trim());el.classList.toggle('err',!bien);el.setAttribute('aria-invalid',bien?'false':'true');if(!bien)ok=false;});
     if(!ok)err.push('Revisa tu nombre, correo y celular de 10 dígitos.');
-    if(!document.getElementById('terminos').checked){ok=false;err.push('Acepta los Términos y Condiciones, el código de ética y el aviso de privacidad para continuar.');}
+    if(!document.getElementById('terminos').checked){ok=false;err.push('Acepta las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad para continuar.');}
     m.textContent=err.join(' ');m.hidden=ok;return ok;
   }
   f.querySelectorAll('[data-sig]').forEach(function(b){b.addEventListener('click',function(){
@@ -311,7 +334,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     var u=urlWA();document.getElementById('enviar').href=u;document.getElementById('reenviar').href=u;}
   function urlWA(){
     var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
-      '\n\nAcepto los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
+      '\n\nAcepto las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
     return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);}
   document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
   ir(1);
