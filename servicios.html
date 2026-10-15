@@ -108,6 +108,19 @@
 .ipasos li{align-content:start;counter-increment:i;border-top:2px solid rgba(255,255,255,.18);padding-top:14px;display:grid;gap:4px}
 .ipasos li::before{content:counter(i);width:30px;height:30px;border-radius:50%;background:var(--naranja);display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:6px}
 .ipasos b{font-size:16px}.ipasos span{color:#C9D4E0;font-size:14.5px}
+.equipo-i{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.pi{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px}
+.pi .foto{width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--naranja)}
+.pi h3{color:#fff;font-size:19px}
+.pi p{margin:2px 0 8px;color:#C9D4E0;font-size:14px}
+.tag-i{display:inline-block;background:var(--naranja);color:#fff;font-size:12px;font-weight:700;border-radius:99px;padding:4px 10px}
+.pi .lg{height:52px;width:auto;max-width:120px;border-radius:8px;object-fit:contain}
+.aliados-i{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.aliados-i span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFB59E;margin-right:4px}
+.aliados-i img{height:56px;width:auto;border-radius:10px;background:#fff}
+.aliados-i img.bl{padding:4px 10px}
+@media (max-width:860px){.equipo-i{grid-template-columns:1fr}}
+@media (max-width:460px){.pi{grid-template-columns:72px 1fr}.pi .foto{width:72px;height:72px}.pi .lg{display:none}}
 @media (max-width:960px){.paises{grid-template-columns:1fr 1fr}.ipasos{grid-template-columns:1fr}}
 @media (max-width:420px){.paises{grid-template-columns:1fr}}
 </style>
@@ -234,13 +247,22 @@
     <div class="wrap">
       <p class="eyebrow">Inversión internacional</p>
       <h2 id="i-t">Invierte en Estados Unidos, Canadá, Panamá o España</h2>
-      <p class="lead">Contamos con un equipo internacional para inversionistas. Te ayudamos a encontrar la propiedad indicada fuera de México y te acompañamos en todo el proceso.</p>
-      <div class="paises"><article class="pais"><span class="flag" aria-hidden="true">🇺🇸</span><h3>Estados Unidos</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Estados%20Unidos.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇨🇦</span><h3>Canadá</h3><p>Inversión en dólares canadienses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇵🇦</span><h3>Panamá</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇪🇸</span><h3>España</h3><p>Inversión en euros.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article></div>
+      <p class="lead">De la mano de <b style="color:#fff">Prosperity Bridge International Advisors</b> ofrecemos este servicio con un equipo internacional para inversionistas. Te ayudamos a encontrar la propiedad indicada fuera de México y te acompañamos en todo el proceso.</p>
+      <div class="equipo-i">
+        <article class="pi"><img class="foto" src="img/intl/mari-del-rio.jpg" alt="Mari del Río" width="480" height="480" loading="lazy">
+          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div>
+          <img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"></article>
+        <article class="pi"><img class="foto" src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" width="480" height="480" loading="lazy">
+          <div><h3>Paulina Arceo</h3><p>Paulina Arceo Global Real Estate</p><span class="tag-i">Especialista en Houston, Texas</span></div>
+          <img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"></article>
+      </div>
+      <div class="paises"><article class="pais"><span class="flag" aria-hidden="true">🇺🇸</span><h3>Estados Unidos</h3><p>Especialmente en Florida y Texas (Houston). Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Estados%20Unidos.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇨🇦</span><h3>Canadá</h3><p>Inversión en dólares canadienses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Canad%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇵🇦</span><h3>Panamá</h3><p>Inversión en dólares estadounidenses.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Panam%C3%A1.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article><article class="pais"><span class="flag" aria-hidden="true">🇪🇸</span><h3>España</h3><p>Inversión en euros.</p><a href="https://wa.me/525520612236?text=Hola%2C%20quiero%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Espa%C3%B1a.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Quiero invertir aquí →</a></article></div>
       <ol class="ipasos">
         <li><b>Cuéntanos tu objetivo</b><span>País, presupuesto y tipo de inversión: renta, patrimonio o segunda residencia.</span></li>
         <li><b>Te presentamos opciones</b><span>Nuestro equipo internacional selecciona propiedades que se ajustan a lo que buscas.</span></li>
         <li><b>Te acompañamos hasta el cierre</b><span>Resolvemos tus dudas en cada paso de la compra.</span></li>
       </ol>
+      <div class="aliados-i"><span>Aliados</span><img src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><img src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><img class="bl" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div>
       <div class="contacto"><a class="btn wa" href="https://wa.me/525520612236?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar con el equipo internacional</a></div>
     </div>
   </section>
