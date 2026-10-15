@@ -446,12 +446,12 @@ div.doc span{flex:1}
           <p class="rd">Conecta inversionistas y refiere oportunidades.</p>
           <div class="cols"><div><p class="ct si">Qué hace</p><ul class="si"><li>Identifica y califica prospectos</li><li>Presenta la oportunidad de inversión</li><li>Conecta al cliente con el equipo experto</li><li>Registra formalmente al prospecto</li></ul></div>
           <div><p class="ct no">Qué no hace</p><ul class="no"><li>Gestión operativa o técnica en EUA</li><li>Negociación directa o cierre</li><li>Estructuración del proyecto</li><li>Asesoría legal, fiscal o tributaria</li></ul></div></div>
-          <p class="fee">Fee operativo internacional: <b>USD 1,000</b> aprox. por operación</p></article>
+          <p class="fee">Fee operativo internacional: <b>USD 1,000</b> aprox. por operación, <b>dividido 50/50</b> entre Brokers Network y tú (te toca USD 500).</p></article>
         <article class="r2 act"><div class="r2h"><span class="ico" aria-hidden="true">🚀</span><div><small>Opción 2 · Mayor comisión</small><h3>Socio activo</h3></div><b class="pct">28%</b></div>
           <p class="rd">Participación activa en todo el proceso, con acompañamiento estratégico en cada fase.</p>
           <div class="cols"><div><p class="ct si">Gestión operativa</p><ul class="si"><li>Seguimiento comercial riguroso</li><li>Perfilamiento detallado del cliente</li><li>Integración eficiente de expediente</li><li>Acompañamiento y comunicación continua</li></ul></div>
           <div class="ben"><p class="ct">Beneficio estratégico</p><p>Mayor porcentaje de participación en la comisión.</p></div></div>
-          <p class="fee">Fee operativo internacional: <b>USD 500</b> aprox. por operación</p></article>
+          <p class="fee">Fee operativo internacional: <b>USD 500</b> aprox. por operación, <b>dividido 50/50</b> entre Brokers Network y tú (te toca USD 250).</p></article>
       </div>
 
       <h3 class="sub">Comisión por tipo de operación</h3>
@@ -460,7 +460,7 @@ div.doc span{flex:1}
         <article class="tp t2"><p class="th">Usadas con exclusiva (listing)</p><p class="tc">Comisión total a IBA: <b>5% a 6%</b></p><div class="tv"><span class="pas">Referidor <b>USD 3,000–3,600</b></span><span class="act">Activo <b>USD 7,000–8,400</b></span></div></article>
         <article class="tp t3"><p class="th">Usadas con comisión compartida</p><p class="tc">Lado comprador a IBA: <b>3%</b></p><div class="tv"><span class="pas">Referidor <b>USD 1,800</b></span><span class="act">Activo <b>USD 4,200</b></span></div></article>
       </div>
-      <p class="nota-ref">Ejemplos con una propiedad de USD 500,000. Los porcentajes pueden variar según el tipo de proyecto y el acuerdo específico de la alianza IBA + Brokers Network.</p>
+      <p class="nota-ref">Ejemplos con una propiedad de USD 500,000, antes del fee operativo. Los porcentajes pueden variar según el tipo de proyecto y el acuerdo específico de la alianza IBA + Brokers Network.</p>
 
       <div class="calc2" id="calculadora">
         <div class="cin">
@@ -475,7 +475,7 @@ div.doc span{flex:1}
         <div class="cout">
           <div class="row"><span>Comisión total de la operación</span><b id="o-total">—</b></div>
           <div class="row"><span>Tu participación (<span id="o-pct">12%</span>)</span><b id="o-bruto">—</b></div>
-          <div class="row"><span>Fee operativo internacional (aprox.)</span><b id="o-fee">—</b></div>
+          <div class="row"><span>Fee operativo (<span id="o-feet">—</span>, 50% Brokers Network)</span><b id="o-fee">—</b></div>
           <div class="big"><span>Recibirías aproximadamente</span><b id="o-neto">—</b></div>
           <p class="cmp" id="o-cmp"></p>
         </div>
@@ -655,16 +655,16 @@ div.doc span{flex:1}
 (function(){
   var tipo=document.getElementById('c-tipo'),precio=document.getElementById('c-precio'),rol='pas';
   if(!tipo)return;
-  var PCT={pas:.12,act:.28},FEE={pas:1000,act:500};
+  var PCT={pas:.12,act:.28},FEE={pas:1000,act:500},PARTE_SOCIO=.5;
   function num(v){return +String(v).replace(/[^0-9.]/g,'')||0}
   function usd(n){return 'USD '+Math.round(n).toLocaleString('en-US')}
   function calc(){
     var p=num(precio.value),r=parseFloat(tipo.value)/100,total=p*r;
-    function neto(k){return Math.max(0,total*PCT[k]-FEE[k])}
+    function neto(k){return Math.max(0,total*PCT[k]-FEE[k]*PARTE_SOCIO)}
     document.getElementById('o-total').textContent=usd(total);
     document.getElementById('o-pct').textContent=(PCT[rol]*100)+'%';
     document.getElementById('o-bruto').textContent=usd(total*PCT[rol]);
-    document.getElementById('o-fee').textContent='− '+usd(FEE[rol]);
+    document.getElementById('o-fee').textContent='− '+usd(FEE[rol]*PARTE_SOCIO);document.getElementById('o-feet').textContent=usd(FEE[rol]);
     document.getElementById('o-neto').textContent=usd(neto(rol));
     var otro=rol==='pas'?'act':'pas';
     document.getElementById('o-cmp').innerHTML=rol==='pas'?'Como <b>socio activo</b> recibirías aprox. <b>'+usd(neto('act'))+'</b>.':'Como <b>socio referidor</b> recibirías aprox. <b>'+usd(neto('pas'))+'</b>.';
