@@ -145,3 +145,31 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
   .top nav.abierto .ddp a:hover{background:var(--naranja-c);color:var(--naranja-t)}
   .top nav.abierto .ddt{color:var(--naranja-t)}
 }
+
+/* Submenús con íconos y filas claras */
+.top nav .ddp a{display:grid;grid-template-columns:34px 1fr;column-gap:10px;align-items:center}
+.top nav .ddp a small{grid-column:2}
+.top nav .ddp a::before{grid-row:1/span 2;width:34px;height:34px;border-radius:10px;background:var(--naranja-c);display:grid;place-items:center;font-size:16px;content:"•"}
+.top nav .ddp a[href*="#propietarios"]::before{content:"🏠"}
+.top nav .ddp a[href*="#requisitos"]::before{content:"📋"}
+.top nav .ddp a[href*="easybroker"]::before{content:"🔎"}
+.top nav .ddp a[href*="#asesor"]::before{content:"👤"}
+.top nav .ddp a[href*="#credito"]::before{content:"💳"}
+.top nav .ddp a[href*="#renta"]::before{content:"🔑"}
+.top nav .ddp a[href*="#servicios"]::before{content:"✨"}
+.top nav .ddp a[href*="inversion-internacional"]::before{content:"🌎"}
+.top nav .ddp a[href="como-trabajamos.html"]::before{content:"🤝"}
+.top nav .ddp a[href*="#comisiones"]::before{content:"💰"}
+.top nav .ddp a[href*="#operaciones"]::before{content:"🔁"}
+.top nav .ddp a[href*="#capacitacion-usa"]::before{content:"🎓"}
+.top nav .ddp a[href="registro.html"]::before{content:"✍️"}
+@media (max-width:1340px){
+  .top nav.abierto .ddp{display:none;grid-template-columns:1fr;gap:8px;padding:12px;background:var(--gris-c)}
+  .top nav.abierto .dd.open .ddp{display:grid}
+  .top nav.abierto .ddt{margin:10px 4px 0;font-size:11px}
+  .top nav.abierto .ddt:first-child{margin-top:2px}
+  .top nav.abierto .ddp a{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:10px 12px;font-size:15px;font-weight:700;grid-template-columns:34px 1fr 14px}
+  .top nav.abierto .ddp a::after{content:"›";grid-column:3;grid-row:1;color:var(--naranja-t);font-size:20px;font-weight:700}
+  .top nav.abierto .ddp a:hover{background:var(--naranja-c);border-color:var(--naranja)}
+  .top nav.abierto .ddp a::before{grid-row:1}
+}
