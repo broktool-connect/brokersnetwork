@@ -124,3 +124,24 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
   .top nav.abierto>a{padding:10px 12px;font-size:15px}
 }
 @media (max-width:340px){.top nav.abierto .ddp{grid-template-columns:1fr}}
+
+/* Encabezado blanco (tira superior) */
+.top{background:#fff;border-bottom:1px solid var(--linea);box-shadow:0 1px 0 rgba(31,45,61,.04)}
+.marca,.marca b{color:var(--azul-o2)}
+.marca small{color:var(--gris-m)}
+.top nav a,.ddb{color:var(--azul-o2)}
+.top nav a:hover,.ddb:hover,.dd.open .ddb{color:var(--naranja-t)}
+.top nav a.nav-ops{color:var(--naranja-t)}
+.top nav a.login{border-color:var(--linea)}
+.top nav a.login:hover{border-color:var(--naranja)}
+.top nav a.cta,.cta-fuera{background:var(--naranja);color:#fff}
+.top nav a.cta:hover,.cta-fuera:hover{background:var(--naranja-t);color:#fff}
+.mmenu{background:var(--gris-c);color:var(--azul-o2)}
+@media (max-width:1340px){
+  .top nav.abierto{background:#fff;border-bottom:1px solid var(--linea);box-shadow:0 14px 30px rgba(31,45,61,.12)}
+  .top nav.abierto .dd{border-top-color:var(--linea)}
+  .top nav.abierto .ddp{background:var(--gris-c)}
+  .top nav.abierto .ddp a{color:var(--azul-o2)}
+  .top nav.abierto .ddp a:hover{background:var(--naranja-c);color:var(--naranja-t)}
+  .top nav.abierto .ddt{color:var(--naranja-t)}
+}
