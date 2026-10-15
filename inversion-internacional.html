@@ -226,6 +226,28 @@
 @media (max-width:760px){.yts{grid-template-columns:1fr}}
 .equipo-i .pi p.emp{margin:4px 0 0;min-height:2.8em;font-size:13.5px;line-height:1.4}
 .equipo-i .pi .lg{margin:8px auto 12px}
+
+/* tarjetas del equipo compactas, sin botón naranja */
+.equipo-i{gap:12px}
+.equipo-i .pi{padding:16px 12px 14px;gap:6px}
+.equipo-i .pi .foto{width:84px;height:84px}
+.equipo-i .pi h3{font-size:17px;margin-top:4px}
+.equipo-i .pi p.emp{min-height:0;margin:2px 0 0;font-size:12.5px}
+.equipo-i .pi p.esp{margin:4px 0 0;color:var(--naranja-t);font-weight:700;font-size:13.5px}
+.equipo-i .pi .lg{height:34px;margin:8px auto 0}
+/* textos dentro de paneles blancos */
+.sp .lista li{color:var(--gris)}
+.porque{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:6px 0 18px;align-items:start}
+.porque .lista{margin-top:10px}
+.dos-c.solo{grid-template-columns:1fr}
+.yts.uno{display:block;margin-top:0}
+.yts.uno .yt{width:100%}
+.sp>.yts.uno{max-width:520px;margin-top:18px}
+.yts.cuatro{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+.yts.cuatro .yt-t b{font-size:14.5px}
+@media (max-width:1000px){.yts.cuatro{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.porque{grid-template-columns:1fr}}
+@media (max-width:480px){.yts.cuatro{grid-template-columns:1fr}}
 </style>
 
 
@@ -300,21 +322,14 @@
       </div>
       <div class="equipo-i">
         <article class="pi"><img class="foto" src="img/intl/mari-del-rio.jpg" alt="Mari del Río" width="480" height="480" loading="lazy">
-          <div><h3>Mari del Río</h3><p class="emp">Prosperity Bridge International Advisors</p><img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><span class="tag-i">Especialista en Orlando, Florida</span></div></article>
+          <div><h3>Mari del Río</h3><p class="emp">Prosperity Bridge International Advisors</p><img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><p class="esp">Especialista en Orlando, Florida</p></div></article>
         <article class="pi"><img class="foto" src="img/intl/arturo-morales.jpg" alt="Arturo Morales" loading="lazy">
-          <div><h3>Arturo Morales</h3><p class="emp">Prosperity Bridge International Advisors</p><img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><span class="tag-i">Especialista en Miami, Florida</span></div>
+          <div><h3>Arturo Morales</h3><p class="emp">Prosperity Bridge International Advisors</p><img class="lg" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><p class="esp">Especialista en Miami, Florida</p></div>
           </article>
         <article class="pi"><img class="foto" src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" width="480" height="480" loading="lazy">
-          <div><h3>Paulina Arceo</h3><p class="emp">Paulina Arceo Global Real Estate</p><img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><span class="tag-i">Especialista en Houston, Texas</span></div></article>
+          <div><h3>Paulina Arceo</h3><p class="emp">Paulina Arceo Global Real Estate</p><img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><p class="esp">Especialista en Houston, Texas</p></div></article>
         <article class="pi"><img class="foto" src="img/intl/jimena-perez-gil.jpg" alt="Jimena Pérez Gil" loading="lazy">
-          <div><h3>Jimena Pérez Gil</h3><p class="emp">Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"><span class="tag-i">Especialista en créditos en EUA</span></div></article>
-      </div>
-      <div class="aprende">
-        <div class="ap-h"><p class="eyebrow">Antes de invertir</p><h3>Conoce cómo funciona en 2 videos</h3></div>
-        <div class="yts">
-        <button class="yt" type="button" data-yt="V3r6MfNdiFI" aria-label="Ver video: Proceso de inversión en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/V3r6MfNdiFI/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Proceso de inversión en EUA</b><small>Paso a paso para comprar desde México</small></span></button>
-        <button class="yt" type="button" data-yt="D7kRee9KcMk" aria-label="Ver video: Financiamiento para extranjeros en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/D7kRee9KcMk/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Financiamiento para extranjeros en EUA</b><small>Créditos Foreign National con 1st Capital</small></span></button>
-        </div>
+          <div><h3>Jimena Pérez Gil</h3><p class="emp">Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"><p class="esp">Especialista en créditos en EUA</p></div></article>
       </div>
     </div>
   </section>
@@ -342,17 +357,17 @@
           <div class="tx exp con-lg"><img src="img/intl/mari-del-rio.jpg" alt="Mari del Río · Orlando" loading="lazy">
             <div><p class="exl">Tu especialista</p><h3 class="zt">Mari del Río · Orlando</h3><p>De Prosperity Bridge International Advisors, especialista en la zona de Orlando. Te ayuda a encontrar propiedades para renta o patrimonio y te acompaña en la compra.</p>
             <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Orlando%2C%20Florida." target="_blank" rel="noopener">Quiero invertir en Orlando</a></div></div><div class="exlogo"><img class="lg2" src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"></div></div>
-          <h3 class="zt">¿Por qué invertir en Florida?</h3>
+          <div class="porque">
+            <div><h3 class="zt">¿Por qué invertir en Florida?</h3>
+              <ul class="lista"><li>Alta demanda de alquiler en ciudades como Orlando, Kissimmee, Miami y Tampa.</li><li>Potencial de valorización y crecimiento económico estable.</li><li>Legislación favorable para los propietarios.</li><li>Opciones para renta a corto o largo plazo.</li></ul></div>
+            <div><h3 class="zt">¿Por qué Orlando?</h3>
+              <ul class="lista"><li>Uno de los destinos turísticos más visitados del mundo, con parques temáticos que generan demanda todo el año.</li><li>Casas vacacionales cerca de Disney en Kissimmee y Davenport, para renta de corto plazo.</li><li>Townhomes y casas para renta de largo plazo con poca vacancia.</li><li>Variedad de precios para empezar a invertir en dólares.</li></ul></div>
+          </div>
       <div class="dos-c">
-        <ul class="lista">
-          <li>Alta demanda de alquiler en ciudades como Orlando, Kissimmee, Miami y Tampa.</li>
-          <li>Potencial de valorización y crecimiento económico estable.</li>
-          <li>Legislación favorable para los propietarios.</li>
-          <li>Opciones para renta a corto o largo plazo.</li>
-        </ul>
         <div class="caja-b"><h3>Ciudades con mayor rentabilidad</h3>
           <div class="ciudades"><span>Orlando</span><span>Kissimmee</span><span>Davenport</span><span>Tampa</span><span>St. Petersburg</span><span>Jacksonville</span><span>St. Augustine</span><span>Palm Beach</span><span>Fort Myers / Cape Coral</span><span>Fort Walton Beach</span><span>Ocala</span><span>Spring Hill</span></div>
           <p class="nota-l">También trabajamos en Texas, con especialidad en Houston.</p></div>
+        <div class="yts uno"><button class="yt" type="button" data-yt="V3r6MfNdiFI" aria-label="Ver video: Proceso de inversión en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/V3r6MfNdiFI/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Proceso de inversión en EUA</b><small>Ver la capacitación en video</small></span></button></div>
       </div>
         </div>
         <div class="sp" id="u-mia" role="tabpanel" hidden>
@@ -377,11 +392,21 @@
             <div><p class="exl">Tu especialista</p><h3 class="zt">Paulina Arceo · Houston</h3>
             <p>Paulina Arceo, de Paulina Arceo Global Real Estate, es nuestra especialista en la zona de Houston. Te ayuda a encontrar propiedades para renta o patrimonio y te acompaña en la compra.</p>
             <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Houston%2C%20Texas." target="_blank" rel="noopener">Quiero invertir en Houston</a></div></div><div class="exlogo"><img class="lg2" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"></div></div>
+          <div class="porque">
+            <div><h3 class="zt">¿Por qué Houston?</h3>
+              <ul class="lista"><li>Texas no cobra impuesto estatal sobre el ingreso personal.</li><li>Economía diversa: energía, salud, puerto y una gran base de empresas.</li><li>Cercanía con México, con vuelos directos desde varias ciudades.</li><li>Ciudad en crecimiento con demanda de vivienda para renta.</li></ul></div>
+            <div><div class="yts uno"><button class="yt" type="button" data-yt="V3r6MfNdiFI" aria-label="Ver video: Proceso de inversión en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/V3r6MfNdiFI/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Proceso de inversión en EUA</b><small>Ver la capacitación en video</small></span></button></div></div>
+          </div>
         </div>
         <div class="sp" id="u-fin" role="tabpanel" hidden>
           <div class="tx exp con-lg"><img src="img/intl/jimena-perez-gil.jpg" alt="Jimena Pérez Gil" loading="lazy">
             <div><p class="exl">Tu especialista</p><h3 class="zt">Jimena Pérez Gil · Créditos</h3><p>Chief of Operations de 1st Capital Lending Group (NMLS 1842005), especialista en créditos para extranjeros en Estados Unidos.</p>
             <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20un%20cr%C3%A9dito%20Foreign%20National%20para%20comprar%20en%20Estados%20Unidos." target="_blank" rel="noopener">Quiero un crédito en EUA</a></div></div><div class="exlogo"><img class="lg2 wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div></div>
+          <div class="porque">
+            <div><h3 class="zt">¿Por qué invertir con crédito?</h3>
+              <ul class="lista"><li>Compras una propiedad más grande o más de una con el mismo capital.</li><li>Conservas liquidez para otras inversiones o imprevistos.</li><li>La renta de la propiedad ayuda a cubrir el pago mensual.</li><li>Construyes patrimonio en dólares sin necesidad de ser residente ni tener historial de crédito en EUA.</li></ul></div>
+            <div><div class="yts uno"><button class="yt" type="button" data-yt="D7kRee9KcMk" aria-label="Ver video: Financiamiento para extranjeros en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/D7kRee9KcMk/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Financiamiento para extranjeros en EUA</b><small>Ver la capacitación en video</small></span></button></div></div>
+          </div>
           <h3 class="zt">Créditos Foreign National en Estados Unidos</h3>
           <p class="zp">Con 1st Capital Lending Group puedes financiar tu propiedad en EUA sin ser residente.</p>
       <div class="fn">
@@ -421,6 +446,20 @@
       </div>
 
       <div class="contacto"><a class="btn wa" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20fuera%20de%20M%C3%A9xico.%20Me%20gustar%C3%ADa%20hablar%20con%20su%20equipo%20internacional." target="_blank" rel="noopener">Hablar con el equipo internacional</a></div>
+    </div>
+  </section>
+
+  <section class="blk claro" id="capacitaciones" aria-labelledby="cap-t">
+    <div class="wrap">
+      <p class="eyebrow">Capacitaciones</p>
+      <h2 id="cap-t">Aprende antes de invertir</h2>
+      <p class="lead">Grabaciones de nuestras capacitaciones con Prosperity Bridge y 1st Capital Lending Group.</p>
+      <div class="yts cuatro">
+        <button class="yt" type="button" data-yt="V3r6MfNdiFI" aria-label="Ver video: Proceso de inversión en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/V3r6MfNdiFI/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Proceso de inversión en EUA</b><small>Paso a paso para comprar desde México</small></span></button>
+        <button class="yt" type="button" data-yt="D7kRee9KcMk" aria-label="Ver video: Financiamiento para extranjeros"><span class="th" style="background-image:url('https://i.ytimg.com/vi/D7kRee9KcMk/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Financiamiento para extranjeros</b><small>Créditos Foreign National en EUA</small></span></button>
+        <button class="yt" type="button" data-yt="b9vfuqcD2f8" aria-label="Ver video: Frida Kahlo Wynwood Residences"><span class="th" style="background-image:url('https://i.ytimg.com/vi/b9vfuqcD2f8/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Frida Kahlo Wynwood Residences</b><small>Proyecto en Wynwood, Miami</small></span></button>
+        <button class="yt" type="button" data-yt="3Y6KkaG1v2k" aria-label="Ver video: Vista Harbor Residences & Yacht Club"><span class="th" style="background-image:url('https://i.ytimg.com/vi/3Y6KkaG1v2k/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Vista Harbor Residences & Yacht Club</b><small>Proyecto en Miami, FL</small></span></button>
+      </div>
     </div>
   </section>
 </main>
