@@ -259,6 +259,17 @@
 .equipo-i .pi .lg{height:54px;max-width:190px;margin:10px auto 0}
 @media (max-width:1100px) and (min-width:641px){.equipo-i .pi .lg{height:44px;max-width:150px}}
 @media (max-width:560px){.equipo-i .pi .lg{height:40px;max-width:140px}}
+
+/* Equipo: estructura alineada */
+.eq-h{grid-template-columns:1fr auto}
+.eq-h .pb{height:84px}
+@media (max-width:760px){.eq-h{grid-template-columns:1fr}.eq-h .pb{display:none}}
+.equipo-i{align-items:stretch}
+.equipo-i .pi{display:flex;flex-direction:column;align-items:center}
+.equipo-i .pi>div{display:flex;flex-direction:column;align-items:center;flex:1;width:100%}
+.equipo-i .pi p.emp{min-height:2.8em}
+.equipo-i .pi .lg{margin-top:auto}
+.equipo-i .pi p.esp{margin-bottom:12px}
 </style>
 
 
