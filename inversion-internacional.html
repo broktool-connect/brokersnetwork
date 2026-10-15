@@ -210,6 +210,20 @@
 .wa-cta:hover{color:#fff}
 .seguro{margin-top:22px}
 @media (max-width:860px){.flujo.hz .ctas{align-items:stretch;text-align:center}}
+
+.aprende{margin-top:34px;padding-top:28px;border-top:1px solid var(--linea)}
+.ap-h h3{color:var(--azul);font-size:clamp(20px,2.4vw,26px);margin:0}
+.yts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.yt{display:block;text-align:left;border:1px solid var(--linea);background:#fff;border-radius:18px;padding:0;overflow:hidden;cursor:pointer;font:inherit;box-shadow:0 10px 26px rgba(31,45,61,.07)}
+.yt .th{display:grid;place-items:center;aspect-ratio:16/9;background-color:var(--azul);background-size:cover;background-position:center;position:relative}
+.yt .th::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,45,61,.05),rgba(31,45,61,.35))}
+.yt .th i{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-style:normal;font-size:22px;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.yt:hover .th i{background:var(--naranja-t)}
+.yt-t{display:block;padding:14px 16px}
+.yt-t b{display:block;color:var(--azul);font-size:16px}
+.yt-t small{color:var(--gris-m);font-size:13.5px}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+@media (max-width:760px){.yts{grid-template-columns:1fr}}
 </style>
 
 
@@ -292,6 +306,13 @@
           <div><h3>Paulina Arceo</h3><img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><span class="tag-i">Especialista en Houston, Texas</span></div></article>
         <article class="pi"><img class="foto" src="img/intl/jimena-perez-gil.jpg" alt="Jimena Pérez Gil" loading="lazy">
           <div><h3>Jimena Pérez Gil</h3><img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"><span class="tag-i">Especialista en créditos en EUA</span></div></article>
+      </div>
+      <div class="aprende">
+        <div class="ap-h"><p class="eyebrow">Antes de invertir</p><h3>Conoce cómo funciona en 2 videos</h3></div>
+        <div class="yts">
+        <button class="yt" type="button" data-yt="V3r6MfNdiFI" aria-label="Ver video: Proceso de inversión en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/V3r6MfNdiFI/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Proceso de inversión en EUA</b><small>Paso a paso para comprar desde México</small></span></button>
+        <button class="yt" type="button" data-yt="D7kRee9KcMk" aria-label="Ver video: Financiamiento para extranjeros en EUA"><span class="th" style="background-image:url('https://i.ytimg.com/vi/D7kRee9KcMk/hqdefault.jpg')"><i aria-hidden="true">▶</i></span><span class="yt-t"><b>Financiamiento para extranjeros en EUA</b><small>Créditos Foreign National con 1st Capital</small></span></button>
+        </div>
       </div>
     </div>
   </section>
@@ -380,7 +401,6 @@
       </details>
       <p class="nota-l">Información de referencia de 1st Capital Lending Group (NMLS 2583704). Todo crédito está sujeto a evaluación y aprobación.</p>
         </div>
-        <div class="vids"><a class="vid" href="https://youtu.be/V3r6MfNdiFI" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Proceso de inversión en EUA</b><span>Ver el video explicativo</span></div></a><a class="vid" href="https://youtu.be/D7kRee9KcMk" target="_blank" rel="noopener"><i aria-hidden="true">▶</i><div><b>Financiamiento para extranjeros en EUA</b><span>Ver la capacitación en video</span></div></a></div>
       </div>
 
       <div class="zpanel" id="z-can" role="tabpanel" aria-labelledby="t-can" hidden>
@@ -441,5 +461,12 @@
 })();
 </script>
 
+<script>
+document.querySelectorAll('.yt[data-yt]').forEach(function(b){b.addEventListener('click',function(){
+  if(b.querySelector('iframe'))return;var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
+  f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title=b.querySelector('b').textContent;
+  b.querySelector('.th').replaceWith(f);});});
+</script>
 </body>
 </html>
