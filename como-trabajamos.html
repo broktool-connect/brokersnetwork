@@ -7,7 +7,7 @@
 <meta name="description" content="Cómo trabajamos en Brokers Network: operaciones compartidas y modelo de comisiones para asesores.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/sitio.css?v=20261015b">
+<link rel="stylesheet" href="css/sitio.css?v=20261015c">
 </head>
 <body>
 <style>
@@ -149,6 +149,20 @@ div.doc span{flex:1}
 .modelo .mfoot{color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:2px solid var(--line);padding-top:16px}
 @media (prefers-reduced-motion:reduce){.modelo .bar div{transition:none}}
 @media (min-width:1001px){#capacitacion-usa .docs{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#capacitacion-usa .doc{padding:18px}}
+
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.rol{border:1px solid var(--linea);border-radius:18px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:8px}
+.rol.dest{border:2px solid var(--naranja);box-shadow:0 14px 30px rgba(221,86,53,.12)}
+.rol .rt{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--naranja-t)}
+.rol h3{color:var(--azul);font-size:20px}
+.rol .rd{margin:0;color:var(--gris-m);font-size:14.5px}
+.rol ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px;font-size:14px}
+.rol li{position:relative;padding-left:24px}
+.rol ul.si li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+.rol ul.no li{color:var(--gris-m)}
+.rol ul.no li::before{content:"✕";position:absolute;left:0;color:#B8401F;font-weight:800}
+.nota-ref{font-size:13px;color:var(--gris-m);margin:16px 0 0}
+@media (max-width:960px){.roles{grid-template-columns:1fr}}
 </style>
 
 
@@ -181,6 +195,7 @@ div.doc span{flex:1}
           <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
           <a href="como-trabajamos.html#comisiones">Modelo de comisiones<small>Tres niveles según tu experiencia</small></a>
           <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="como-trabajamos.html#referidos">Gana comisión refiriendo inversionistas<small>Comisión en dólares por clientes de EUA</small></a>
           <a href="como-trabajamos.html#capacitacion-usa">Capacitación: inversión en EUA<small>Grabaciones y presentaciones para asesores</small></a>
           <a href="registro.html">Quiero afiliarme<small>Únete a la red de asesores</small></a>
         </div>
@@ -365,6 +380,25 @@ div.doc span{flex:1}
     </div>
   </section>
 
+  <section class="blk claro" id="referidos" aria-labelledby="ref-t">
+    <div class="wrap">
+      <p class="eyebrow">Para asesores · Inversión internacional</p>
+      <h2 id="ref-t">Gana comisión en dólares refiriendo inversionistas</h2>
+      <p class="lead">Si tienes clientes que quieren invertir en Estados Unidos, Canadá, Panamá o España, refiérelos a nuestro equipo internacional y gana comisión por cada operación cerrada. Tú eliges cómo participar.</p>
+      <div class="roles">
+        <article class="rol"><span class="rt">Opción 1</span><h3>Socio referidor</h3><p class="rd">Conectas al inversionista y nuestro equipo se encarga del resto.</p>
+          <ul class="si"><li>Identificas y calificas al prospecto</li><li>Le presentas la oportunidad de inversión</li><li>Lo conectas con el equipo experto</li><li>Lo registras formalmente</li></ul>
+          <ul class="no"><li>No gestionas la operación en EUA</li><li>No negocias ni cierras la venta</li><li>No das asesoría legal ni fiscal</li></ul></article>
+        <article class="rol dest"><span class="rt">Opción 2 · Mayor comisión</span><h3>Socio activo</h3><p class="rd">Participas en todo el proceso y recibes un mayor porcentaje de la comisión.</p>
+          <ul class="si"><li>Das seguimiento comercial a tu cliente</li><li>Perfilas en detalle al inversionista</li><li>Integras su expediente</li><li>Lo acompañas y mantienes la comunicación</li></ul></article>
+        <article class="rol"><span class="rt">Te respalda</span><h3>Equipo líder y aliados</h3><p class="rd">Coordinación, CRM, capacitación y el equipo en EUA para búsqueda de propiedades, visitas, negociación, contratos y cierre legal.</p>
+          <ul class="si"><li>Ingresos en dólares (USD)</li><li>Portafolio de propiedades high-end</li><li>Capacitación en real estate global</li><li>Materiales de marketing y soporte continuo</li></ul></article>
+      </div>
+      <p class="nota-ref">Los porcentajes de comisión y el fee operativo internacional dependen del tipo de operación y del rol que elijas. Te compartimos el esquema completo al registrarte.</p>
+      <div class="hb" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn nar" href="https://api.whatsapp.com/send?phone=525520603432&text=Hola%2C%20soy%20asesor%20y%20quiero%20referir%20a%20un%20cliente%20inversionista.%20%C2%BFMe%20comparten%20el%20esquema%20de%20comisiones%3F" target="_blank" rel="noopener">Quiero referir a un cliente</a><a class="btn borg" href="https://form.typeform.com/to/QGe5v9cR" target="_blank" rel="noopener">Formulario de perfil para tu cliente</a></div>
+    </div>
+  </section>
+
   <section class="blk oscuro" id="capacitacion-usa" aria-labelledby="cu-t">
     <div class="wrap">
       <p class="eyebrow">Capacitación para asesores</p>
@@ -423,7 +457,7 @@ div.doc span{flex:1}
   </div>
   <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y <a style="color:#fff" href="aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> según la NOM-247 y EC0110.02.</div></div>
 </footer>
-<script src="js/menu.js?v=20261015b"></script>
+<script src="js/menu.js?v=20261015c"></script>
 <script src="js/resumen-usa.js?v=2"></script>
 
 <script>

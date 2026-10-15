@@ -192,3 +192,4 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
 .oscuro .mtag{background:#fff}
 .oscuro .modelo{border-radius:22px;overflow:hidden;padding:0 8px 8px}
 .oscuro .doc em a{color:inherit}
+.top nav .ddp a[href*="#referidos"]::before{content:"💵"}
