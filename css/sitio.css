@@ -157,7 +157,7 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
 .top nav .ddp a[href*="#credito"]::before{content:"💳"}
 .top nav .ddp a[href*="#renta"]::before{content:"🔑"}
 .top nav .ddp a[href*="#servicios"]::before{content:"✨"}
-.top nav .ddp a[href*="inversion-internacional"]::before{content:"🌎"}
+.top nav .ddp a[href*="inversion-internacional"]::before{content:"🇺🇸"}
 .top nav .ddp a[href="como-trabajamos.html"]::before{content:"🤝"}
 .top nav .ddp a[href*="#comisiones"]::before{content:"💰"}
 .top nav .ddp a[href*="#operaciones"]::before{content:"🔁"}
