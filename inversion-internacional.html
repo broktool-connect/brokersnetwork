@@ -153,6 +153,18 @@
 .equipo-i .pi p{margin:4px 0 10px}
 @media (max-width:1000px){.equipo-i{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.equipo-i .pi{grid-template-columns:1fr;padding:16px 10px}.equipo-i .pi .foto{width:80px;height:80px}.equipo-i .pi h3{font-size:16px}.equipo-i .pi p{font-size:12.5px}.tag-i{font-size:11px}}
+
+.tx.exp{grid-template-columns:96px 1fr;gap:18px;background:var(--gris-c);border-radius:16px;padding:16px;margin-bottom:18px}
+.tx.exp img,.tx.exp .mono{width:96px;height:96px;border-radius:50%;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--naranja)}
+.tx.exp .mono{display:grid;place-items:center;background:var(--azul);color:#fff;font-weight:800;font-size:26px}
+.tx.exp p{margin:0 0 10px;font-size:14.5px}
+.tx.exp>div{min-width:0}
+.de{min-width:0}
+.de .btn{white-space:normal;text-align:center}
+@media (max-width:420px){.de{padding:18px}}
+.tx.exp .btn{white-space:normal;text-align:center}
+.exl{font-size:11px!important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 2px!important}
+@media (max-width:560px){.tx.exp{grid-template-columns:72px 1fr}.tx.exp img,.tx.exp .mono{width:72px;height:72px;font-size:20px}}
 </style>
 
 
@@ -228,15 +240,15 @@
       </div>
       <div class="equipo-i">
         <article class="pi"><img class="foto" src="img/intl/mari-del-rio.jpg" alt="Mari del Río" width="480" height="480" loading="lazy">
-          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div></article>
+          <div><h3>Mari del Río</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Especialista en Orlando, Florida</span></div></article>
         <article class="pi"><span class="foto mono" aria-hidden="true">AM</span>
-          <div><h3>Arturo Morales</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Inversión internacional</span></div>
+          <div><h3>Arturo Morales</h3><p>Prosperity Bridge International Advisors</p><span class="tag-i">Especialista en Miami, Florida</span></div>
           </article>
         <article class="pi"><img class="foto" src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" width="480" height="480" loading="lazy">
           <div><h3>Paulina Arceo</h3><p>Paulina Arceo Global Real Estate</p><span class="tag-i">Especialista en Houston, Texas</span></div>
           <img class="lg" src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"></article>
         <article class="pi"><span class="foto mono" aria-hidden="true">JP</span>
-          <div><h3>Jimena Pérez Gil</h3><p>Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><span class="tag-i">Créditos Foreign National en EUA</span></div>
+          <div><h3>Jimena Pérez Gil</h3><p>Chief of Operations · 1st Capital Lending Group · NMLS 1842005</p><span class="tag-i">Especialista en créditos para extranjeros</span></div>
           <img class="lg wbg" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></article>
       </div>
       <div class="aliados-i"><span>Aliados</span><img src="img/intl/logo-prosperity-bridge.png" alt="Prosperity Bridge International Advisors" loading="lazy"><img src="img/intl/logo-paulina-arceo.png" alt="Paulina Arceo Global Real Estate" loading="lazy"><img class="bl" src="img/intl/logo-1st-capital.png" alt="1st Capital Lending Group" loading="lazy"></div>
@@ -263,6 +275,9 @@
           <button role="tab" aria-selected="false" aria-controls="u-fin"><i aria-hidden="true">🏦</i>Créditos para extranjeros</button>
         </div>
         <div class="sp" id="u-fl" role="tabpanel">
+          <div class="tx exp"><img src="img/intl/mari-del-rio.jpg" alt="Mari del Río · Orlando" loading="lazy">
+            <div><p class="exl">Tu especialista</p><h3 class="zt">Mari del Río · Orlando</h3><p>De Prosperity Bridge International Advisors, especialista en la zona de Orlando. Te ayuda a encontrar propiedades para renta o patrimonio y te acompaña en la compra.</p>
+            <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Orlando%2C%20Florida." target="_blank" rel="noopener">Quiero invertir en Orlando</a></div></div></div>
           <h3 class="zt">¿Por qué invertir en Florida?</h3>
       <div class="dos-c">
         <ul class="lista">
@@ -277,6 +292,9 @@
       </div>
         </div>
         <div class="sp" id="u-mia" role="tabpanel" hidden>
+          <div class="tx exp"><span class="mono" aria-hidden="true">AM</span>
+            <div><p class="exl">Tu especialista</p><h3 class="zt">Arturo Morales · Miami</h3><p>De Prosperity Bridge International Advisors, especialista en Miami. Te presenta los proyectos y te acompaña hasta el cierre.</p>
+            <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Miami%2C%20Florida." target="_blank" rel="noopener">Quiero invertir en Miami</a></div></div></div>
           <h3 class="zt">Proyectos destacados en Miami</h3>
       <div class="des">
         <article class="de"><span class="loc">Wynwood · Miami, FL</span><h3>Frida Kahlo Wynwood Residences</h3>
@@ -291,12 +309,15 @@
           <p class="nota-l">Precios y disponibilidad sujetos a cambio sin previo aviso.</p>
         </div>
         <div class="sp" id="u-tx" role="tabpanel" hidden>
-          <div class="tx"><img src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" loading="lazy">
-            <div><h3 class="zt">Texas, con especialidad en Houston</h3>
+          <div class="tx exp"><img src="img/intl/paulina-arceo.jpg" alt="Paulina Arceo" loading="lazy">
+            <div><p class="exl">Tu especialista</p><h3 class="zt">Paulina Arceo · Houston</h3>
             <p>Paulina Arceo, de Paulina Arceo Global Real Estate, es nuestra especialista en la zona de Houston. Te ayuda a encontrar propiedades para renta o patrimonio y te acompaña en la compra.</p>
             <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20invertir%20en%20bienes%20ra%C3%ADces%20en%20Houston%2C%20Texas." target="_blank" rel="noopener">Quiero invertir en Houston</a></div></div></div>
         </div>
         <div class="sp" id="u-fin" role="tabpanel" hidden>
+          <div class="tx exp"><span class="mono" aria-hidden="true">JP</span>
+            <div><p class="exl">Tu especialista</p><h3 class="zt">Jimena Pérez Gil · Créditos</h3><p>Chief of Operations de 1st Capital Lending Group (NMLS 1842005), especialista en créditos para extranjeros en Estados Unidos.</p>
+            <div class="hb"><a class="btn nar" href="https://wa.me/525520603432?text=Hola%2C%20me%20interesa%20un%20cr%C3%A9dito%20Foreign%20National%20para%20comprar%20en%20Estados%20Unidos." target="_blank" rel="noopener">Quiero un crédito en EUA</a></div></div></div>
           <h3 class="zt">Créditos Foreign National en Estados Unidos</h3>
           <p class="zp">Con 1st Capital Lending Group puedes financiar tu propiedad en EUA sin ser residente.</p>
       <div class="fn">
