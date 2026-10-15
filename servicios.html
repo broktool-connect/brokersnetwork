@@ -123,6 +123,20 @@
 @media (max-width:460px){.pi{grid-template-columns:72px 1fr}.pi .foto{width:72px;height:72px}.pi .lg{display:none}}
 @media (max-width:960px){.paises{grid-template-columns:1fr 1fr}.ipasos{grid-template-columns:1fr}}
 @media (max-width:420px){.paises{grid-template-columns:1fr}}
+
+/* Requisitos en pestañas desplegables */
+.rgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rg{padding:0;border-radius:14px;overflow:hidden}
+.rg summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer}
+.rg summary::-webkit-details-marker{display:none}
+.rg summary b{flex:1;color:var(--azul);font-size:15px}
+.rg summary .rn{font-size:12.5px;color:var(--gris-m);white-space:nowrap}
+.rg summary::after{content:"+";width:26px;height:26px;border-radius:50%;background:var(--naranja-c);color:var(--naranja-t);display:grid;place-items:center;font-weight:800;flex:none}
+.rg[open] summary::after{content:"−";background:var(--naranja);color:#fff}
+.rg[open] summary{border-bottom:1px solid var(--linea)}
+.rg ul{padding:14px 16px 16px}
+@media (max-width:760px){.rgrid{grid-template-columns:1fr}}
+@media (max-width:420px){.rg summary .rn{display:none}}
 </style>
 
 
@@ -306,7 +320,7 @@
   function ver(k){
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-r')===k?'true':'false')});
     panel.setAttribute('aria-labelledby','rt-'+k);
-    panel.innerHTML=REQ[k].g.map(function(g){return '<article class="rg"><h3><span aria-hidden="true">'+g[0]+'</span>'+esc(g[1])+'</h3><ul>'+g[2].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></article>'}).join('');
+    panel.innerHTML=REQ[k].g.map(function(g){return '<details class="rg"><summary><span class="ri" aria-hidden="true">'+g[0]+'</span><b>'+esc(g[1])+'</b><span class="rn">'+g[2].length+' documentos</span></summary><ul>'+g[2].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></details>'}).join('');
     wa.href='https://wa.me/?text='+encodeURIComponent(texto(k));
     wa.textContent='Compartir requisitos de '+REQ[k].t.toLowerCase()+' por WhatsApp';
     bn.href='https://wa.me/525520612236?text='+encodeURIComponent('Hola, quiero enviar mis documentos para una operación de '+REQ[k].t.toLowerCase()+' con Brokers Network.');
