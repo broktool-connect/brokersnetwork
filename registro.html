@@ -149,6 +149,16 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
   .planes,.g2{grid-template-columns:1fr}
   .marca small{display:none}
 }
+
+/* Beneficios desplegables */
+.bgrid{align-items:start;gap:10px}
+details.bc{padding:0}
+details.bc summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;gap:10px}
+details.bc summary::-webkit-details-marker{display:none}
+details.bc summary h3{margin:0;flex:1}
+details.bc summary::after{content:"+";width:28px;height:28px;border-radius:50%;background:var(--naranja-c,#FFF1EC);color:var(--naranja-t);display:grid;place-items:center;font-weight:800;flex:none}
+details.bc[open] summary::after{content:"−";background:var(--naranja);color:#fff}
+details.bc .bcb{padding:0 18px 18px}
 </style>
 </head>
 <body>
@@ -254,7 +264,7 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
     <p>Como afiliado tendrás derecho a:</p></div>
   </div>
   <div class="bgrid">
-    <article class="bc ancho"><h3><i aria-hidden="true">▤</i>Plataforma y soporte operativo</h3>
+    <details class="bc ancho"><summary><h3><i aria-hidden="true">▤</i>Plataforma y soporte operativo</h3></summary><div class="bcb">
       <p>Acceso a una carpeta compartida con más de 50 documentos y contratos de los que más se utilizan en materia inmobiliaria:</p>
       <ul class="dos">
         <li>Proceso inmobiliario de principio a fin</li>
@@ -267,22 +277,22 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
         <li>Carpeta con capacitaciones</li>
         <li>Carpeta con inventario de desarrollos y preventas</li>
         <li>Directorio de asesores afiliados para el apoyo mutuo en la promoción de inmuebles</li>
-      </ul></article>
-    <article class="bc"><h3><i aria-hidden="true">✆</i>Acceso a chats</h3>
-      <ul><li>Acceso a los chats oficiales de BN, así como a algunos chats eficientes de asesores inmobiliarios para la promoción de tus propiedades.</li></ul></article>
-    <article class="bc"><h3><i aria-hidden="true">◈</i>Imagen corporativa</h3>
+      </ul></div></details>
+    <details class="bc"><summary><h3><i aria-hidden="true">✆</i>Acceso a chats</h3></summary><div class="bcb">
+      <ul><li>Acceso a los chats oficiales de BN, así como a algunos chats eficientes de asesores inmobiliarios para la promoción de tus propiedades.</li></ul></div></details>
+    <details class="bc"><summary><h3><i aria-hidden="true">◈</i>Imagen corporativa</h3></summary><div class="bcb">
       <ul><li>Diseño digital en PDF de tarjetas de presentación de 9×5 cm, para imprimir en couché de 250 g, a color frente y vuelta, con tu nombre y el color que elijas.</li>
       <li>Diseño digital en PDF de 3 lonas promocionales (venta y renta) de 1×1 m, con doblez y ojillos, con tu número de teléfono.</li>
-      <li>Precios preferenciales si necesitas más material corporativo.</li></ul></article>
-    <article class="bc"><h3><i aria-hidden="true">$</i>Precios preferenciales</h3>
-      <ul><li>Para la promoción de tu inventario, BN pone a tu disposición precios preferenciales en los principales portales inmobiliarios.</li></ul></article>
-    <article class="bc"><h3><i aria-hidden="true">✎</i>Capacitación constante</h3>
+      <li>Precios preferenciales si necesitas más material corporativo.</li></ul></div></details>
+    <details class="bc"><summary><h3><i aria-hidden="true">$</i>Precios preferenciales</h3></summary><div class="bcb">
+      <ul><li>Para la promoción de tu inventario, BN pone a tu disposición precios preferenciales en los principales portales inmobiliarios.</li></ul></div></details>
+    <details class="bc"><summary><h3><i aria-hidden="true">✎</i>Capacitación constante</h3></summary><div class="bcb">
       <ul><li>Capacitaciones gratuitas por Zoom, que se convocan oportunamente en el “Chat de Capacitaciones”.</li>
       <li>Invitación a eventos y congresos del sector con costos preferenciales.</li>
-      <li>Invitación y asesoría para obtener tu Certificación Inmobiliaria.</li></ul></article>
-    <article class="bc todo"><h3><i aria-hidden="true">⇄</i>Network para apoyo de promoción</h3>
+      <li>Invitación y asesoría para obtener tu Certificación Inmobiliaria.</li></ul></div></details>
+    <details class="bc todo"><summary><h3><i aria-hidden="true">⇄</i>Network para apoyo de promoción</h3></summary><div class="bcb">
       <ul><li>El directorio de los asesores afiliados a BN, que podrán apoyarte en citas, recorridos, firmas, etc.</li>
-      <li>Una tabla de comisiones convenida con todos los afiliados, para que el trabajo en equipo sea transparente y quede claramente definido entre todos los participantes.</li></ul></article>
+      <li>Una tabla de comisiones convenida con todos los afiliados, para que el trabajo en equipo sea transparente y quede claramente definido entre todos los participantes.</li></ul></div></details>
   </div>
 
 
