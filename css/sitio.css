@@ -193,3 +193,7 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
 .oscuro .modelo{border-radius:22px;overflow:hidden;padding:0 8px 8px}
 .oscuro .doc em a{color:inherit}
 .top nav .ddp a[href*="#referidos"]::before{content:"🇺🇸"}
+/* Encabezado en celular: solo logo + Quiero afiliarme + Menú */
+@media (max-width:600px){.top .marca>span{display:none}.top .wrap{gap:8px;padding-inline:14px}}
+@media (min-width:601px) and (max-width:820px){.top .marca small{display:none}.top .marca b{font-size:14px}}
+@media (max-width:480px){.btn{white-space:normal;text-align:center;line-height:1.3}}
