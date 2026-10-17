@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin · Brokers Network</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/sitio.css?v=20261016b">
+</head>
+<body>
+<body>
+<style>
+body{background:var(--gris-c)}
+.adm{min-height:calc(100vh - 0px);display:grid;place-items:center;padding:30px 16px}
+.caja{background:#fff;border-radius:22px;padding:30px;width:100%;max-width:420px;box-shadow:0 20px 50px rgba(31,45,61,.12);border-top:5px solid var(--naranja)}
+.caja img{width:56px;height:56px}
+.caja h1{font-size:24px;color:var(--azul);margin:12px 0 4px}
+.caja p.s{color:var(--gris-m);margin:0 0 18px;font-size:14.5px}
+label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
+.campo{border:1.5px solid var(--linea);border-radius:12px;padding:12px;font:500 15px var(--f);width:100%}
+.err{color:#C62828;font-weight:600;font-size:13.5px;margin:0 0 10px}
+.panel{width:100%;max-width:820px}
+.panel h1{color:var(--azul);font-size:28px;margin:0 0 6px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.tile{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:18px;padding:18px;text-decoration:none;color:var(--gris);box-shadow:0 8px 20px rgba(31,45,61,.06)}
+.tile:hover{border-color:var(--naranja)}
+.tile i{font-style:normal;font-size:26px;width:48px;height:48px;border-radius:14px;background:var(--naranja-c);display:grid;place-items:center;flex:none}
+.tile b{display:block;color:var(--azul);font-size:16.5px}
+.tile span{font-size:13.5px;color:var(--gris-m)}
+.salir{margin-top:20px;background:none;border:0;color:var(--naranja-t);font:700 14px var(--f);cursor:pointer;padding:0}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}}
+</style>
+<main class="adm">
+  <form class="caja" id="login" autocomplete="on">
+    <img src="img/logo-brokers-network.png" alt="Brokers Network">
+    <h1>Administración</h1>
+    <p class="s">Acceso para el equipo de Brokers Network.</p>
+    <label>Usuario<input class="campo" id="u" autocomplete="username" required></label>
+    <label>Contraseña<input class="campo" id="p" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="e" hidden>Usuario o contraseña incorrectos.</p>
+    <button class="btn nar" type="submit" style="width:100%">Entrar</button>
+  </form>
+  <section class="panel" id="panel" hidden>
+    <p class="eyebrow">Administración</p>
+    <h1>Panel de Brokers Network</h1>
+    <p class="lead" style="margin-top:4px">Herramientas internas del equipo. Los trackers se abren con tu cuenta de Claude.</p>
+    <div class="tiles">
+      <a class="tile" href="https://claude.ai/artifact/19rgvVkdtZV8TnSoPUfzPB" target="_blank" rel="noopener"><i aria-hidden="true">📋</i><div><b>Tracker de afiliaciones</b><span>Interesados en afiliarse: estado, entrevista y notas.</span></div></a>
+      <a class="tile" href="https://claude.ai/artifact/SS5czeuLrVWcVn6LgbhqmM" target="_blank" rel="noopener"><i aria-hidden="true">🔁</i><div><b>Tracker de operaciones</b><span>Operaciones compartidas entre asesores.</span></div></a>
+      <a class="tile" href="registro.html" target="_blank" rel="noopener"><i aria-hidden="true">✍️</i><div><b>Formulario de afiliación</b><span>Lo que ven los interesados al afiliarse.</span></div></a>
+      <a class="tile" href="como-trabajamos.html#capacitacion-usa"><i aria-hidden="true">🎓</i><div><b>Materiales de capacitación EUA</b><span>Compartir o copiar el acceso a materiales.</span></div></a>
+    </div>
+    <button class="salir" id="salir" type="button">Cerrar sesión</button>
+  </section>
+</main>
+<script>
+(function(){
+  var H="39064e751935fb908b4a0bb61a6921af55bed2daa57df41bf41152c5c912a631",K='bn-admin-ok';
+  function ok(){document.getElementById('login').hidden=true;document.getElementById('panel').hidden=false;}
+  try{if(sessionStorage.getItem(K)===H)ok();}catch(e){}
+  async function sha(t){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+  document.getElementById('login').addEventListener('submit',async function(ev){ev.preventDefault();
+    var h=await sha('bn-admin|'+document.getElementById('u').value.trim()+'|'+document.getElementById('p').value);
+    if(h===H){try{sessionStorage.setItem(K,H)}catch(e){}ok();}else{document.getElementById('e').hidden=false;}});
+  document.getElementById('salir').addEventListener('click',function(){try{sessionStorage.removeItem(K)}catch(e){}location.reload();});
+})();
+</script>
+</body>
+</html>

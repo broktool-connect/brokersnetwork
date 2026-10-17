@@ -159,6 +159,20 @@ details.bc summary h3{margin:0;flex:1}
 details.bc summary::after{content:"+";width:28px;height:28px;border-radius:50%;background:var(--naranja-c,#FFF1EC);color:var(--naranja-t);display:grid;place-items:center;font-weight:800;flex:none}
 details.bc[open] summary::after{content:"−";background:var(--naranja);color:#fff}
 details.bc .bcb{padding:0 18px 18px}
+
+/* Políticas desplegables */
+.pol ol{gap:8px}
+.pol li{align-items:start}
+.pol li::before{margin-top:9px}
+.pol details{border:1px solid var(--linea);border-radius:12px;background:#fff}
+.pol summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 14px}
+.pol summary::-webkit-details-marker{display:none}
+.pol summary b{flex:1;color:var(--azul);font-size:15px}
+.pol .sev{font-size:11px;font-weight:700;color:#A3341A;background:#FDECE7;border-radius:99px;padding:3px 8px;white-space:nowrap}
+.pol summary::after{content:"+";width:24px;height:24px;border-radius:50%;background:#FFF1EC;color:var(--naranja-t);display:grid;place-items:center;font-weight:800;flex:none}
+.pol details[open] summary::after{content:"−";background:var(--naranja);color:#fff}
+.pol .pb{padding:0 14px 14px;font-size:14px;line-height:1.55}
+@media (max-width:420px){.pol .sev{display:none}}
 </style>
 </head>
 <body>
@@ -313,13 +327,13 @@ details.bc .bcb{padding:0 18px 18px}
     <h2>Políticas de la empresa</h2>
     <p>Al afiliarte te comprometes a cumplir estas políticas, que protegen a todos los asesores de la red.</p>
     <ol>
-      <li><div>El afiliado, una vez cobrada su comisión, se compromete a pagar a otros afiliados o a cualquier otro asesor inmobiliario su parte correspondiente el mismo día que reciba dicho pago, de manera completa y según la cantidad acordada.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una primera vez, o si no enmienda su error en un máximo de 5 días hábiles.</span></div></li>
-      <li><div>El afiliado se compromete, antes de iniciar formalmente una operación, a aclarar, informar y comunicar debida y claramente, por escrito, la comisión por compartir a otros afiliados o a cualquier otro asesor inmobiliario.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una segunda vez como máximo.</span></div></li>
-      <li><div>El afiliado se compromete a respetar los clientes y las propiedades opcionadas por otros afiliados o por cualquier otro asesor inmobiliario. Si de manera fortuita y sin intención ventajosa llegara a representar al mismo cliente o la misma propiedad, deberá informar de inmediato al afiliado que la tenga en su inventario, para competir de manera honesta y justa en cuanto a información y precio.<span class="resc">La afiliación se rescinde si el afiliado no cumple con esta política.</span></div></li>
-      <li><div>El afiliado se compromete a no fungir como contacto usando el inventario de las propiedades que manejan los demás afiliados de BN.</div></li>
-      <li><div>El afiliado que opcione proyectos, desarrollos o preventas entre afiliados se compromete a pagar a BN el 10% del total de la comisión pactada entre asesores. Dicha suma será pagadera el mismo día que reciba el pago de su comisión y se justifica por el contacto que BN le brinda con otros afiliados y asesores.<span class="resc">La afiliación se rescinde, sin opción a renovación, si el afiliado no cumple con esta política.</span></div></li>
-      <li><div>El afiliado se compromete a hacer un reporte mensual de las operaciones que haya cerrado satisfactoriamente, con el objeto de presentar a los clientes la efectividad global de la empresa por medio de sus afiliados.</div></li>
-    </ol>
+      <li><details><summary><b>Paga a otros asesores el mismo día</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado, una vez cobrada su comisión, se compromete a pagar a otros afiliados o a cualquier otro asesor inmobiliario su parte correspondiente el mismo día que reciba dicho pago, de manera completa y según la cantidad acordada.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una primera vez, o si no enmienda su error en un máximo de 5 días hábiles.</span></div></details></li>
+      <li><details><summary><b>Acuerda la comisión por escrito</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado se compromete, antes de iniciar formalmente una operación, a aclarar, informar y comunicar debida y claramente, por escrito, la comisión por compartir a otros afiliados o a cualquier otro asesor inmobiliario.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una segunda vez como máximo.</span></div></details></li>
+      <li><details><summary><b>Respeta clientes y propiedades de otros</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado se compromete a respetar los clientes y las propiedades opcionadas por otros afiliados o por cualquier otro asesor inmobiliario. Si de manera fortuita y sin intención ventajosa llegara a representar al mismo cliente o la misma propiedad, deberá informar de inmediato al afiliado que la tenga en su inventario, para competir de manera honesta y justa en cuanto a información y precio.<span class="resc">La afiliación se rescinde si el afiliado no cumple con esta política.</span></div></details></li>
+      <li><details><summary><b>No uses el inventario de otros como contacto</b></summary><div class="pb">El afiliado se compromete a no fungir como contacto usando el inventario de las propiedades que manejan los demás afiliados de BN.</div></details></li>
+      <li><details><summary><b>10% a BN en proyectos y preventas</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado que opcione proyectos, desarrollos o preventas entre afiliados se compromete a pagar a BN el 10% del total de la comisión pactada entre asesores. Dicha suma será pagadera el mismo día que reciba el pago de su comisión y se justifica por el contacto que BN le brinda con otros afiliados y asesores.<span class="resc">La afiliación se rescinde, sin opción a renovación, si el afiliado no cumple con esta política.</span></div></details></li>
+      <li><details><summary><b>Reporte mensual de operaciones cerradas</b></summary><div class="pb">El afiliado se compromete a hacer un reporte mensual de las operaciones que haya cerrado satisfactoriamente, con el objeto de presentar a los clientes la efectividad global de la empresa por medio de sus afiliados.</div></details></li>
+</ol>
   </div>
   <p class="reserva">* Nos reservamos el derecho de modificar o discontinuar los servicios (o cualquier parte del contenido) en cualquier momento sin previo aviso, con base en las alianzas obtenidas con nuestros socios de negocio.</p>
 </section>
