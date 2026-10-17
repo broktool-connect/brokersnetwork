@@ -319,14 +319,14 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
   var WA='525520603432';
   var f=document.getElementById('f');
 
-  function ir(n){
+  function ir(n,quieto){
     f.querySelectorAll('[data-paso]').forEach(function(s){s.hidden=(s.getAttribute('data-paso')!==String(n));});
     document.querySelectorAll('#pasos li').forEach(function(li){var k=+li.getAttribute('data-p');li.classList.toggle('on',k===n);li.classList.toggle('hecho',k<n);
       li.querySelector('i').textContent=k<n?'✓':k;});
     if(n===3)pintaResumen();
     if(n===4){var nom=document.getElementById('nombre').value.trim().split(' ')[0];
       document.getElementById('bien').textContent='¡Gracias'+(nom?', '+nom:'')+'!';}
-    document.querySelector('.caja').scrollIntoView({behavior:'smooth',block:'start'});
+    if(!quieto)document.querySelector('.caja').scrollIntoView({behavior:'smooth',block:'start'});
   }
   function valida1(){
     var ok=true,m=document.getElementById('m1'),err=[];
@@ -356,7 +356,8 @@ label .opc{font-weight:500;color:var(--gris-m);font-size:12.5px}
       '\n\nAcepto las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
     return 'https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent(t);}
   document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
-  ir(1);
+  ir(1,true);
+  if(!location.hash){window.scrollTo(0,0);}
 })();
 </script>
 </body>
