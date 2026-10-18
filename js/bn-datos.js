@@ -3,7 +3,7 @@
    Expone window.BN y un window.claude.use() compatible con los trackers. */
 (function(){
   // URL de la aplicación web de Apps Script (termina en /exec). Vacía = aún no conectada.
-  var API = '';
+  var API = 'https://script.google.com/macros/s/AKfycbxZgTlOlBulK-4Z0cWUcX-38NIsYUJSJ18IR7FKk6y595MRh_4bXSGoPYKRDMYjntrV4w/exec';
   var HOJA = 'https://docs.google.com/spreadsheets/d/1fkHmoiRiV0x1CRMUkWUh8JM4epFmZn41Gy8dpQticGE/edit';
   var K = 'bn-admin-cred';
 
