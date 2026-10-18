@@ -36,7 +36,7 @@ label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
   <form class="caja" id="login" autocomplete="on">
     <img src="img/logo-brokers-network.png" alt="Brokers Network">
     <h1>Administración</h1>
-    <p class="s">Acceso para el equipo de Brokers Network.</p>
+    <p class="s">Acceso para el equipo de Brokers Network. La sesión se cierra sola tras 20 minutos sin uso.</p>
     <label>Usuario<input class="campo" id="u" autocomplete="username" required></label>
     <label>Contraseña<input class="campo" id="p" type="password" autocomplete="current-password" required></label>
     <p class="err" id="e" hidden>Usuario o contraseña incorrectos.</p>
@@ -59,7 +59,7 @@ label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
     <button class="salir" id="salir" type="button">Cerrar sesión</button> · <a href="index.html" style="color:var(--gris-m);font-size:14px">Volver al sitio</a>
   </section>
 </main>
-<script src="js/bn-datos.js?v=20261018a"></script>
+<script src="js/bn-datos.js?v=20261018b"></script>
 <script>
 (function(){
   var H="39064e751935fb908b4a0bb61a6921af55bed2daa57df41bf41152c5c912a631",K='bn-admin-ok';
@@ -67,7 +67,7 @@ label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
   $('tHoja').href=BN.hoja;
   if(!BN.conectado()){document.querySelector('a[href="admin-afiliaciones.html"]').href='https://claude.ai/artifact/19rgvVkdtZV8TnSoPUfzPB';document.querySelector('a[href="admin-operaciones.html"]').href='https://claude.ai/artifact/SS5czeuLrVWcVn6LgbhqmM';}
   function ok(){$('login').hidden=true;$('panel').hidden=false;$('sinHoja').hidden=BN.conectado();}
-  try{if(BN.conectado()?BN.sesion():sessionStorage.getItem(K)===H)ok();}catch(e){}
+  try{sessionStorage.removeItem(K);if(BN.sesion())ok();}catch(e){}
   async function sha(t){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
   $('login').addEventListener('submit',async function(ev){ev.preventDefault();
     var u=$('u').value.trim(),p=$('p').value,b=$('login').querySelector('button[type=submit]');$('e').hidden=true;
@@ -75,7 +75,8 @@ label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
       BN.entrar(u,p).then(ok,function(err){$('e').textContent=err.message||'No se pudo entrar.';$('e').hidden=false;}).finally(function(){b.disabled=false;b.textContent='Entrar';});return;}
     var h=await sha('bn-admin|'+u+'|'+p);
     if(h===H){try{sessionStorage.setItem(K,H)}catch(e){}ok();}else{$('e').hidden=false;}});
-  $('salir').addEventListener('click',function(){try{sessionStorage.removeItem(K)}catch(e){}BN.salir();location.reload();});
+  $('salir').addEventListener('click',function(){BN.salir();location.reload();});
+  setInterval(function(){if(!$('panel').hidden&&!BN.sesion())location.reload();},30000);
 })();
 </script>
 </body>

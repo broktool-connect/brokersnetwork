@@ -7,7 +7,13 @@
   var HOJA = 'https://docs.google.com/spreadsheets/d/1fkHmoiRiV0x1CRMUkWUh8JM4epFmZn41Gy8dpQticGE/edit';
   var K = 'bn-admin-cred';
 
-  function cred(){ try{ return JSON.parse(sessionStorage.getItem(K) || 'null'); }catch(e){ return null; } }
+  // La sesión vence tras 20 minutos sin usar el panel; al cerrar la pestaña también se borra.
+  var VENCE = 20 * 60 * 1000;
+  function cred(){ try{ var c = JSON.parse(sessionStorage.getItem(K) || 'null'); if(!c || !c.t || Date.now() - c.t > VENCE){ sessionStorage.removeItem(K); return null; } return c; }catch(e){ return null; } }
+  function tocar(){ var c = cred(); if(c){ c.t = Date.now(); guardarCred(c); } }
+  ['click','keydown','touchstart'].forEach(function(ev){ document.addEventListener(ev, function(){ tocar(); }, { passive:true, capture:true }); });
+  // En los trackers, si la sesión venció, regresa al inicio de sesión.
+  setInterval(function(){ if(!cred() && window.BN && BN.alSalir) BN.alSalir(); }, 30000);
   function guardarCred(c){ try{ if(c) sessionStorage.setItem(K, JSON.stringify(c)); else sessionStorage.removeItem(K); }catch(e){} }
   function err(code, msg){ var e = new Error(msg || code); e.code = code; return e; }
 
@@ -22,6 +28,7 @@
           if(j.error === 'no_autorizado' && !c.prueba){ guardarCred(null); if(BN.alSalir) BN.alSalir(); }
           throw err(j.error, j.error === 'no_autorizado' ? 'Usuario o contraseña incorrectos.' : 'Error de la hoja de Google (' + j.error + ').');
         }
+        tocar();
         return j;
       });
   }
@@ -79,7 +86,7 @@
     conectado: function(){ return !!API; },
     hoja: HOJA,
     sesion: function(){ return !!cred(); },
-    entrar: function(u, p){ var c = { u:u, p:p, prueba:true }; return llamar({ op:'ping' }, c).then(function(){ guardarCred({ u:u, p:p }); }); },
+    entrar: function(u, p){ var c = { u:u, p:p, prueba:true }; return llamar({ op:'ping' }, c).then(function(){ guardarCred({ u:u, p:p, t:Date.now() }); }); },
     salir: function(){ guardarCred(null); },
     db: { collection: coleccion, doc: function(ruta){ var p = String(ruta).split('/'); return coleccion(p[0]).doc(p[1]); } },
     alSalir: null
