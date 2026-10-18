@@ -205,3 +205,4 @@ footer.pie .copyr .wrap{display:block;padding-block:0}
 .util a{color:#C9D4E0;text-decoration:none;font-weight:600;padding:5px 10px;border-radius:99px;white-space:nowrap}
 .util a:hover{color:#fff;background:rgba(255,255,255,.08)}
 @media (max-width:600px){.util .wrap{padding-inline:14px}}
+.top nav .ddp a[href="coacutedigo-de-eacutetica.html"]::before{content:"⚖️"}
