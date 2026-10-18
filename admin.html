@@ -46,27 +46,36 @@ label{display:grid;gap:6px;font-weight:700;font-size:13.5px;margin-bottom:12px}
   <section class="panel" id="panel" hidden>
     <p class="eyebrow">Administración</p>
     <h1>Panel de Brokers Network</h1>
-    <p class="lead" style="margin-top:4px">Herramientas internas del equipo. Los trackers se abren con tu cuenta de Claude.</p>
+    <p class="lead" style="margin-top:4px">Herramientas internas del equipo.</p>
+    <p class="err" id="sinHoja" hidden style="margin-top:14px;background:#FFF4E5;color:#7A3E0A;border-radius:12px;padding:10px 12px">Los trackers todavía no están conectados a la hoja de Google; mientras tanto se abren en Claude.</p>
     <div class="tiles">
-      <a class="tile" href="https://claude.ai/artifact/19rgvVkdtZV8TnSoPUfzPB" target="_blank" rel="noopener"><i aria-hidden="true">📋</i><div><b>Tracker de afiliaciones</b><span>Interesados en afiliarse: estado, entrevista y notas.</span></div></a>
-      <a class="tile" href="https://claude.ai/artifact/SS5czeuLrVWcVn6LgbhqmM" target="_blank" rel="noopener"><i aria-hidden="true">🔁</i><div><b>Tracker de operaciones</b><span>Operaciones compartidas entre asesores.</span></div></a>
-      <a class="tile" href="connect/" target="_blank" rel="noopener"><i aria-hidden="true">🧭</i><div><b>BN Connect</b><span>Portal de asesores (versión piloto).</span></div></a>
+      <a class="tile" href="admin-afiliaciones.html"><i aria-hidden="true">📋</i><div><b>Tracker de afiliaciones</b><span>Interesados en afiliarse: estado, entrevista y notas.</span></div></a>
+      <a class="tile" href="admin-operaciones.html"><i aria-hidden="true">🔁</i><div><b>Tracker de operaciones</b><span>Clientes, visitas, ofertas y contratos.</span></div></a>
+      <a class="tile" href="connect/"><i aria-hidden="true">🧭</i><div><b>BN Connect</b><span>Portal de asesores (versión piloto).</span></div></a>
       <a class="tile" href="registro.html" target="_blank" rel="noopener"><i aria-hidden="true">✍️</i><div><b>Formulario de afiliación</b><span>Lo que ven los interesados al afiliarse.</span></div></a>
+      <a class="tile" id="tHoja" href="#" target="_blank" rel="noopener"><i aria-hidden="true">📊</i><div><b>Hoja de Google</b><span>Todos los registros de los trackers, como respaldo.</span></div></a>
       <a class="tile" href="como-trabajamos.html#capacitacion-usa"><i aria-hidden="true">🎓</i><div><b>Materiales de capacitación EUA</b><span>Compartir o copiar el acceso a materiales.</span></div></a>
     </div>
     <button class="salir" id="salir" type="button">Cerrar sesión</button> · <a href="index.html" style="color:var(--gris-m);font-size:14px">Volver al sitio</a>
   </section>
 </main>
+<script src="js/bn-datos.js?v=20261017d"></script>
 <script>
 (function(){
   var H="39064e751935fb908b4a0bb61a6921af55bed2daa57df41bf41152c5c912a631",K='bn-admin-ok';
-  function ok(){document.getElementById('login').hidden=true;document.getElementById('panel').hidden=false;}
-  try{if(sessionStorage.getItem(K)===H)ok();}catch(e){}
+  var $=function(id){return document.getElementById(id)};
+  $('tHoja').href=BN.hoja;
+  if(!BN.conectado()){document.querySelector('a[href="admin-afiliaciones.html"]').href='https://claude.ai/artifact/19rgvVkdtZV8TnSoPUfzPB';document.querySelector('a[href="admin-operaciones.html"]').href='https://claude.ai/artifact/SS5czeuLrVWcVn6LgbhqmM';}
+  function ok(){$('login').hidden=true;$('panel').hidden=false;$('sinHoja').hidden=BN.conectado();}
+  try{if(BN.conectado()?BN.sesion():sessionStorage.getItem(K)===H)ok();}catch(e){}
   async function sha(t){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
-  document.getElementById('login').addEventListener('submit',async function(ev){ev.preventDefault();
-    var h=await sha('bn-admin|'+document.getElementById('u').value.trim()+'|'+document.getElementById('p').value);
-    if(h===H){try{sessionStorage.setItem(K,H)}catch(e){}ok();}else{document.getElementById('e').hidden=false;}});
-  document.getElementById('salir').addEventListener('click',function(){try{sessionStorage.removeItem(K)}catch(e){}location.reload();});
+  $('login').addEventListener('submit',async function(ev){ev.preventDefault();
+    var u=$('u').value.trim(),p=$('p').value,b=$('login').querySelector('button[type=submit]');$('e').hidden=true;
+    if(BN.conectado()){b.disabled=true;b.textContent='Entrando…';
+      BN.entrar(u,p).then(ok,function(err){$('e').textContent=err.message||'No se pudo entrar.';$('e').hidden=false;}).finally(function(){b.disabled=false;b.textContent='Entrar';});return;}
+    var h=await sha('bn-admin|'+u+'|'+p);
+    if(h===H){try{sessionStorage.setItem(K,H)}catch(e){}ok();}else{$('e').hidden=false;}});
+  $('salir').addEventListener('click',function(){try{sessionStorage.removeItem(K)}catch(e){}BN.salir();location.reload();});
 })();
 </script>
 </body>

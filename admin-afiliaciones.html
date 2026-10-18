@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tracker de afiliaciones · Admin BN</title>
+<link rel="icon" href="img/logo-brokers-network.png">
+<script src="js/bn-datos.js?v=20261017d"></script>
+<script>if(!BN.sesion())location.replace('admin.html');BN.alSalir=function(){location.replace('admin.html')};</script>
+<style>:root{box-sizing:border-box}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+.adm-bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#1F2D3D;color:#C9D4E0;padding:8px 14px;font:600 13.5px "Montserrat",system-ui,-apple-system,sans-serif;border-bottom:3px solid #DD5635}
+.adm-bar a,.adm-bar button{color:#fff;text-decoration:none;background:rgba(255,255,255,.08);border:0;border-radius:99px;padding:7px 12px;font:inherit;cursor:pointer}
+.adm-bar a:hover,.adm-bar button:hover{background:rgba(255,255,255,.18)}
+.adm-bar .sp{margin-left:auto}
+.adm-bar .ok{background:none;color:#9FB0C2;font-weight:500;padding:0 4px}
+</style><nav class="adm-bar" aria-label="Administración"><a href="admin.html">← Panel admin</a><a href="index.html">Sitio</a><span class="ok" id="bnEstado"></span><button class="sp" type="button" id="bnSalir">Cerrar sesión</button></nav>
+<script>
+document.getElementById('bnSalir').onclick=function(){BN.salir();location.replace('admin.html')};
+</script>
+<title>Tracker de afiliaciones</title>
+<style>
+:root{--naranja:#DD5635;--naranja-t:#B8401F;--naranja-c:#FFF1EC;--azul:#30445A;--azul-o2:#1F2D3D;--azul-c:#E7EDF3;--gris:#3B3B3B;--gris-m:#666;--gris-c:#F4F4F4;--linea:#E3E3E3;--ok:#1E8A4C;--f:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--gris:#E6ECF2;--gris-m:#A9B6C4;--gris-c:#18222D;--linea:#2C3A49;--azul:#C9D8EA;--azul-c:#22303F;--naranja-c:#3A2219;--naranja-t:#FF9C7E}:root:not([data-theme="light"]) body{background:#111A23}:root:not([data-theme="light"]) .card,:root:not([data-theme="light"]) .panel,:root:not([data-theme="light"]) .campo{background:#18222D}}
+:root[data-theme="dark"]{--gris:#E6ECF2;--gris-m:#A9B6C4;--gris-c:#18222D;--linea:#2C3A49;--azul:#C9D8EA;--azul-c:#22303F;--naranja-c:#3A2219;--naranja-t:#FF9C7E}
+:root[data-theme="dark"] body{background:#111A23}
+*{box-sizing:border-box}
+body{margin:0;background:#F4F5F7;color:var(--gris);font-family:var(--f);font-size:15px;line-height:1.5}
+.top{background:#1F2D3D;color:#fff;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:4px solid var(--naranja)}
+.top h1{margin:0;font-size:20px}
+.top small{color:#C9D4E0;display:block;font-size:12.5px}
+.top .sp{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+.btn{border:0;border-radius:99px;padding:10px 16px;font:700 14px var(--f);cursor:pointer}
+.btn.nar{background:var(--naranja);color:#fff}
+.btn.lin{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}
+.btn.sec{background:var(--azul-c);color:var(--azul)}
+.btn.del{background:transparent;color:#C62828;padding:6px 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.stat b{display:block;font-size:24px;color:var(--azul)}
+.stat span{font-size:12.5px;color:var(--gris-m)}
+.stat[aria-pressed="true"]{outline:2px solid var(--naranja)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.campo{border:1.5px solid var(--linea);border-radius:10px;padding:10px 12px;font:500 14px var(--f);color:var(--gris);background:#fff;width:100%}
+.bar .campo{width:auto;flex:1;min-width:200px}
+.list{display:grid;gap:10px}
+.card{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:12px;align-items:center}
+.card h3{margin:0;font-size:16px;color:var(--azul)}
+.card .m{font-size:13px;color:var(--gris-m)}
+.card a{color:var(--naranja-t);font-weight:700;text-decoration:none}
+.est{border-radius:99px;padding:6px 10px;font:700 12.5px var(--f);border:0}
+.notas{grid-column:1/-1;font-size:13.5px;color:var(--gris);background:var(--gris-c);border-radius:10px;padding:8px 10px;white-space:pre-wrap}
+.vacio{text-align:center;color:var(--gris-m);padding:40px 10px;background:#fff;border:1px dashed var(--linea);border-radius:16px}
+.panel{position:fixed;inset:0;background:rgba(15,22,30,.55);display:none;align-items:flex-start;justify-content:center;padding:20px;overflow:auto;z-index:20}
+.panel.on{display:flex}
+.box{background:#fff;color:var(--gris);border-radius:20px;padding:22px;max-width:640px;width:100%}
+:root[data-theme="dark"] .box{background:#18222D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .box{background:#18222D}}
+.box h2{margin:0 0 12px;color:var(--azul);font-size:20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{display:grid;gap:4px;font-weight:700;font-size:12.5px;margin-bottom:10px}
+textarea.campo{min-height:80px;resize:vertical}
+.acc{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:6px}
+.aviso{background:var(--naranja-c);color:var(--naranja-t);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:14px;display:none}
+.pegar{background:var(--azul-c);border-radius:12px;padding:12px;margin-bottom:12px}
+.pegar p{margin:0 0 6px;font-size:13px;color:var(--azul);font-weight:700}
+@media (max-width:760px){.card{grid-template-columns:1fr 1fr}.card .acts{grid-column:1/-1;justify-self:start}.g2{grid-template-columns:1fr}}
+</style>
+
+<header class="top">
+  <div><h1>Tracker de afiliaciones</h1><small>Brokers Network · interesados en afiliarse</small></div>
+  <div class="sp"><button class="btn nar" id="nuevo" type="button">+ Agregar interesado</button><button class="btn lin" id="csv" type="button">Descargar CSV</button></div>
+</header>
+
+<main class="wrap">
+  <p class="aviso" id="aviso"></p>
+  <div class="stats" id="stats"></div>
+  <div class="bar"><input class="campo" id="q" type="search" placeholder="Buscar por nombre, celular, ciudad…" aria-label="Buscar"></div>
+  <div class="list" id="list"><p class="vacio">Cargando…</p></div>
+</main>
+
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pt">
+  <form class="box" id="form">
+    <h2 id="pt">Interesado</h2>
+    <div class="pegar" id="pegarBox">
+      <p>¿Llegó por WhatsApp desde el sitio? Pega aquí el mensaje y se llenan los datos.</p>
+      <textarea class="campo" id="pegar" placeholder="Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas: …"></textarea>
+    </div>
+    <div class="g2">
+      <label>Nombre<input class="campo" name="nombre" required></label>
+      <label>Celular<input class="campo" name="cel"></label>
+      <label>Correo<input class="campo" name="correo" type="email"></label>
+      <label>Ciudad<input class="campo" name="ciudad"></label>
+      <label>Perfil<input class="campo" name="perfil"></label>
+      <label>Experiencia<input class="campo" name="experiencia"></label>
+      <label>Nos conoció por<input class="campo" name="fuente"></label>
+      <label>Estado<select class="campo" name="estado" id="fEstado"></select></label>
+      <label>Fecha de entrevista<input class="campo" name="entrevista" type="date"></label>
+      <label>Inmobiliaria<input class="campo" name="inmobiliaria"></label>
+    </div>
+    <label>Notas<textarea class="campo" name="notas"></textarea></label>
+    <div class="acc"><button class="btn sec" type="button" id="cancelar">Cancelar</button><button class="btn nar" type="submit">Guardar</button></div>
+  </form>
+</div>
+
+<script>
+(function(){
+  function use(n){return window.claude&&window.claude.use?window.claude.use(n):Promise.resolve(null)}
+  var ESTADOS=[["nuevo","Nuevo","#E7EDF3","#30445A"],["contactado","Contactado","#FFF4E5","#8A4B00"],["entrevista","Entrevista agendada","#EAF0FD","#2A50A8"],["documentos","Documentos","#F3E8FF","#6B2FA0"],["convenio","Convenio / pago","#FFF1EC","#B8401F"],["afiliado","Afiliado","#E8F6EE","#1F6E49"],["descartado","Descartado","#F1F1F1","#777"]];
+  var EST={};ESTADOS.forEach(function(e){EST[e[0]]=e});
+  var rows=[],filtro=null,db=null,col=null,editId=null;
+  var $=function(id){return document.getElementById(id)};
+  var form=$('form'),panel=$('panel');
+  ESTADOS.forEach(function(e){var o=document.createElement('option');o.value=e[0];o.textContent=e[1];$('fEstado').appendChild(o)});
+  function aviso(t){var a=$('aviso');a.textContent=t||'';a.style.display=t?'block':'none'}
+  function el(tag,attrs,text){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
+  function render(){
+    var st=$('stats');st.innerHTML='';
+    var tot=el('button',{class:'stat',type:'button','aria-pressed':String(filtro===null)});tot.appendChild(el('b',{},rows.length));tot.appendChild(el('span',{},'Todos'));tot.onclick=function(){filtro=null;render()};st.appendChild(tot);
+    ESTADOS.forEach(function(e){var n=rows.filter(function(r){return (r.estado||'nuevo')===e[0]}).length;var b=el('button',{class:'stat',type:'button','aria-pressed':String(filtro===e[0])});var bb=el('b',{},n);bb.style.color=e[3];b.appendChild(bb);b.appendChild(el('span',{},e[1]));b.onclick=function(){filtro=filtro===e[0]?null:e[0];render()};st.appendChild(b)});
+    var q=$('q').value.trim().toLowerCase();
+    var vis=rows.filter(function(r){return (!filtro||(r.estado||'nuevo')===filtro)&&(!q||[r.nombre,r.cel,r.ciudad,r.correo,r.fuente].join(' ').toLowerCase().indexOf(q)>=0)});
+    var L=$('list');L.innerHTML='';
+    if(!vis.length){L.appendChild(el('p',{class:'vacio'},rows.length?'Ningún interesado con ese filtro.':'Aún no hay interesados. Agrega el primero con “+ Agregar interesado” o pega el mensaje de WhatsApp que llega desde el sitio.'));return}
+    vis.forEach(function(r){
+      var c=el('article',{class:'card'});
+      var a=el('div');a.appendChild(el('h3',{},r.nombre||'(sin nombre)'));a.appendChild(el('div',{class:'m'},[r.ciudad,r.perfil].filter(Boolean).join(' · ')||'—'));c.appendChild(a);
+      var b=el('div',{class:'m'});
+      if(r.cel){var w=el('a',{href:'https://api.whatsapp.com/send?phone=52'+String(r.cel).replace(/\D/g,'').slice(-10),target:'_blank',rel:'noopener'},'WhatsApp '+r.cel);b.appendChild(w);b.appendChild(el('br'))}
+      if(r.correo)b.appendChild(document.createTextNode(r.correo));c.appendChild(b);
+      var s=el('select',{class:'est','aria-label':'Estado de '+(r.nombre||'')});ESTADOS.forEach(function(e){var o=el('option',{value:e[0]},e[1]);if((r.estado||'nuevo')===e[0])o.selected=true;s.appendChild(o)});
+      var e=EST[r.estado||'nuevo'];s.style.background=e[2];s.style.color=e[3];
+      s.onchange=function(){guardar(r.id,{estado:s.value})};
+      var sw=el('div');sw.appendChild(s);if(r.entrevista)sw.appendChild(el('div',{class:'m'},'Entrevista: '+r.entrevista));c.appendChild(sw);
+      var acts=el('div',{class:'acts'});var ed=el('button',{class:'btn sec',type:'button'},'Editar');ed.onclick=function(){abrir(r)};var dl=el('button',{class:'btn del',type:'button'},'Eliminar');dl.onclick=function(){if(confirm('¿Eliminar a '+(r.nombre||'este interesado')+'?'))col.doc(r.id).delete().catch(function(){aviso('No se pudo eliminar.')})};acts.appendChild(ed);acts.appendChild(dl);c.appendChild(acts);
+      if(r.notas)c.appendChild(el('div',{class:'notas'},r.notas));
+      L.appendChild(c);
+    });
+  }
+  function abrir(r){editId=r?r.id:null;form.reset();$('pegarBox').style.display=r?'none':'block';$('pt').textContent=r?'Editar interesado':'Nuevo interesado';
+    ['nombre','cel','correo','ciudad','perfil','experiencia','fuente','estado','entrevista','inmobiliaria','notas'].forEach(function(k){if(form[k])form[k].value=r&&r[k]!=null?r[k]:(k==='estado'?'nuevo':'')});
+    panel.classList.add('on');form.nombre.focus()}
+  function cerrar(){panel.classList.remove('on')}
+  $('nuevo').onclick=function(){if(!col){aviso('Sin conexión con la hoja de Google. Recarga la página.');return}abrir(null)};
+  $('cancelar').onclick=cerrar;panel.onclick=function(e){if(e.target===panel)cerrar()};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrar()});
+  $('q').oninput=render;
+  $('pegar').oninput=function(){var t=this.value,map={'Nombre':'nombre','Correo':'correo','Celular':'cel','Ciudad':'ciudad','Inmobiliaria':'inmobiliaria','Perfil':'perfil','Experiencia':'experiencia','Nos conoció por':'fuente'};
+    t.split(/\n/).forEach(function(l){var m=l.match(/^\s*[•\-*]?\s*([^:]+):\s*(.+)$/);if(m&&map[m[1].trim()])form[map[m[1].trim()]].value=m[2].trim()});
+    var i=t.match(/Le interesa:\s*(.+)/);if(i&&!form.notas.value)form.notas.value='Le interesa: '+i[1].trim()};
+  function guardar(id,data){if(!col)return Promise.reject();return col.doc(id).update(data).catch(function(){aviso('No se pudo guardar el cambio.')})}
+  form.onsubmit=function(e){e.preventDefault();var d={};['nombre','cel','correo','ciudad','perfil','experiencia','fuente','estado','entrevista','inmobiliaria','notas'].forEach(function(k){d[k]=(form[k].value||'').trim()});
+    if(!d.nombre){form.nombre.focus();return}
+    var p=editId?col.doc(editId).update(d):col.doc().set(Object.assign(d,{creado:new Date().toISOString()}));
+    p.then(function(){cerrar();aviso('')},function(err){aviso(err&&err.code==='quota_exceeded'?'Se llenó el espacio del tracker; elimina registros viejos.':'No se pudo guardar. Revisa tu conexión e intenta de nuevo.')})};
+  $('csv').onclick=function(){var cols=['nombre','cel','correo','ciudad','perfil','experiencia','fuente','estado','entrevista','inmobiliaria','notas','creado'];
+    var csv=[cols.join(',')].concat(rows.map(function(r){return cols.map(function(k){var v=k==='estado'?(EST[r.estado||'nuevo']||[0,r.estado])[1]:(r[k]||'');return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')})).join('\n');
+    var blob=new Blob(['﻿'+csv],{type:'text/csv'});use('downloads').then(function(dl){if(dl)return dl.save({filename:'afiliaciones-bn.csv',data:blob});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='afiliaciones-bn.csv';a.click()}).catch(function(){})};
+  use('db').then(function(d){
+    if(!d){$('list').innerHTML='';$('list').appendChild(el('p',{class:'vacio'},'Inicia sesión en el panel admin para ver el tracker.'));return}
+    db=d;col=db.collection('prospectos');
+    col.orderBy('creado','desc').onSnapshot(function(s){rows=s.docs.map(function(x){var o=Object.assign({},x.data());o.id=x.id;return o});render()},function(){aviso('Se perdió la conexión con el tracker. Recarga la página.')});
+  });
+})();
+</script>
+</body>
+</html>
