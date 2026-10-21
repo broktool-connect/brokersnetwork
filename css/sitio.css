@@ -219,3 +219,24 @@ footer.pie .fbtn.wa{background:var(--ok);color:#fff}
 footer.pie .fbtn.wa:hover{background:#17703D;color:#fff}
 footer.pie .fbtn svg{width:18px;height:18px}
 @media (max-width:600px){footer.pie .fcb{width:100%}footer.pie .fbtn{flex:1 1 100%;justify-content:center;white-space:normal}}
+/* Menú Quiénes somos: grupos en columnas (escritorio) y mosaico compacto (celular) */
+.top nav .ddp a[href*="#propietarios"]::before{content:"🏠"}
+@media (min-width:1181px){
+  .top nav .dd.mdd{position:static}
+  .top nav .ddp.mega{left:50%;transform:translateX(-50%);top:100%;width:min(1040px,calc(100vw - 32px));padding:18px;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 18px}
+  .top nav .dd.mdd.open .ddp.mega{display:grid}
+  .top nav .ddp.mega .g{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .top nav .ddp.mega .g+.g{border-left:1px solid var(--linea);padding-left:14px}
+}
+@media (hover:hover) and (min-width:1181px){.top nav .dd.mdd:hover .ddp.mega{display:grid}}
+@media (max-width:1180px){
+  .top nav.abierto .ddp.mega{gap:6px}
+  .top nav.abierto .ddp.mega .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .top nav.abierto .ddp.mega .g .ddt{grid-column:1/-1;margin:8px 4px 0}
+  .top nav.abierto .ddp.mega .g:first-child .ddt{margin-top:2px}
+  .top nav.abierto .ddp.mega a{grid-template-columns:1fr;row-gap:6px;padding:12px;font-size:14px;line-height:1.25;align-content:start}
+  .top nav.abierto .ddp.mega a::before{grid-row:auto;width:30px;height:30px;font-size:15px}
+  .top nav.abierto .ddp.mega a::after{display:none}
+  .top nav.abierto .ddp.mega a small{display:none}
+}
+@media (max-width:340px){.top nav.abierto .ddp.mega .g{grid-template-columns:1fr}}
