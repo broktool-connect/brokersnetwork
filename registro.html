@@ -216,6 +216,11 @@ details.bc .bcb{padding:0 18px 18px}
 .plan .elegir{margin-top:auto;width:100%}
 .addons{border:1px dashed var(--linea);border-radius:12px;padding:12px 14px;margin:0 0 14px}
 .addons p{margin:8px 0 0;font-size:13.5px;color:var(--gris-m)}
+.pasos li{display:block}
+.pasos .ir{all:unset;box-sizing:border-box;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;width:100%;cursor:pointer;border-radius:10px;padding:2px}
+.pasos .ir:hover span{text-decoration:underline}
+.pasos .ir:focus-visible{outline:2px solid #FFB59E;outline-offset:2px}
+@media (max-width:860px){.lado .pasos .ir{grid-template-columns:30px;gap:0}}
 </style>
 </head>
 <body>
@@ -228,14 +233,14 @@ details.bc .bcb{padding:0 18px 18px}
   <aside class="lado" aria-label="Tu avance">
     <p class="eb">Afiliación</p>
     <h1>Únete a nuestra red de asesores independientes</h1>
-    <p>Te acompañamos paso a paso: tus datos, el costo de la membresía, lo que incluye, los requisitos y nuestras políticas. Al final nos envías tu solicitud por WhatsApp.</p>
+    <p>Te acompañamos paso a paso: tus datos, el costo de la membresía, lo que incluye, los requisitos y nuestras políticas. Puedes saltar entre secciones cuando quieras; al final nos envías tu solicitud por WhatsApp.</p>
     <ol class="pasos" id="pasos">
-      <li data-p="1"><i>1</i><span>Tus datos</span></li>
-      <li data-p="2"><i>2</i><span>Costo de membresía</span></li>
-      <li data-p="3"><i>3</i><span>Qué incluye</span></li>
-      <li data-p="4"><i>4</i><span>Requisitos</span></li>
-      <li data-p="5"><i>5</i><span>Políticas y código de ética</span></li>
-      <li data-p="6"><i>6</i><span>Enviar</span></li>
+      <li data-p="1"><button type="button" class="ir" data-ir="1" aria-label="Ir al paso 1: Tus datos"><i>1</i><span>Tus datos</span></button></li>
+      <li data-p="2"><button type="button" class="ir" data-ir="2" aria-label="Ir al paso 2: Costo de membresía"><i>2</i><span>Costo de membresía</span></button></li>
+      <li data-p="3"><button type="button" class="ir" data-ir="3" aria-label="Ir al paso 3: Qué incluye"><i>3</i><span>Qué incluye</span></button></li>
+      <li data-p="4"><button type="button" class="ir" data-ir="4" aria-label="Ir al paso 4: Requisitos"><i>4</i><span>Requisitos</span></button></li>
+      <li data-p="5"><button type="button" class="ir" data-ir="5" aria-label="Ir al paso 5: Políticas y código de ética"><i>5</i><span>Políticas y código de ética</span></button></li>
+      <li data-p="6"><button type="button" class="ir" data-ir="6" aria-label="Ir al paso 6: Enviar"><i>6</i><span>Enviar</span></button></li>
     </ol>
   </aside>
 
@@ -276,8 +281,7 @@ details.bc .bcb{padding:0 18px 18px}
             <p class="pl">Membership Broker</p>
             <h3>Tu negocio inmobiliario</h3>
             <p class="para">Para asesores inmobiliarios independientes</p>
-            <div class="pr"><span class="intro">Precio de introducción</span><b>$499</b><span class="u">MXN/mes</span></div>
-            <p class="reg">Precio regular: <s>$699 MXN/mes</s></p>
+            <div class="pr"><b>$699</b><span class="u">MXN/mes</span></div>
             <p class="desc">Publica tus propiedades, administra tus prospectos, comparte oportunidades y conecta con otros asesores y aliados desde una sola plataforma.</p>
             <details class="inc"><summary>Qué incluye</summary><ul>
               <li>Portal inmobiliario</li><li>CRM inmobiliario y gestión de prospectos</li><li>Administración de propiedades</li><li>Fichas de propiedades compartibles</li><li>Gestión de citas y recorridos propios</li><li>Acceso a la bolsa inmobiliaria compartida</li><li>Networking entre brokers</li><li>Marketplace de proveedores</li><li>Herramientas para dar seguimiento a oportunidades y cerrar negocios</li><li>Integración con EasyBroker y recepción de leads de Pincalli y Mercado Libre, según la configuración disponible</li></ul></details>
@@ -287,8 +291,7 @@ details.bc .bcb{padding:0 18px 18px}
             <p class="pl">Membership Team</p>
             <h3>Tu negocio inmobiliario, con tu equipo</h3>
             <p class="para">Para líderes de equipo e inmobiliarias</p>
-            <div class="pr"><span class="intro">Precio de introducción · administrador</span><b>$699</b><span class="u">MXN/mes</span></div>
-            <p class="reg">Precio regular del administrador: <s>$999 MXN/mes</s></p>
+            <div class="pr"><b>$999</b><span class="u">MXN/mes · administrador</span></div>
             <p class="extra"><b>+ $299 MXN/mes</b> por cada usuario adicional</p>
             <div class="calc">
               <label for="usuarios">Usuarios adicionales<input class="campo" id="usuarios" type="number" min="0" max="200" value="4" inputmode="numeric"></label>
@@ -421,10 +424,12 @@ details.bc .bcb{padding:0 18px 18px}
 (function(){
   var WA='525520603432';
   var f=document.getElementById('f');
+  var vistos={};
   function ir(n,quieto){
+    vistos[n]=true;
     f.querySelectorAll('[data-paso]').forEach(function(s){s.hidden=(s.getAttribute('data-paso')!==String(n));});
-    document.querySelectorAll('#pasos li').forEach(function(li){var k=+li.getAttribute('data-p');li.classList.toggle('on',k===n);li.classList.toggle('hecho',k<n);
-      li.querySelector('i').textContent=k<n?'✓':k;});
+    document.querySelectorAll('#pasos li').forEach(function(li){var k=+li.getAttribute('data-p');li.classList.toggle('on',k===n);var h=vistos[k]&&k!==n;li.classList.toggle('hecho',h);
+      li.querySelector('i').textContent=h?'✓':k;var bt=li.querySelector('button');if(bt)bt.setAttribute('aria-current',k===n?'step':'false');});
     if(n===6)pintaResumen();
     if(n===7){var nom=document.getElementById('nombre').value.trim().split(' ')[0];
       document.getElementById('bien').textContent='¡Gracias'+(nom?', '+nom:'')+'!';}
@@ -438,15 +443,16 @@ details.bc .bcb{padding:0 18px 18px}
   }
   function valida5(){var ok=document.getElementById('terminos').checked,m=document.getElementById('m5');
     m.textContent=ok?'':'Para continuar, acepta las políticas, el código de ética, los Términos y Condiciones y el aviso de privacidad.';m.hidden=ok;return ok;}
-  f.querySelectorAll('[data-sig]').forEach(function(b){b.addEventListener('click',function(){
-    var n=+b.getAttribute('data-sig'),actual=+b.closest('[data-paso]').getAttribute('data-paso');
-    if(n>actual){if(actual===1&&!valida1())return;if(actual===5&&!valida5())return;}
-    ir(n);});});
+  // Navegación libre: botones Continuar/Atrás y los números del avance. Solo para enviar pedimos datos y aceptación.
+  function puedeEnviar(){if(!valida1()){ir(1);return false;}if(!valida5()){ir(5);return false;}return true;}
+  function navegar(n){if(n===6&&!puedeEnviar())return;ir(n);}
+  f.querySelectorAll('[data-sig]').forEach(function(b){b.addEventListener('click',function(){navegar(+b.getAttribute('data-sig'));});});
+  document.querySelectorAll('#pasos [data-ir]').forEach(function(b){b.addEventListener('click',function(){navegar(+b.getAttribute('data-ir'));});});
 
   var usu=document.getElementById('usuarios');
   function mx(n){return '$'+n.toLocaleString('es-MX')+' MXN/mes';}
   function calcTeam(){var n=Math.max(0,parseInt(usu.value,10)||0);
-    document.getElementById('tot-team').innerHTML='Total con '+n+' usuario'+(n===1?'':'s')+' adicional'+(n===1?'':'es')+': <b>'+mx(699+299*n)+'</b> con precio de introducción del administrador; <b>'+mx(999+299*n)+'</b> a precio regular.';}
+    document.getElementById('tot-team').innerHTML='Administrador + '+n+' usuario'+(n===1?'':'s')+' adicional'+(n===1?'':'es')+': <b>'+mx(999+299*n)+'</b> en total.';}
   usu.addEventListener('input',calcTeam);calcTeam();
   document.querySelectorAll('[data-elegir]').forEach(function(b){b.addEventListener('click',function(){
     var p=b.getAttribute('data-elegir');document.getElementById('plan').value=p;
