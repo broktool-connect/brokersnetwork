@@ -242,3 +242,4 @@ footer.pie .fbtn svg{width:18px;height:18px}
 }
 @media (max-width:340px){.top nav.abierto .ddp.mega .g{grid-template-columns:1fr}}
 .top nav .ddp a[href="servicios.html"]::before{content:"🧰"}
+.top nav .ddp a[href="aviso-de-privacidad.html"]::before{content:"🔐"}
