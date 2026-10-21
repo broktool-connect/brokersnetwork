@@ -10,9 +10,17 @@
 (function(){
   var dds=[].slice.call(document.querySelectorAll('.dd'));
   function cerrar(excepto){dds.forEach(function(d){if(d!==excepto){d.classList.remove('open');d.querySelector('.ddb').setAttribute('aria-expanded','false');}});}
+  // En computadora el submenú se abre al pasar el mouse y espera un momento antes de cerrarse,
+  // para que dé tiempo de bajar a las opciones. El clic en el título lo deja abierto.
+  var escritorio=window.matchMedia('(hover:hover) and (min-width:1181px)');
+  function abrir(d){cerrar(d);d.classList.add('open');d.querySelector('.ddb').setAttribute('aria-expanded','true');}
   dds.forEach(function(d){
-    var b=d.querySelector('.ddb');
-    b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');cerrar(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});
+    var b=d.querySelector('.ddb'),t=null;
+    b.addEventListener('click',function(e){e.stopPropagation();
+      if(escritorio.matches){abrir(d);return;}
+      var o=!d.classList.contains('open');cerrar(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});
+    d.addEventListener('mouseenter',function(){if(!escritorio.matches)return;clearTimeout(t);abrir(d);});
+    d.addEventListener('mouseleave',function(){if(!escritorio.matches)return;clearTimeout(t);t=setTimeout(function(){d.classList.remove('open');b.setAttribute('aria-expanded','false');},450);});
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.dd'))cerrar();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrar();});
