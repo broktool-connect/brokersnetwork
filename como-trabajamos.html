@@ -7,7 +7,7 @@
 <meta name="description" content="Cómo trabajamos en Brokers Network: operaciones compartidas, referidos y capacitación para asesores.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/sitio.css?v=20261018c">
+<link rel="stylesheet" href="css/sitio.css?v=20261021b">
 </head>
 <body>
 <style>
@@ -241,6 +241,15 @@ div.doc span{flex:1}
 .cb-h p:last-child{margin:0;color:#C9D4E0;font-size:15px}
 .calc-band .calc2{margin-top:0;border:0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 @media (max-width:520px){.calc-band{padding:16px;border-radius:20px}.cb-ic{width:46px;height:46px;font-size:22px}}
+/* cómo trabajamos: cifras y lo que nos rige */
+#como .cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:var(--azul);color:#fff;margin-top:26px}
+#como .cifras .c{padding:30px 26px;border-left:1px solid rgba(255,255,255,.14)}
+#como .cifras .c:first-child{border-left:0}
+#como .cifras b{display:block;font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+#como .cifras b.t{font-size:clamp(20px,2.2vw,26px);line-height:1.25}
+#como .cifras span{font-size:15px;color:#C9D4E0}
+#como .rige{font-size:clamp(20px,2.2vw,26px);color:var(--azul);font-weight:800;margin:44px 0 0;scroll-margin-top:110px}
+@media (max-width:820px){#como .cifras{grid-template-columns:1fr}#como .cifras .c{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:22px 22px}#como .cifras .c:first-child{border-top:0}}
 </style>
 
 
@@ -271,12 +280,11 @@ div.doc span{flex:1}
       <div class="dd actual"><button class="ddb" type="button" aria-expanded="false">Si eres asesor <span class="fl">▾</span></button>
         <div class="ddp">
           <p class="ddt">Para asesores inmobiliarios</p>
-          <a href="registro.html">Quiero afiliarme<small>Únete a nuestra red de asesores</small></a>
-          <a href="como-trabajamos.html">Cómo trabajamos<small>Reglas claras para colaborar en red</small></a>
+          <a href="como-trabajamos.html#como">Cómo trabajamos<small>La red en números y lo que nos rige</small></a>
           <a href="como-trabajamos.html#operaciones">Operaciones compartidas<small>Registra a tu cliente y cuidamos tu comisión</small></a>
+          <a href="registro.html">Únete al equipo<small>Quiero afiliarme a la red</small></a>
           <a href="como-trabajamos.html#referidos">Gana comisión refiriendo inversionistas<small>Comisión en dólares por clientes de EUA</small></a>
           <a href="como-trabajamos.html#capacitacion-usa">Capacitación: inversión en EUA<small>Grabaciones y presentaciones para asesores</small></a>
-          <a href="coacutedigo-de-eacutetica.html">Código de ética<small>Principios que comparten todos los afiliados</small></a>
         </div>
       </div>
       <a href="index.html#contacto">Contacto</a>
@@ -291,9 +299,30 @@ div.doc span{flex:1}
       <h1>Cómo <span>trabajamos</span></h1>
       <p>Reglas claras para compartir operaciones entre asesores y crecer juntos.</p>
       <nav class="subnav" aria-label="En esta página">
+        <a href="#como">Lo que nos rige</a>
         <a href="#operaciones">Operaciones compartidas</a>
-        <a href="#documentos">Documentos</a>
+        <a href="#referidos">Referidos EUA</a>
+        <a href="registro.html">Únete al equipo</a>
       </nav>
+    </div>
+  </section>
+
+  <section class="blk claro" id="como" aria-labelledby="como-t">
+    <div class="wrap">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 id="como-t">Una red que trabaja contigo</h2>
+      <div class="cifras" aria-label="La red en números">
+        <div class="c"><b>+500</b><span>propiedades en venta y renta</span></div>
+        <div class="c"><b>9 ciudades</b><span>en México, con presencia en EUA y Europa</span></div>
+        <div class="c"><b class="t">Los mejores aliados estratégicos</b><span>para cerrar tus operaciones: créditos, pólizas jurídicas, fideicomisos y más</span></div>
+      </div>
+      <h3 class="rige" id="documentos">Lo que nos rige</h3>
+      <div class="docs">
+        <a class="doc" href="servicios.html"><b>Servicios</b><span>Bienes raíces, créditos, pólizas jurídicas, inversión, administración y más.</span><em>Ver servicios</em></a>
+        <a class="doc" href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener"><b>Código de ética</b><span>Los principios que comparten todos los asesores de la red.</span><em>Leer el código</em></a>
+        <a class="doc" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener"><b>EC0110.02 y NOM-247</b><span>Certificación oficial y la norma de información comercial inmobiliaria.</span><em>Conocer más</em></a>
+        <a class="doc" href="aviso-de-privacidad.html" target="_blank" rel="noopener"><b>Aviso de privacidad</b><span>Cómo cuidamos y usamos tus datos personales.</span><em>Leer el aviso</em></a>
+      </div>
     </div>
   </section>
 
@@ -388,18 +417,6 @@ div.doc span{flex:1}
     </div>
   </section>
 
-  <section class="blk claro" id="documentos" aria-labelledby="d-t">
-    <div class="wrap">
-      <p class="eyebrow">Documentos</p>
-      <h2 id="d-t">Lo que nos rige</h2>
-      <div class="docs">
-        <a class="doc" href="https://www.brokersnetwork.mx/servicios.html" target="_blank" rel="noopener"><b>Servicios</b><span>Bienes raíces, créditos, pólizas jurídicas, inversión, administración y más.</span><em>Ver servicios</em></a>
-        <a class="doc" href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener"><b>Código de ética</b><span>Los principios que comparten todos los asesores de la red.</span><em>Leer el código</em></a>
-        <a class="doc" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener"><b>EC0110.02 y NOM-247</b><span>Certificación oficial y la norma de información comercial inmobiliaria.</span><em>Conocer más</em></a>
-        <a class="doc" href="aviso-de-privacidad.html" target="_blank" rel="noopener"><b>Aviso de privacidad</b><span>Cómo cuidamos y usamos tus datos personales.</span><em>Leer el aviso</em></a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="pie">
@@ -429,7 +446,7 @@ div.doc span{flex:1}
   </div>
   <div class="copyr"><div class="wrap">© 2026 Brokers Network Soluciones Inmobiliarias S.C. · Consulta nuestros <a style="color:#fff" href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a>, <a style="color:#fff" href="aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a> y <a style="color:#fff" href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">Código de ética</a> según la NOM-247 y EC0110.02.</div></div>
 </footer>
-<script src="js/menu.js?v=20261018c"></script>
+<script src="js/menu.js?v=20261021b"></script>
 <script src="js/resumen-usa.js?v=3"></script>
 
 <script>
