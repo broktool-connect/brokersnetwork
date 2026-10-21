@@ -174,6 +174,48 @@ details.bc .bcb{padding:0 18px 18px}
 .pol .pb{padding:0 14px 14px;font-size:14px;line-height:1.55}
 @media (max-width:420px){.pol .sev{display:none}}
 .pol .pb ul{margin:0;padding-left:18px;display:grid;gap:6px}
+/* asistente de afiliación en 6 pasos */
+.caja .bgrid{grid-template-columns:1fr 1fr;margin-bottom:20px}
+.caja .bc.ancho,.caja .bc.todo{grid-column:1/-1}
+@media (max-width:620px){.caja .bgrid{grid-template-columns:1fr}}
+.caja .pol{margin:0 0 18px;border:0;padding:0}
+.caja .polt{font-size:17px;color:var(--azul);font-weight:800;margin:0 0 10px}
+.caja .pol .pi{color:var(--gris-m);font-size:14px;margin:-4px 0 12px}
+.caja .pol .ver{margin:10px 0 0;font-size:14px}
+.caja .docs{margin:0 0 18px;grid-template-columns:1fr 1fr}
+@media (max-width:520px){.caja .docs{grid-template-columns:1fr}}
+.precio{border:1.5px solid var(--naranja);border-radius:16px;padding:22px;background:var(--naranja-c);margin:0 0 20px;display:grid;gap:14px}
+.precio .pl{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t)}
+.precio .monto{display:block;font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--azul);line-height:1.1;margin-top:6px;font-variant-numeric:tabular-nums}
+.precio .per{display:block;color:var(--gris-m);font-size:14px;margin-top:2px}
+.precio ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14.5px}
+.listo ol.sig{text-align:left;max-width:460px;margin:0 auto 16px;padding-left:20px;display:grid;gap:8px}
+.reserva{max-width:1100px;margin:0 auto 48px;padding-inline:20px;font-size:12.5px;color:var(--gris-m)}
+@media (max-width:860px){.pant{grid-template-columns:minmax(0,1fr)}.lado .pasos{grid-template-columns:repeat(6,auto);gap:8px}.lado .pasos li{grid-template-columns:30px;gap:0}}
+.planes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 14px}
+@media (max-width:700px){.planes{grid-template-columns:1fr}}
+.plan{border:1.5px solid var(--linea);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;background:#fff;min-width:0}
+.plan.team{border-color:var(--azul)}
+.plan.sel{border-color:var(--naranja);box-shadow:0 0 0 3px rgba(221,86,53,.18)}
+.plan .pl{margin:0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja-t)}
+.plan h3{margin:0;font-size:19px;color:var(--azul);line-height:1.25}
+.plan .para{margin:0;color:var(--gris-m);font-size:14px}
+.plan .pr{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:6px}
+.plan .pr .intro{flex-basis:100%;font-size:12px;font-weight:700;color:#1E8A4C}
+.plan .pr b{font-size:36px;line-height:1;color:var(--azul);font-variant-numeric:tabular-nums}
+.plan .pr .u{color:var(--gris-m);font-size:14px}
+.plan .reg{margin:0;font-size:13.5px;color:var(--gris-m)}
+.plan .extra{margin:0;font-size:14.5px;color:var(--azul)}
+.plan .calc{background:var(--gris-c);border-radius:12px;padding:12px;display:grid;gap:6px}
+.plan .calc label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13.5px;font-weight:700;margin:0}
+.plan .calc input{width:90px;padding:8px 10px}
+.plan .calc p{margin:0;font-size:13.5px;color:var(--gris);line-height:1.45}
+.plan .desc{margin:2px 0 0;font-size:14px;color:var(--gris)}
+.plan details.inc summary,.addons summary{cursor:pointer;font-weight:700;color:var(--naranja-t);font-size:14px}
+.plan details.inc ul,.addons ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:13.5px;color:var(--gris)}
+.plan .elegir{margin-top:auto;width:100%}
+.addons{border:1px dashed var(--linea);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.addons p{margin:8px 0 0;font-size:13.5px;color:var(--gris-m)}
 </style>
 </head>
 <body>
@@ -186,38 +228,28 @@ details.bc .bcb{padding:0 18px 18px}
   <aside class="lado" aria-label="Tu avance">
     <p class="eb">Afiliación</p>
     <h1>Únete a nuestra red de asesores independientes</h1>
-    <p>Te toma menos de cinco minutos. Al terminar nos envías tus respuestas por WhatsApp y te contactamos para darte la bienvenida.</p>
-    <a class="verben" href="#beneficios">Ver beneficios, requisitos y políticas ↓</a>
+    <p>Te acompañamos paso a paso: tus datos, el costo de la membresía, lo que incluye, los requisitos y nuestras políticas. Al final nos envías tu solicitud por WhatsApp.</p>
     <ol class="pasos" id="pasos">
       <li data-p="1"><i>1</i><span>Tus datos</span></li>
-      <li data-p="2"><i>2</i><span>Tu perfil</span></li>
-      <li data-p="3"><i>3</i><span>Enviar</span></li>
-      <li data-p="4"><i>4</i><span>Listo</span></li>
+      <li data-p="2"><i>2</i><span>Costo de membresía</span></li>
+      <li data-p="3"><i>3</i><span>Qué incluye</span></li>
+      <li data-p="4"><i>4</i><span>Requisitos</span></li>
+      <li data-p="5"><i>5</i><span>Políticas y código de ética</span></li>
+      <li data-p="6"><i>6</i><span>Enviar</span></li>
     </ol>
   </aside>
 
   <main class="caja">
     <form id="f" novalidate>
-      <!-- Paso 1 -->
       <section data-paso="1">
-        <p class="paso-t">Paso 1 de 4 · Tus datos</p>
+        <p class="paso-t">Paso 1 de 6 · Tus datos</p>
         <h2>¿Cómo te contactamos?</h2>
-        <p class="s">Escribe tus datos de contacto.</p>
+        <p class="s">Con estos datos te escribimos para agendar tu entrevista.</p>
         <label for="nombre">Nombre completo<input class="campo" id="nombre" type="text" autocomplete="name" placeholder="Ana Ruiz" required></label>
         <div class="g2">
           <label for="correo">Correo<input class="campo" id="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
           <label for="cel">Celular (WhatsApp)<input class="campo" id="cel" type="tel" autocomplete="tel" inputmode="tel" placeholder="10 dígitos" required></label>
         </div>
-        <label class="chk" for="terminos"><input type="checkbox" id="terminos"> <span>Acepto las <a href="#politicas">Políticas de la empresa</a>, los <a href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a>, el <a href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">código de ética</a> y el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> de Brokers Network, según la NOM-247 y EC0110.02.</span></label>
-        <p class="msg" id="m1" hidden></p>
-        <div class="acc"><span></span><button class="btn nar" type="button" data-sig="2">Continuar</button></div>
-      </section>
-
-      <!-- Paso 2 -->
-      <section data-paso="2" hidden>
-        <p class="paso-t">Paso 2 de 4 · Tu perfil</p>
-        <h2>Cuéntanos un poco de ti</h2>
-        <p class="s">Así te recomendamos tu siguiente paso dentro de la red.</p>
         <div class="g2">
           <label for="ciudad">Ciudad<input class="campo" id="ciudad" type="text" placeholder="¿Desde dónde operas?"></label>
           <label for="inmo">Inmobiliaria o agencia <span class="opc">(opcional)</span><input class="campo" id="inmo" type="text" placeholder="Si aplica"></label>
@@ -228,56 +260,58 @@ details.bc .bcb{padding:0 18px 18px}
           <label for="exp">Experiencia inmobiliaria
             <select class="campo" id="exp"><option value="">Elige una opción</option><option>Estoy empezando (menos de 1 año)</option><option>1 a 3 años</option><option>3 a 5 años</option><option>5 a 10 años</option><option>Más de 10 años</option></select></label>
         </div>
-        <p class="lbl">¿Qué te interesa de la red? <span class="opc">(puedes elegir varias)</span></p>
-        <div class="chips" id="chips">
-          <button type="button" class="chp" aria-pressed="false">Comisiones justas</button>
-          <button type="button" class="chp" aria-pressed="false">Equipo para citas y firmas</button>
-          <button type="button" class="chp" aria-pressed="false">Destacados en portales</button>
-          <button type="button" class="chp" aria-pressed="false">Desarrollos en convenio</button>
-          <button type="button" class="chp" aria-pressed="false">Capacitación y certificación EC0110.02</button>
-          <button type="button" class="chp" aria-pressed="false">Oficina en Polanco</button>
-          <button type="button" class="chp" aria-pressed="false">CRM y herramientas</button>
-        </div>
         <label for="conociste">¿Cómo nos conociste?
-          <select class="campo" id="conociste"><option value="">Elige una opción</option><option>Me lo recomendó un asesor de la red</option><option>Presentación para interesados</option><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>Google</option><option>En un evento</option><option>Otro</option></select></label>
-        <div class="acc"><button class="btn lin" type="button" data-sig="1">Atrás</button><button class="btn nar" type="button" data-sig="3">Revisar y enviar</button></div>
+          <select class="campo" id="conociste"><option value="">Elige una opción</option><option>Me lo recomendó un asesor de la red</option><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>Google</option><option>En un evento</option><option>Otro</option></select></label>
+        <p class="msg" id="m1" hidden></p>
+        <div class="acc"><span></span><button class="btn nar" type="button" data-sig="2">Continuar</button></div>
       </section>
 
-      <!-- Paso 3 -->
-      <section data-paso="3" hidden>
-        <p class="paso-t">Paso 3 de 4 · Enviar</p>
-        <h2>Revisa tus respuestas</h2>
-        <p class="s">Al enviar se abre WhatsApp con este resumen listo para mandarlo a Brokers Network.</p>
-        <div class="res" id="resumen"></div>
-        <p class="nota"><b>Ten a la mano tus documentos:</b> identificación oficial, CURP y RFC, comprobante de domicilio y fotografía. Cuando se abra WhatsApp, envía el resumen y adjúntalos en ese mismo chat.</p>
-        <div class="acc"><button class="btn lin" type="button" data-sig="2">Atrás</button><a class="btn wa" id="enviar" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
-      </section>
-
-      <!-- Paso 4 -->
-      <section data-paso="4" hidden>
-        <div class="listo">
-          <div class="ico" aria-hidden="true">✓</div>
-          <p class="paso-t">Paso 4 de 4 · Listo</p>
-          <h2 id="bien">¡Gracias por tu interés!</h2>
-          <p class="s" id="bien-s">Recibimos tu solicitud por WhatsApp.</p>
-          <ul class="sig">
-            <li>Te escribimos por WhatsApp para darte la bienvenida y resolver tus dudas.</li>
-            <li><b>Adjunta tus documentos en ese mismo chat de WhatsApp:</b> identificación oficial, CURP y RFC, comprobante de domicilio y fotografía. Con ellos preparamos tu Convenio de Afiliación. Si prefieres, mándalos a <a href="mailto:oficina@brokersnetwork.mx">oficina@brokersnetwork.mx</a>.</li>
-            <li>Agendamos tu inducción a la red.</li>
-          </ul>
-          <p class="alt" style="text-align:center">¿No se abrió WhatsApp? <a href="#" id="reenviar" target="_blank" rel="noopener">Envíalo de nuevo</a></p>
-          <div class="acc" style="justify-content:center"><a class="btn lin" href="index.html">Volver al sitio</a></div>
+      <section data-paso="2" hidden>
+        <p class="paso-t">Paso 2 de 6 · Costo de membresía</p>
+        <h2>Elige tu membresía</h2>
+        <p class="s">Tu negocio inmobiliario, conectado a una red que te impulsa a crecer. Las dos membresías te dan acceso completo a la red; la diferencia es si operas solo o con tu equipo.</p>
+        <input type="hidden" id="plan" value="">
+        <div class="planes">
+          <article class="plan" data-plan="Broker">
+            <p class="pl">Membership Broker</p>
+            <h3>Tu negocio inmobiliario</h3>
+            <p class="para">Para asesores inmobiliarios independientes</p>
+            <div class="pr"><span class="intro">Precio de introducción</span><b>$499</b><span class="u">MXN/mes</span></div>
+            <p class="reg">Precio regular: <s>$699 MXN/mes</s></p>
+            <p class="desc">Publica tus propiedades, administra tus prospectos, comparte oportunidades y conecta con otros asesores y aliados desde una sola plataforma.</p>
+            <details class="inc"><summary>Qué incluye</summary><ul>
+              <li>Portal inmobiliario</li><li>CRM inmobiliario y gestión de prospectos</li><li>Administración de propiedades</li><li>Fichas de propiedades compartibles</li><li>Gestión de citas y recorridos propios</li><li>Acceso a la bolsa inmobiliaria compartida</li><li>Networking entre brokers</li><li>Marketplace de proveedores</li><li>Herramientas para dar seguimiento a oportunidades y cerrar negocios</li><li>Integración con EasyBroker y recepción de leads de Pincalli y Mercado Libre, según la configuración disponible</li></ul></details>
+            <button class="btn nar elegir" type="button" data-elegir="Broker">Elegir Broker</button>
+          </article>
+          <article class="plan team" data-plan="Team">
+            <p class="pl">Membership Team</p>
+            <h3>Tu negocio inmobiliario, con tu equipo</h3>
+            <p class="para">Para líderes de equipo e inmobiliarias</p>
+            <div class="pr"><span class="intro">Precio de introducción · administrador</span><b>$699</b><span class="u">MXN/mes</span></div>
+            <p class="reg">Precio regular del administrador: <s>$999 MXN/mes</s></p>
+            <p class="extra"><b>+ $299 MXN/mes</b> por cada usuario adicional</p>
+            <div class="calc">
+              <label for="usuarios">Usuarios adicionales<input class="campo" id="usuarios" type="number" min="0" max="200" value="4" inputmode="numeric"></label>
+              <p id="tot-team"></p>
+            </div>
+            <p class="desc">Gestiona tu operación, coordina a tus asesores, supervisa citas, recorridos y operaciones de tu equipo, y trabaja de forma colaborativa desde una sola plataforma.</p>
+            <details class="inc"><summary>Todo lo de Broker, más</summary><ul>
+              <li>Oficina virtual</li><li>Gestión de usuarios y equipo</li><li>Supervisión de citas y recorridos de los integrantes</li><li>Visualización y seguimiento de las operaciones del equipo</li><li>Herramientas colaborativas</li><li>Infraestructura tecnológica para la operación de la inmobiliaria</li><li>Soporte personalizado y acompañamiento estratégico</li><li>White label limitado para inmobiliarias, según las opciones de personalización existentes</li><li>El administrador puede gestionar o cobrar su propio plan a los usuarios de su equipo</li></ul></details>
+            <button class="btn nar elegir" type="button" data-elegir="Team">Elegir Team</button>
+          </article>
         </div>
+        <details class="addons"><summary>Servicios opcionales con costo adicional</summary>
+          <p>Las funciones de la plataforma están incluidas en cada membresía. Estos servicios son opcionales y no son requisito para usarla:</p>
+          <ul><li>Integración con Inmuebles24 (plan según el número de anuncios)</li><li>Talleres de capacitación</li><li>Plan de negocios personalizado</li><li>Certificación SEP-CONOCER EC0110.02</li><li>Licencias o registros estatales, según corresponda</li><li>Cursos, especializaciones y seminarios</li><li>Masterclasses y servicios de aliados estratégicos</li></ul>
+        </details>
+        <p class="nota">El pago se confirma después de tu entrevista, no ahora. Con tu pago y tus documentos preparamos tu <b>Convenio de Afiliación</b>.</p>
+        <div class="acc"><button class="btn lin" type="button" data-sig="1">Atrás</button><button class="btn lin" type="button" data-sig="3">Aún no lo decido →</button></div>
       </section>
-    </form>
-  </main>
-</div>
 
-<section class="ben" id="beneficios" aria-labelledby="ben-t">
-  <div class="ben-h">
-    <div><p class="eb">Beneficios</p><h2 id="ben-t">¿Qué incluye tu afiliación?</h2>
-    <p>Como afiliado tendrás derecho a:</p></div>
-  </div>
+      <section data-paso="3" hidden id="beneficios">
+        <p class="paso-t">Paso 3 de 6 · Qué incluye</p>
+        <h2>¿Qué incluye tu afiliación?</h2>
+        <p class="s">Toca cada tema para ver el detalle.</p>
   <div class="bgrid">
     <details class="bc ancho"><summary><h3><i aria-hidden="true">▤</i>Plataforma y soporte operativo</h3></summary><div class="bcb">
       <p>Acceso a una carpeta compartida con más de 50 documentos y contratos de los que más se utilizan en materia inmobiliaria:</p>
@@ -309,24 +343,28 @@ details.bc .bcb{padding:0 18px 18px}
       <ul><li>El directorio de los asesores afiliados a BN, que podrán apoyarte en citas, recorridos, firmas, etc.</li>
       <li>Una tabla de comisiones convenida con todos los afiliados, para que el trabajo en equipo sea transparente y quede claramente definido entre todos los participantes.</li></ul></div></details>
   </div>
+        <div class="acc"><button class="btn lin" type="button" data-sig="2">Atrás</button><button class="btn nar" type="button" data-sig="4">Continuar</button></div>
+      </section>
 
-
-  <div class="pol" id="requisitos">
-    <p class="eb" style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px">Para tu expediente</p>
-    <h2>Requisitos de afiliación</h2>
-    <p>Para llevar a cabo tu afiliación a Brokers Network te pedimos la confirmación de tu pago y tu documentación, con la que armamos tu expediente y preparamos el <b>Convenio de Afiliación</b> y sus <b>anexos</b> para la firma.</p>
+      <section data-paso="4" hidden id="requisitos">
+        <p class="paso-t">Paso 4 de 6 · Requisitos</p>
+        <h2>Requisitos de afiliación</h2>
+        <p class="s">Para tu expediente y tu Convenio de Afiliación te pediremos:</p>
     <ul class="docs">
       <li><i aria-hidden="true">🪪</i>Identificación oficial</li>
       <li><i aria-hidden="true">📄</i>CURP y RFC</li>
       <li><i aria-hidden="true">🏠</i>Comprobante de domicilio</li>
       <li><i aria-hidden="true">📷</i>Fotografía</li>
     </ul>
-    <p style="margin:16px 0 0">Estos documentos se te solicitarán una vez completada tu entrevista.</p>
-  </div>
-  <div class="pol" id="politicas">
-    <p class="eb" style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px">Reglas de la red</p>
-    <h2>Políticas de la empresa</h2>
-    <p>Al afiliarte te comprometes a cumplir estas políticas, que protegen a todos los asesores de la red.</p>
+        <p class="nota">No necesitas enviarlos ahora: <b>te los solicitamos una vez completada tu entrevista</b>, junto con la confirmación de tu pago.</p>
+        <div class="acc"><button class="btn lin" type="button" data-sig="3">Atrás</button><button class="btn nar" type="button" data-sig="5">Continuar</button></div>
+      </section>
+
+      <section data-paso="5" hidden id="politicas">
+        <p class="paso-t">Paso 5 de 6 · Políticas y código de ética</p>
+        <h2>Lo que firmas al unirte</h2>
+        <p class="s">Estas reglas protegen a todos los asesores de la red. Léelas antes de continuar.</p>
+        <div class="pol"><h3 class="polt">Políticas de la empresa</h3>
     <ol>
       <li><details><summary><b>Paga a otros asesores el mismo día</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado, una vez cobrada su comisión, se compromete a pagar a otros afiliados o a cualquier otro asesor inmobiliario su parte correspondiente el mismo día que reciba dicho pago, de manera completa y según la cantidad acordada.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una primera vez, o si no enmienda su error en un máximo de 5 días hábiles.</span></div></details></li>
       <li><details><summary><b>Acuerda la comisión por escrito</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado se compromete, antes de iniciar formalmente una operación, a aclarar, informar y comunicar debida y claramente, por escrito, la comisión por compartir a otros afiliados o a cualquier otro asesor inmobiliario.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una segunda vez como máximo.</span></div></details></li>
@@ -336,66 +374,104 @@ details.bc .bcb{padding:0 18px 18px}
       <li><details><summary><b>Reporte mensual de operaciones cerradas</b></summary><div class="pb">El afiliado se compromete a hacer un reporte mensual de las operaciones que haya cerrado satisfactoriamente, con el objeto de presentar a los clientes la efectividad global de la empresa por medio de sus afiliados.</div></details></li>
       <li><details><summary><b>Respeta la tabla de comisiones</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado se compromete a respetar, cumplir y pagar la comisión propuesta en tiempo y forma en la tabla de comisiones anexa.<span class="resc">Faltar a ella será motivo de rescisión de su afiliación.</span></div></details></li>
 </ol>
-  </div>
-  <div class="pol" id="codigo-etica">
-    <p class="eb" style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-t);margin:0 0 6px">Lo que firmas al unirte</p>
-    <h2>Código de ética</h2>
-    <p>Como asesores profesionales, obramos con absoluta integridad, justicia y honradez con todas las partes de una operación. Faltar al código es motivo de rescisión inmediata de la membresía.</p>
+        </div>
+        <div class="pol" id="codigo-etica"><h3 class="polt">Código de ética</h3>
+        <p class="pi">Obramos con absoluta integridad, justicia y honradez con todas las partes de una operación. Faltar al código es motivo de rescisión inmediata de la membresía.</p>
     <ol>
       <li><details><summary><b>I. Honestidad y respeto entre asesores y con la empresa</b></summary><div class="pb"><ul><li>Ser siempre respetuoso con los clientes o propiedades de otros afiliados o de cualquier otro asesor inmobiliario, registrando debidamente sus clientes, así como pagando en tiempo y forma las comisiones convenidas.</li><li>Utilizar únicamente los destacados a los que tenga derecho (aquellos incluidos en la membresía, así como los contratados con pago anticipado para su renta mensual).</li></ul></div></details></li>
       <li><details><summary><b>II. Responsabilidad y profesionalismo con los clientes</b></summary><div class="pb"><ul><li>Ser siempre honesto en la promoción de inmuebles, publicando debidamente información veraz y completa.</li><li>Ser siempre transparente y claro en la intermediación inmobiliaria entre cliente y propietario.</li><li>Proteger siempre los intereses de sus clientes contra fraudes, abusos o prácticas inmorales en el campo del sector inmobiliario.</li><li>Prevenir siempre cualquier acto que ataque la dignidad e integridad de nuestra profesión inmobiliaria, así como de sus involucrados.</li><li>Ser siempre extraordinariamente cuidadoso en la guarda del secreto profesional y por ningún motivo expondrá opiniones ni proporcionará datos personales o información confidencial sobre sus clientes, o sobre aquello que bajo debida autorización se le hubiere confiado para el desempeño de su función.</li></ul></div></details></li>
       <li><details><summary><b>III. Conocimiento: información, capacitación y actualización</b></summary><div class="pb"><ul><li>Estar siempre informado, capacitado y actualizado en todo lo competente al sector inmobiliario.</li><li>Mantenerse siempre informado sobre los cambios normativos que se generen respecto del sector inmobiliario en el país, ya se trate de materia impositiva, legislativa, fiscal y demás aspectos relacionados con la propiedad inmobiliaria.</li><li>Contar con el estándar de competencia según establece el Diario Oficial de la Federación publicado el 26 de agosto de 2011: EC0110.02 Asesoría en Comercialización de Bienes Inmuebles.</li><li>Cumplir con todas las normativas y disposiciones oficiales en materia inmobiliaria, como la Norma Oficial Mexicana <a href="https://dof.gob.mx/nota_detalle.php?codigo=5646251&amp;fecha=22/03/2022" target="_blank" rel="noopener">NOM-247-SE-2021</a>, publicada en el Diario Oficial de la Federación el 19 de septiembre de 2022.</li></ul></div></details></li>
       <li><details><summary><b>IV. Trabajo en equipo y comunicación</b></summary><div class="pb"><ul><li>Preferir siempre trabajar en equipo, buscando siempre el bien desinteresado de los afiliados u otros asesores, sabiendo que esta actitud genera confianza y sinergia entre profesionales inmobiliarios.</li><li>Comunicar siempre, de manera objetiva y resolutiva, cualquier inconformidad o conflicto entre afiliados con los directivos de BN, con el objeto de entender actitudes y comportamientos y poder llegar juntos a una solución amigable, sabiendo que siempre “hablando se entiende la gente”.</li><li>Comunicar siempre, de manera objetiva y resolutiva, cualquier malentendido, crítica constructiva, comentario y área de oportunidad sobre BN a sus directivos, con el objeto de lograr juntos un espacio positivo para el intercambio de ideas dentro de la empresa de la que todos formamos parte.</li></ul></div></details></li>
     </ol>
-    <p style="margin:12px 0 0;font-size:14px"><a href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">Leer el código de ética completo, con el convenio de afiliación →</a></p>
-  </div>
-  <p class="reserva">* Nos reservamos el derecho de modificar o discontinuar los servicios (o cualquier parte del contenido) en cualquier momento sin previo aviso, con base en las alianzas obtenidas con nuestros socios de negocio.</p>
-</section>
+        <p class="ver"><a href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">Leer el código de ética completo →</a></p>
+        </div>
+        <label class="chk" for="terminos"><input type="checkbox" id="terminos"> <span>Leí y acepto las Políticas de la empresa, el <a href="coacutedigo-de-eacutetica.html" target="_blank" rel="noopener">código de ética</a>, los <a href="eco11001-y-nom-247-se2021.html" target="_blank" rel="noopener">Términos y Condiciones</a> y el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> de Brokers Network, según la NOM-247 y EC0110.02.</span></label>
+        <p class="msg" id="m5" hidden></p>
+        <div class="acc"><button class="btn lin" type="button" data-sig="4">Atrás</button><button class="btn nar" type="button" data-sig="6">Revisar y enviar</button></div>
+      </section>
+
+      <section data-paso="6" hidden>
+        <p class="paso-t">Paso 6 de 6 · Enviar</p>
+        <h2>Revisa y envía tu solicitud</h2>
+        <p class="s">Al enviar se abre WhatsApp con este resumen listo para mandarlo a Brokers Network.</p>
+        <div class="res" id="resumen"></div>
+        <div class="acc"><button class="btn lin" type="button" data-sig="5">Atrás</button><a class="btn wa" id="enviar" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>
+      </section>
+
+      <section data-paso="7" hidden>
+        <div class="listo">
+          <div class="ico" aria-hidden="true">✓</div>
+          <h2 id="bien">¡Gracias por tu interés!</h2>
+          <p class="s">Recibimos tu solicitud por WhatsApp. Esto sigue:</p>
+          <ol class="sig">
+            <li>Te escribimos por WhatsApp para agendar tu entrevista.</li>
+            <li>Después de la entrevista te pedimos tus documentos y la confirmación de tu pago.</li>
+            <li>Firmamos tu Convenio de Afiliación y te damos la bienvenida a la red.</li>
+          </ol>
+          <p class="alt" style="text-align:center">¿No se abrió WhatsApp? <a href="#" id="reenviar" target="_blank" rel="noopener">Envíalo de nuevo</a></p>
+          <div class="acc" style="justify-content:center"><a class="btn lin" href="index.html">Volver al sitio</a></div>
+        </div>
+      </section>
+    </form>
+  </main>
+</div>
+<p class="reserva">* Nos reservamos el derecho de modificar o discontinuar los servicios (o cualquier parte del contenido) en cualquier momento sin previo aviso, con base en las alianzas obtenidas con nuestros socios de negocio.</p>
 
 <script>
 (function(){
   var WA='525520603432';
   var f=document.getElementById('f');
-
   function ir(n,quieto){
     f.querySelectorAll('[data-paso]').forEach(function(s){s.hidden=(s.getAttribute('data-paso')!==String(n));});
     document.querySelectorAll('#pasos li').forEach(function(li){var k=+li.getAttribute('data-p');li.classList.toggle('on',k===n);li.classList.toggle('hecho',k<n);
       li.querySelector('i').textContent=k<n?'✓':k;});
-    if(n===3)pintaResumen();
-    if(n===4){var nom=document.getElementById('nombre').value.trim().split(' ')[0];
+    if(n===6)pintaResumen();
+    if(n===7){var nom=document.getElementById('nombre').value.trim().split(' ')[0];
       document.getElementById('bien').textContent='¡Gracias'+(nom?', '+nom:'')+'!';}
     if(!quieto)document.querySelector('.caja').scrollIntoView({behavior:'smooth',block:'start'});
   }
   function valida1(){
-    var ok=true,m=document.getElementById('m1'),err=[];
+    var ok=true,m=document.getElementById('m1');
     [['nombre',function(v){return v.length>2;}],['correo',function(v){return /^\S+@\S+\.\S+$/.test(v);}],['cel',function(v){return v.replace(/\D/g,'').length>=10;}]]
       .forEach(function(c){var el=document.getElementById(c[0]),bien=c[1](el.value.trim());el.classList.toggle('err',!bien);el.setAttribute('aria-invalid',bien?'false':'true');if(!bien)ok=false;});
-    if(!ok)err.push('Revisa tu nombre, correo y celular de 10 dígitos.');
-    if(!document.getElementById('terminos').checked){ok=false;err.push('Acepta las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad para continuar.');}
-    m.textContent=err.join(' ');m.hidden=ok;return ok;
+    m.textContent=ok?'':'Revisa tu nombre, correo y celular de 10 dígitos.';m.hidden=ok;return ok;
   }
+  function valida5(){var ok=document.getElementById('terminos').checked,m=document.getElementById('m5');
+    m.textContent=ok?'':'Para continuar, acepta las políticas, el código de ética, los Términos y Condiciones y el aviso de privacidad.';m.hidden=ok;return ok;}
   f.querySelectorAll('[data-sig]').forEach(function(b){b.addEventListener('click',function(){
-    var n=+b.getAttribute('data-sig'); if(n===2&&b.closest('[data-paso="1"]')&&!valida1())return; ir(n);});});
-  document.querySelectorAll('.chp').forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');});});
+    var n=+b.getAttribute('data-sig'),actual=+b.closest('[data-paso]').getAttribute('data-paso');
+    if(n>actual){if(actual===1&&!valida1())return;if(actual===5&&!valida5())return;}
+    ir(n);});});
+
+  var usu=document.getElementById('usuarios');
+  function mx(n){return '$'+n.toLocaleString('es-MX')+' MXN/mes';}
+  function calcTeam(){var n=Math.max(0,parseInt(usu.value,10)||0);
+    document.getElementById('tot-team').innerHTML='Total con '+n+' usuario'+(n===1?'':'s')+' adicional'+(n===1?'':'es')+': <b>'+mx(699+299*n)+'</b> con precio de introducción del administrador; <b>'+mx(999+299*n)+'</b> a precio regular.';}
+  usu.addEventListener('input',calcTeam);calcTeam();
+  document.querySelectorAll('[data-elegir]').forEach(function(b){b.addEventListener('click',function(){
+    var p=b.getAttribute('data-elegir');document.getElementById('plan').value=p;
+    document.querySelectorAll('.plan').forEach(function(a){a.classList.toggle('sel',a.getAttribute('data-plan')===p);});
+    ir(3);});});
+  function planTxt(){var p=v('plan');if(p==='Broker')return 'Membership Broker';if(p==='Team'){var n=Math.max(0,parseInt(usu.value,10)||0);return 'Membership Team (administrador + '+n+' usuario'+(n===1?'':'s')+' adicional'+(n===1?'':'es')+')';}return '';}
   f.addEventListener('submit',function(e){e.preventDefault();});
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
   function datos(){
-    var ch=[].slice.call(document.querySelectorAll('.chp[aria-pressed="true"]')).map(function(c){return c.textContent;});
     return [['Nombre',v('nombre')],['Correo',v('correo')],['Celular',v('cel')],
       ['Ciudad',v('ciudad')],['Inmobiliaria',v('inmo')],['Perfil',v('perfil')],['Experiencia',v('exp')],
-      ['Le interesa',ch.join(', ')],['Nos conoció por',v('conociste')]].filter(function(r){return r[1];});}
+      ['Nos conoció por',v('conociste')],['Membresía',planTxt()]].filter(function(r){return r[1];});}
   function esc(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function pintaResumen(){
     document.getElementById('resumen').innerHTML=datos().map(function(r){return '<div class="fila"><span>'+r[0]+'</span><b>'+esc(r[1])+'</b></div>';}).join('');
     var u=urlWA();document.getElementById('enviar').href=u;document.getElementById('reenviar').href=u;}
   function urlWA(){
     var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
-      '\n\nEn seguida adjunto mis documentos: identificación oficial, CURP y RFC, comprobante de domicilio y fotografía.'+
-      '\n\nAcepto las Políticas de la empresa, los Términos y Condiciones, el código de ética y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.';
+      '\n\nYa revisé las membresías, lo que incluye la afiliación, los requisitos y las políticas. Acepto las Políticas de la empresa, el código de ética, los Términos y Condiciones y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.'+
+      '\n\n¿Me ayudan a agendar mi entrevista?';
     return 'https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent(t);}
-  document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(4);},400);});
-  ir(1,true);
-  if(!location.hash){window.scrollTo(0,0);}
+  document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(7);},400);});
+  var H={'#beneficios':3,'#requisitos':4,'#politicas':5,'#codigo-etica':5}[location.hash];
+  ir(H||1,true);
+  if(!H){window.scrollTo(0,0);}else{setTimeout(function(){document.querySelector('.caja').scrollIntoView({block:'start'});},50);}
 })();
 </script>
 </body>
