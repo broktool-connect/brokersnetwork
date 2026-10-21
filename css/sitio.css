@@ -225,6 +225,7 @@ footer.pie .fbtn svg{width:18px;height:18px}
   .top nav .dd.mdd{position:static}
   .top nav .ddp.mega{left:50%;transform:translateX(-50%);top:100%;width:min(1040px,calc(100vw - 32px));padding:18px;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 18px}
   .top nav .dd.mdd.open .ddp.mega{display:grid}
+  .top nav .ddp.mega::before{top:-40px;height:40px}
   .top nav .ddp.mega .g{display:flex;flex-direction:column;gap:2px;min-width:0}
   .top nav .ddp.mega .g+.g{border-left:1px solid var(--linea);padding-left:14px}
 }
