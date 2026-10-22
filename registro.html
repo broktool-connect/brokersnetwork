@@ -220,13 +220,16 @@ details.bc .bcb{padding:0 18px 18px}
 .pasos .ir span small{font-size:12px;color:#9FB0C2;font-weight:500}
 .pasos li.on .ir span small{color:#D3DDE8}
 @media (max-width:860px){
-  .lado .pasos{grid-template-columns:1fr 1fr!important;gap:8px}
+  .lado .pasos{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
+  .lado .pasos .ir span{min-width:0}
+  .lado .pasos .ir span b{overflow-wrap:anywhere}
   .lado .pasos li{grid-template-columns:none}
   .lado .pasos .ir{grid-template-columns:28px 1fr!important;gap:8px!important;background:rgba(255,255,255,.06);padding:8px;border-radius:12px}
   .lado .pasos li span{display:grid!important}
   .lado .pasos .ir span small{display:none}
   .lado .pasos li.on .ir{background:rgba(221,86,53,.25)}
 }
+@media (max-width:360px){.lado{padding:20px}.lado .pasos .ir span b{font-size:13px}}
 /* membresías atractivas */
 .plan{border:0;box-shadow:0 14px 34px rgba(31,45,61,.12);border-radius:20px;padding:24px;position:relative;overflow:hidden}
 .plan[data-plan="Broker"]{background:linear-gradient(165deg,#FFE4D8 0%,#FFF6F2 45%,#fff 100%);border-top:6px solid var(--naranja)}
