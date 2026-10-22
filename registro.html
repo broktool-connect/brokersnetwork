@@ -52,15 +52,6 @@ h1,h2,h3{margin:0;text-wrap:balance}
 .caja .s{color:var(--gris-m);margin:6px 0 24px}
 .planes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
 .plan{position:relative;border:1.5px solid var(--linea);padding:16px;cursor:pointer;display:block}
-.plan input{position:absolute;opacity:0;pointer-events:none}
-.plan b{display:block;color:var(--azul);font-size:16px}
-.plan .pr{font-size:24px;font-weight:800;color:var(--gris);margin:4px 0 0;font-variant-numeric:tabular-nums}
-.plan .pr small{font-size:13px;font-weight:600;color:var(--gris-m)}
-.plan .pp{font-size:12.5px;color:var(--gris-m)}
-.plan ul{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--gris-m)}
-.plan:has(input:checked){border-color:var(--naranja);background:#FFF6F2;box-shadow:inset 0 0 0 1px var(--naranja)}
-.plan:has(input:focus-visible){outline:2px solid var(--naranja);outline-offset:2px}
-.plan .ok{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;border:2px solid var(--linea)}
 .plan:has(input:checked) .ok{background:var(--naranja);border-color:var(--naranja);box-shadow:inset 0 0 0 4px #fff}
 
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -221,6 +212,48 @@ details.bc .bcb{padding:0 18px 18px}
 .pasos .ir:hover span{text-decoration:underline}
 .pasos .ir:focus-visible{outline:2px solid #FFB59E;outline-offset:2px}
 @media (max-width:860px){.lado .pasos .ir{grid-template-columns:30px;gap:0}}
+/* pasos con descripción */
+.lado .ptit{margin:22px 0 0;color:#FFB59E;font-size:12.5px;font-weight:700}
+.lado .pasos{margin-top:10px}
+.pasos .ir span{display:grid;gap:1px}
+.pasos .ir span b{font-weight:700;color:inherit;font-size:14px}
+.pasos .ir span small{font-size:12px;color:#9FB0C2;font-weight:500}
+.pasos li.on .ir span small{color:#D3DDE8}
+@media (max-width:860px){
+  .lado .pasos{grid-template-columns:1fr 1fr!important;gap:8px}
+  .lado .pasos li{grid-template-columns:none}
+  .lado .pasos .ir{grid-template-columns:28px 1fr!important;gap:8px!important;background:rgba(255,255,255,.06);padding:8px;border-radius:12px}
+  .lado .pasos li span{display:grid!important}
+  .lado .pasos .ir span small{display:none}
+  .lado .pasos li.on .ir{background:rgba(221,86,53,.25)}
+}
+/* membresías atractivas */
+.plan{border:0;box-shadow:0 14px 34px rgba(31,45,61,.12);border-radius:20px;padding:24px;position:relative;overflow:hidden}
+.plan[data-plan="Broker"]{background:linear-gradient(165deg,#FFE4D8 0%,#FFF6F2 45%,#fff 100%);border-top:6px solid var(--naranja)}
+.plan.team{background:linear-gradient(165deg,#1F2D3D 0%,#30445A 100%);color:#E6ECF2;border-top:6px solid #FFB59E}
+.plan.team .pl{color:#FFB59E}.plan.team h3,.plan.team .pr b,.plan.team .extra,.plan.team .extra b{color:#fff}
+.plan.team .para,.plan.team .pr .u,.plan.team .desc{color:#C9D4E0}
+.plan.team details.inc summary{color:#FFB59E}.plan.team details.inc ul{color:#D3DDE8}
+.plan .pr b{font-size:42px}
+.plan.sel{box-shadow:0 0 0 4px var(--naranja),0 14px 34px rgba(31,45,61,.18)}
+.plan .calc{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px;gap:8px}
+.plan .calc .ct{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFB59E}
+.plan .calc .cnt{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 10px;font-size:14px;font-weight:700;color:#fff}
+.plan .calc .stp{display:flex;align-items:center;gap:6px}
+.plan .calc .stp input{width:52px;text-align:center;padding:8px 6px;font-weight:800}
+.plan .calc .mn{width:32px;height:32px;flex:none;border-radius:50%;border:0;background:#fff;color:var(--azul);font:800 18px var(--f);cursor:pointer}
+.plan .calc .tot{margin:2px 0 0;font-size:30px;line-height:1.1;color:#fff}
+.plan .calc .tot b{display:inline;color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
+.plan .calc .des{margin:0;font-size:13px;color:#C9D4E0}
+.plan.team .elegir{background:#fff;color:#1F2D3D}
+.plan.team .elegir:hover{background:#FFE7DE}
+/* cierre con el proceso */
+.listo ol.proc{list-style:none;text-align:left;max-width:560px;margin:0 auto 16px;padding:0;display:grid;gap:10px}
+.listo ol.proc li{border:1px solid var(--linea);border-radius:14px;padding:12px 14px;display:grid;gap:4px;background:#fff}
+.listo ol.proc li.ok{border-color:#1E8A4C;background:#EEF8F2}
+.listo ol.proc b{color:var(--azul)}
+.listo ol.proc span{font-size:14px;color:var(--gris)}
+.listo .fin{text-align:center;font-weight:700;color:var(--azul)}
 </style>
 </head>
 <body>
@@ -233,14 +266,15 @@ details.bc .bcb{padding:0 18px 18px}
   <aside class="lado" aria-label="Tu avance">
     <p class="eb">Afiliación</p>
     <h1>Únete a nuestra red de asesores independientes</h1>
-    <p>Te acompañamos paso a paso: tus datos, el costo de la membresía, lo que incluye, los requisitos y nuestras políticas. Puedes saltar entre secciones cuando quieras; al final nos envías tu solicitud por WhatsApp.</p>
+    <p>Regístrate en unos minutos. Después agendamos tu entrevista, revisas el convenio y, si todo está en orden, activas tu membresía.</p>
+    <p class="ptit">Toca cualquier sección para verla:</p>
     <ol class="pasos" id="pasos">
-      <li data-p="1"><button type="button" class="ir" data-ir="1" aria-label="Ir al paso 1: Tus datos"><i>1</i><span>Tus datos</span></button></li>
-      <li data-p="2"><button type="button" class="ir" data-ir="2" aria-label="Ir al paso 2: Costo de membresía"><i>2</i><span>Costo de membresía</span></button></li>
-      <li data-p="3"><button type="button" class="ir" data-ir="3" aria-label="Ir al paso 3: Qué incluye"><i>3</i><span>Qué incluye</span></button></li>
-      <li data-p="4"><button type="button" class="ir" data-ir="4" aria-label="Ir al paso 4: Requisitos"><i>4</i><span>Requisitos</span></button></li>
-      <li data-p="5"><button type="button" class="ir" data-ir="5" aria-label="Ir al paso 5: Políticas y código de ética"><i>5</i><span>Políticas y código de ética</span></button></li>
-      <li data-p="6"><button type="button" class="ir" data-ir="6" aria-label="Ir al paso 6: Enviar"><i>6</i><span>Enviar</span></button></li>
+      <li data-p="1"><button type="button" class="ir" data-ir="1"><i>1</i><span><b>Tus datos</b><small>Cómo te contactamos</small></span></button></li>
+      <li data-p="2"><button type="button" class="ir" data-ir="2"><i>2</i><span><b>Membresías</b><small>Broker o Team y sus precios</small></span></button></li>
+      <li data-p="3"><button type="button" class="ir" data-ir="3"><i>3</i><span><b>Qué incluye</b><small>Beneficios de tu afiliación</small></span></button></li>
+      <li data-p="4"><button type="button" class="ir" data-ir="4"><i>4</i><span><b>Requisitos</b><small>Documentos para tu expediente</small></span></button></li>
+      <li data-p="5"><button type="button" class="ir" data-ir="5"><i>5</i><span><b>Cómo trabajamos</b><small>Políticas y código de ética</small></span></button></li>
+      <li data-p="6"><button type="button" class="ir" data-ir="6"><i>6</i><span><b>Enviar</b><small>Tu solicitud por WhatsApp</small></span></button></li>
     </ol>
   </aside>
 
@@ -249,7 +283,7 @@ details.bc .bcb{padding:0 18px 18px}
       <section data-paso="1">
         <p class="paso-t">Paso 1 de 6 · Tus datos</p>
         <h2>¿Cómo te contactamos?</h2>
-        <p class="s">Con estos datos te escribimos para agendar tu entrevista.</p>
+        <p class="s">Solo lo necesario para conocer tu perfil profesional.</p>
         <label for="nombre">Nombre completo<input class="campo" id="nombre" type="text" autocomplete="name" placeholder="Ana Ruiz" required></label>
         <div class="g2">
           <label for="correo">Correo<input class="campo" id="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></label>
@@ -272,7 +306,7 @@ details.bc .bcb{padding:0 18px 18px}
       </section>
 
       <section data-paso="2" hidden>
-        <p class="paso-t">Paso 2 de 6 · Costo de membresía</p>
+        <p class="paso-t">Paso 2 de 6 · Membresías</p>
         <h2>Elige tu membresía</h2>
         <p class="s">Tu negocio inmobiliario, conectado a una red que te impulsa a crecer. Las dos membresías te dan acceso completo a la red; la diferencia es si operas solo o con tu equipo.</p>
         <input type="hidden" id="plan" value="">
@@ -293,9 +327,11 @@ details.bc .bcb{padding:0 18px 18px}
             <p class="para">Para líderes de equipo e inmobiliarias</p>
             <div class="pr"><b>$999</b><span class="u">MXN/mes · administrador</span></div>
             <p class="extra"><b>+ $299 MXN/mes</b> por cada usuario adicional</p>
-            <div class="calc">
-              <label for="usuarios">Usuarios adicionales<input class="campo" id="usuarios" type="number" min="0" max="200" value="4" inputmode="numeric"></label>
-              <p id="tot-team"></p>
+            <div class="calc" aria-label="Calculadora de Team">
+              <p class="ct">Calcula tu mensualidad</p>
+              <div class="cnt"><span>Usuarios adicionales</span><div class="stp"><button type="button" class="mn" data-d="-1" aria-label="Quitar un usuario">−</button><input class="campo" id="usuarios" type="number" min="0" max="200" value="4" inputmode="numeric" aria-label="Usuarios adicionales"><button type="button" class="mn" data-d="1" aria-label="Agregar un usuario">+</button></div></div>
+              <p class="tot" id="tot-team"></p>
+              <p class="des" id="des-team"></p>
             </div>
             <p class="desc">Gestiona tu operación, coordina a tus asesores, supervisa citas, recorridos y operaciones de tu equipo, y trabaja de forma colaborativa desde una sola plataforma.</p>
             <details class="inc"><summary>Todo lo de Broker, más</summary><ul>
@@ -307,7 +343,7 @@ details.bc .bcb{padding:0 18px 18px}
           <p>Las funciones de la plataforma están incluidas en cada membresía. Estos servicios son opcionales y no son requisito para usarla:</p>
           <ul><li>Integración con Inmuebles24 (plan según el número de anuncios)</li><li>Talleres de capacitación</li><li>Plan de negocios personalizado</li><li>Certificación SEP-CONOCER EC0110.02</li><li>Licencias o registros estatales, según corresponda</li><li>Cursos, especializaciones y seminarios</li><li>Masterclasses y servicios de aliados estratégicos</li></ul>
         </details>
-        <p class="nota">El pago se confirma después de tu entrevista, no ahora. Con tu pago y tus documentos preparamos tu <b>Convenio de Afiliación</b>.</p>
+        <p class="nota"><b>No pagas nada hoy.</b> Si tu entrevista resulta favorable, te enviamos la liga de pago para que actives la membresía que elijas.</p>
         <div class="acc"><button class="btn lin" type="button" data-sig="1">Atrás</button><button class="btn lin" type="button" data-sig="3">Aún no lo decido →</button></div>
       </section>
 
@@ -364,9 +400,9 @@ details.bc .bcb{padding:0 18px 18px}
       </section>
 
       <section data-paso="5" hidden id="politicas">
-        <p class="paso-t">Paso 5 de 6 · Políticas y código de ética</p>
-        <h2>Lo que firmas al unirte</h2>
-        <p class="s">Estas reglas protegen a todos los asesores de la red. Léelas antes de continuar.</p>
+        <p class="paso-t">Paso 5 de 6 · Cómo trabajamos</p>
+        <h2>Nuestro equipo trabaja así</h2>
+        <p class="s">Colaboramos con reglas claras que cuidan a cada asesor de la red: nuestras políticas y nuestro código de ética. Puedes revisar también el <a href="https://docs.google.com/document/d/1iLJAYRG-JWfumM5pAalN3b-Rc-952Vdx/edit?usp=sharing" target="_blank" rel="noopener">convenio de afiliación</a>.</p>
         <div class="pol"><h3 class="polt">Políticas de la empresa</h3>
     <ol>
       <li><details><summary><b>Paga a otros asesores el mismo día</b><span class="sev">Rescisión</span></summary><div class="pb">El afiliado, una vez cobrada su comisión, se compromete a pagar a otros afiliados o a cualquier otro asesor inmobiliario su parte correspondiente el mismo día que reciba dicho pago, de manera completa y según la cantidad acordada.<span class="resc">La afiliación se rescinde si el afiliado falla a esta política una primera vez, o si no enmienda su error en un máximo de 5 días hábiles.</span></div></details></li>
@@ -405,12 +441,14 @@ details.bc .bcb{padding:0 18px 18px}
         <div class="listo">
           <div class="ico" aria-hidden="true">✓</div>
           <h2 id="bien">¡Gracias por tu interés!</h2>
-          <p class="s">Recibimos tu solicitud por WhatsApp. Esto sigue:</p>
-          <ol class="sig">
-            <li>Te escribimos por WhatsApp para agendar tu entrevista.</li>
-            <li>Después de la entrevista te pedimos tus documentos y la confirmación de tu pago.</li>
-            <li>Firmamos tu Convenio de Afiliación y te damos la bienvenida a la red.</li>
+          <p class="s">Recibimos tu registro. Así sigue tu proceso de afiliación:</p>
+          <ol class="proc">
+            <li class="ok"><b>📝 Registro</b><span>Listo: ya tenemos tu información y tu perfil profesional.</span></li>
+            <li><b>🤝 Entrevista</b><span>Agendamos una entrevista para conocerte, explicarte nuestro modelo de colaboración, los beneficios y condiciones de afiliación, y resolver tus dudas.</span></li>
+            <li><b>📄 Convenio de afiliación</b><span>Te compartimos el convenio para que lo revises con calma y dejes tus dudas o comentarios en el documento antes de formalizar. <a href="https://docs.google.com/document/d/1iLJAYRG-JWfumM5pAalN3b-Rc-952Vdx/edit?usp=sharing" target="_blank" rel="noopener">Ver el convenio</a></span></li>
+            <li><b>💳 Activación de tu membresía</b><span>Si tu entrevista resulta favorable, te enviamos la liga de pago para que actives tu membresía. Con el pago confirmado te damos tus accesos y recursos.</span></li>
           </ol>
+          <p class="fin">¡Estamos listos para crecer contigo! 🏡✨</p>
           <p class="alt" style="text-align:center">¿No se abrió WhatsApp? <a href="#" id="reenviar" target="_blank" rel="noopener">Envíalo de nuevo</a></p>
           <div class="acc" style="justify-content:center"><a class="btn lin" href="index.html">Volver al sitio</a></div>
         </div>
@@ -452,8 +490,8 @@ details.bc .bcb{padding:0 18px 18px}
   var usu=document.getElementById('usuarios');
   function mx(n){return '$'+n.toLocaleString('es-MX')+' MXN/mes';}
   function calcTeam(){var n=Math.max(0,parseInt(usu.value,10)||0);
-    document.getElementById('tot-team').innerHTML='Administrador + '+n+' usuario'+(n===1?'':'s')+' adicional'+(n===1?'':'es')+': <b>'+mx(999+299*n)+'</b> en total.';}
-  usu.addEventListener('input',calcTeam);calcTeam();
+    document.getElementById('tot-team').innerHTML='<b>'+mx(999+299*n)+'</b>';document.getElementById('des-team').textContent='Administrador $999 + '+n+' × $299 por usuario adicional';}
+  usu.addEventListener('input',calcTeam);document.querySelectorAll('.calc .mn').forEach(function(b){b.addEventListener('click',function(){usu.value=Math.min(200,Math.max(0,(parseInt(usu.value,10)||0)+ +b.getAttribute('data-d')));calcTeam();});});calcTeam();
   document.querySelectorAll('[data-elegir]').forEach(function(b){b.addEventListener('click',function(){
     var p=b.getAttribute('data-elegir');document.getElementById('plan').value=p;
     document.querySelectorAll('.plan').forEach(function(a){a.classList.toggle('sel',a.getAttribute('data-plan')===p);});
@@ -472,7 +510,7 @@ details.bc .bcb{padding:0 18px 18px}
   function urlWA(){
     var t='Hola, quiero afiliarme a Brokers Network. Estas son mis respuestas:\n\n'+datos().map(function(r){return '• '+r[0]+': '+r[1];}).join('\n')+
       '\n\nYa revisé las membresías, lo que incluye la afiliación, los requisitos y las políticas. Acepto las Políticas de la empresa, el código de ética, los Términos y Condiciones y el aviso de privacidad de Brokers Network, según la NOM-247 y EC0110.02.'+
-      '\n\n¿Me ayudan a agendar mi entrevista?';
+      '\n\nQuedo atento(a) para agendar la entrevista.';
     return 'https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent(t);}
   document.getElementById('enviar').addEventListener('click',function(){this.href=urlWA();setTimeout(function(){ir(7);},400);});
   var H={'#beneficios':3,'#requisitos':4,'#politicas':5,'#codigo-etica':5}[location.hash];
